@@ -1,0 +1,31 @@
+.nav_logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  margin-left: -112px;
+  width: 224px;
+  height: 114px;
+  font-size: 27.7px;
+}
+
+.top_nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 60px;
+
+  li {
+    padding-left: 2px;
+    line-height: 36px;
+  }
+  a {
+    font-size: 12px;
+    padding: 0 8px;
+    color: #959595;
+    border-right: 1px solid;
+    color: gray;
+  }
+  .top_nav_end {
+    border: none;
+  }
+}
