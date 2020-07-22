@@ -1,0 +1,31 @@
+.OnlynHot {
+  width: 1140px;
+  padding-top: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  .OnlynHotList {
+    .title {
+      text-align: center;
+      background: url(https://www.larocheposay.co.kr/images/main/bg_h2line.png)
+        repeat-x 0 11px;
+      margin-bottom: 40px;
+      .mainTitle {
+        display: inline-block;
+        width: 220px;
+        font-size: 40px;
+        background-color: white;
+      }
+      .subTitle {
+        text-align: center;
+        margin: 5px 0 0;
+        color: #959595;
+        font-size: 16px;
+      }
+    }
+  }
+  .flexList {
+    display: flex;
+    justify-content: space-between;
+  }
+}

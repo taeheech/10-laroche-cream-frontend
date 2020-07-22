@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+.BestSeller {
+  position: relative;
+  display: block;
+  width: 1140px;
+  margin: 0 auto;
+  padding: 80px 0 0;
+  text-align: center;
+
+  .bestSellerTitle {
+    margin: 0 0 40px;
+    font-size: 40px;
+
+    .bestSellerSubTitle {
+      margin: 5px 0 0;
+      color: #959595;
+      font-size: 16px;
+    }
+  }
+
+  .seeMore {
+    position: absolute;
+    display: block;
+    top: 100px;
+    right: 0;
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;
+  }
+
+  .bestSellerList {
+    justify-content: space-around;
+    margin-bottom: 100px;
+
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      width: 17px;
+      height: 30px;
+      border: black;
+      z-index: 999;
+    }
+
+    .slick-prev::before {
+      display: none;
+    }
+
+    .slick-prev {
+      left: -30px;
+      background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
+        no-repeat -169px 0;
+    }
+
+    .slick-next::before {
+      display: none;
+    }
+
+    .slick-next {
+      top: 50%;
+      right: -30px;
+      background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
+        no-repeat -191px 0;
+    }
+
+    .slick-dots {
+      li {
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+        background: none;
+        color: black;
+        margin: 0 4px;
+        vertical-align: text-bottom;
+      }
+      .slick-active {
+        width: 12px;
+        height: 18px;
+        background-color: none;
+        border: none;
+      }
+    }
+  }
+}
