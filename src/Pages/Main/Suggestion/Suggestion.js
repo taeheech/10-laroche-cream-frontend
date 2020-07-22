@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Slides from "../../Components/Main/Slides";
-import "./Discount.scss";
+import Slides from "../../../Components/Main/Slides";
+import "./Suggestion.scss";
 
-class Discount extends Component {
+class Suggestion extends Component {
   constructor() {
     super();
     this.state = {
@@ -92,9 +92,9 @@ class Discount extends Component {
   }
   render() {
     return (
-      <div className="Discount">
-        <h1 className="discountTitle">공식몰만의 할인구성</h1>
-        <div className="discountList">
+      <div className="Suggestion">
+        <h1 className="suggestionTitle">고객님 피부고민을 위한 맞춤 추천</h1>
+        <div className="suggestionList">
           <Slides
             itemList={this.state.itemList}
             settings={this.state.settings}
@@ -107,4 +107,4 @@ class Discount extends Component {
     );
   }
 }
-export default Discount;
+export default Suggestion;

@@ -55,8 +55,8 @@ class TopSlideBar extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      // autoplay: true,
-      // autoplaySpeed: 2000,
+      autoplay: true,
+      autoplaySpeed: 2000,
       arrow: true,
       customPaging: () => <div>☐</div>,
     };

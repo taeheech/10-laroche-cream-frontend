@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ItemBox from "../../Components/Main/ItemBox";
+import ItemBox from "../../../Components/Main/ItemBox";
 import "./OnlynHot.scss";
 
 class OnlynHot extends Component {

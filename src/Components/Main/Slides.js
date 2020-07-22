@@ -5,9 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Slides.scss";
 
 class Slides extends Component {
-  constructor() {
-    super();
-  }
   render() {
     const settings = {
       dots: this.props.dots,
@@ -24,7 +21,7 @@ class Slides extends Component {
           return (
             <div className="itemList">
               <div className="slideItemBox">
-                <img alt="" src={item.img} />
+                <img className="itemImg" alt="" src={item.img} />
                 <p className="itemDesc">{item.desc}</p>
                 <p className="itemPrice">{item.price}</p>
                 <p className="prevPrice">{item.prevPrice}</p>

@@ -1,5 +1,6 @@
 .itemFrame {
   position: relative;
+
   .itemBox {
     display: flex;
     flex-direction: column;
@@ -15,21 +16,26 @@
       height: 210px;
       margin: 35px;
     }
+
     p {
       flex-direction: column;
       margin: 0 0 8px;
     }
+
     .itemHash {
       font-size: 14px;
       color: #959595;
     }
+
     .itemName {
       font-size: 18px;
       font-weight: bold;
     }
+
     .itemDesc {
       font-size: 16px;
     }
+
     .itemPrice {
       font-size: 22px;
       font-weight: bold;
@@ -45,6 +51,7 @@
     }
   }
 }
+
 .itemBox:hover {
   border: 1px solid rgba(#009ee3, 0.8);
 

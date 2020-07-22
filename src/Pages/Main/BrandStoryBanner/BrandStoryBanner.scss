@@ -2,10 +2,12 @@
   position: relative;
   display: block;
   margin: 0 auto;
+
   .brandStory {
     position: relative;
     justify-content: center;
     display: flex;
+
     .storyItem {
       margin: 1px;
       width: 284px;
@@ -16,14 +18,17 @@
         cursor: pointer;
         opacity: 0;
       }
+
       .storyHoverImage:hover {
         opacity: 1;
         transition: 0.8s;
       }
+
       .storyImage {
         position: absolute;
       }
     }
+
     .storyRef {
       position: absolute;
       bottom: -15px;

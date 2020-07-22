@@ -1,33 +1,38 @@
 .TopSlideBar {
   width: 100%;
+
   .slick-arrow {
     position: absolute;
     top: 50%;
     width: 50px;
     height: 76px;
     border: 0.5px solid #fff;
-    z-index: 999;
   }
 
   .slick-prev::before {
     display: none;
   }
+
   .slick-prev {
     left: 0px;
     background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
       no-repeat 0 -129px;
+    z-index: 5;
   }
 
   .slick-next::before {
     display: none;
   }
+
   .slick-next {
     right: 0px;
     background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
       no-repeat -55px -129px;
   }
+
   .slick-dots {
     bottom: 52px;
+
     li {
       display: inline-block;
       cursor: pointer;
@@ -38,6 +43,7 @@
       margin: 0 4px;
       vertical-align: text-bottom;
     }
+
     .slick-active {
       width: 12px;
       height: 18px;
@@ -52,30 +58,35 @@
     background-position: center;
     background-image: url("https://www.larocheposay.co.kr/upload/site/main/2020/07/20200714_1612041_146.jpg");
   }
+
   .img2 {
     height: 699px;
     background-size: cover;
     background-position: center;
     background-image: url("https://www.larocheposay.co.kr/upload/site/main/2020/02/20200225_1840003_152.jpg");
   }
+
   .img3 {
     height: 699px;
     background-size: cover;
     background-position: center;
     background-image: url("https://www.larocheposay.co.kr/upload/site/main/2020/02/20200225_1841014_156.jpg");
   }
+
   .img4 {
     height: 699px;
     background-size: cover;
     background-position: center;
     background-image: url("https://www.larocheposay.co.kr/upload/site/main/2020/07/20200720_1429049_268.jpg");
   }
+
   .img5 {
     height: 699px;
     background-size: cover;
     background-position: center;
     background-image: url("https://www.larocheposay.co.kr/upload/site/main/2020/06/20200629_1039052_486.jpg");
   }
+
   .img6 {
     height: 699px;
     background-size: cover;
