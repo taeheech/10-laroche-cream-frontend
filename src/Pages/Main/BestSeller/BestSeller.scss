@@ -62,11 +62,12 @@
 
     .slick-dots {
       li {
+        top: 20px;
         cursor: pointer;
         width: 12px;
         height: 12px;
         background: none;
-        color: black;
+        color: #009ee3;
         margin: 0 4px;
         vertical-align: text-bottom;
       }

@@ -30,7 +30,11 @@ class SkinSolution extends Component {
       slidesToShow: 3,
       slidesToScroll: 2,
       arrow: true,
-      customPaging: () => <div>☐</div>,
+      customPaging: () => (
+        <div>
+          <span>◽️</span>
+        </div>
+      ),
     };
 
     const { skinSolution } = this.state;

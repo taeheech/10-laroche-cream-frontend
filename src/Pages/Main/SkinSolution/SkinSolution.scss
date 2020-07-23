@@ -55,8 +55,10 @@
     .slick-disabled {
       display: none !important;
     }
+
     div {
       text-align: center;
+
       .solutionItemBox {
         position: relative;
         outline: none;
@@ -76,6 +78,7 @@
             transition: 0.5s;
           }
           .solutionText {
+            text-align: left;
             width: 286px;
             line-height: 36px;
             display: block;

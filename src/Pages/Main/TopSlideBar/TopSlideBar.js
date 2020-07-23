@@ -32,7 +32,7 @@ class TopSlideBar extends Component {
       autoplay: true,
       autoplaySpeed: 2000,
       arrow: true,
-      customPaging: () => <div>☐</div>,
+      customPaging: () => <div>🀆</div>,
     };
     const { topSlideImg } = this.state;
     return (

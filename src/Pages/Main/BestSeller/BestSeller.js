@@ -31,7 +31,11 @@ class BestSeller extends Component {
       slidesToShow: 4,
       slidesToScroll: 4,
       arrow: true,
-      customPaging: () => <div>☐</div>,
+      customPaging: () => (
+        <div>
+          <span>🀫</span>
+        </div>
+      ),
     };
 
     const { bestSeller } = this.state;

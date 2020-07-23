@@ -58,7 +58,7 @@
   }
 }
 
-.itemBox:hover {
+.itemBoxFrame:hover {
   border: 1px solid rgba(#009ee3, 0.8);
 
   .over {
@@ -69,7 +69,7 @@
       content: "";
       width: 56px;
       height: 56px;
-      background: url(https://www.larocheposay.co.kr//images/product/bg_product_sp.png) -380px
+      background: url(https://www.larocheposay.co.kr/images/product/bg_product_sp.png) -380px
         0 no-repeat;
       cursor: pointer;
     }
