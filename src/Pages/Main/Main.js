@@ -11,6 +11,7 @@ import Memebership from "./Membership/Membership";
 import Video from "./Video/Video";
 import Review from "./Review/Review";
 import Notice from "./Notice/Notice";
+import Footer from "../../Components/Footer/Footer";
 
 class Main extends Component {
   render() {
@@ -28,6 +29,7 @@ class Main extends Component {
         <Video />
         <Review />
         <Notice />
+        <Footer />
       </div>
     );
   }
