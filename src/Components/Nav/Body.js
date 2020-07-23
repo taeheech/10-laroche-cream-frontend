@@ -69,7 +69,7 @@ class Body extends Component {
                       <div className="menu_top">피부 고민별</div>
                     </a>
                   </li>
-                  <li className="menu_list_top">
+                  <li>
                     <a href="/">전체</a>
                   </li>
                   <li>
@@ -90,7 +90,7 @@ class Body extends Component {
                       <div className="menu_top">제품 라인별</div>
                     </a>
                   </li>
-                  <li className="menu_list_top">
+                  <li>
                     <a href="/">전체</a>
                   </li>
                   <li>
@@ -111,7 +111,7 @@ class Body extends Component {
                       <div className="menu_top">사용 단계별</div>
                     </a>
                   </li>
-                  <li className="menu_list_top">
+                  <li>
                     <a href="/">전체</a>
                   </li>
                   <li>

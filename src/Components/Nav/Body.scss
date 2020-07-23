@@ -19,23 +19,27 @@
 
       .menu_list {
         width: 200px;
-      }
-      .menu_top {
-        color: #222;
-        width: 150px;
-        padding-bottom: 10px;
-        font-weight: bold;
-        border-bottom: 1.3px solid gainsboro;
-        font-size: 16px;
-        line-height: 1;
-      }
-      li {
-        font-size: 14px;
-        height: 10px;
-        margin-top: 25px;
 
-        a {
-          color: gray;
+        .menu_top {
+          color: #222;
+          width: 150px;
+          padding-bottom: 10px;
+          font-weight: bold;
+          border-bottom: 1.3px solid gainsboro;
+          font-size: 16px;
+          line-height: 1;
+        }
+
+        li {
+          font-size: 15px;
+          height: 10px;
+          margin-top: 25px;
+          a {
+            color: gray;
+            &:hover {
+              color: skyblue;
+            }
+          }
         }
       }
     }
