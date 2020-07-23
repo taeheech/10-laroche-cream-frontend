@@ -6,20 +6,22 @@ class ItemBox extends Component {
     const { item } = this.props;
     return (
       <div className="ItemBox">
-        <div className="itemBoxFrame">
-          <img alt="" src={item.img} />
-          <p className="itemHash">{item.hash}</p>
-          <p className="itemName">{item.name}</p>
-          <p className="itemDesc">{item.desc}</p>
-          <p className="itemPrice">
-            <strong>{item.price}</strong>
-            <span>원</span>
-          </p>
-          <div className="over">
-            <div className="detailView"></div>
-            <div className="addCart"></div>
+        <li>
+          <div className="itemBoxFrame">
+            <img alt="" src={item.img} />
+            <p className="itemHash">{item.hash}</p>
+            <p className="itemName">{item.name}</p>
+            <p className="itemDesc">{item.desc}</p>
+            <p className="itemPrice">
+              <strong>{item.price}</strong>
+              <span>원</span>
+            </p>
+            <div className="over">
+              <div className="detailView"></div>
+              <div className="addCart"></div>
+            </div>
           </div>
-        </div>
+        </li>
       </div>
     );
   }

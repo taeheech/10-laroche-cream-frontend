@@ -33,11 +33,7 @@ class OnlynHot extends Component {
           </div>
           <ul className="flexList">
             {onlyOneItems.map((item) => {
-              return (
-                <li>
-                  <ItemBox item={item} />
-                </li>
-              );
+              return <ItemBox item={item} />;
             })}
           </ul>
         </div>
@@ -48,11 +44,7 @@ class OnlynHot extends Component {
           </div>
           <ul className="flexList">
             {hotDealItems.map((item) => {
-              return (
-                <li>
-                  <ItemBox item={item} />
-                </li>
-              );
+              return <ItemBox item={item} />;
             })}
           </ul>
         </div>

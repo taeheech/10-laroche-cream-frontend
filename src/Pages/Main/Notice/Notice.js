@@ -49,7 +49,7 @@ class Notice extends Component {
         </div>
 
         <div className="Right">
-          <a>
+          <a href="none">
             <img
               src="https://www.larocheposay.co.kr/upload/site/main/2018/09/20180903_1303026_001.jpg"
               alt=" - 바로가기"
