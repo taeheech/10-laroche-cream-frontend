@@ -9,7 +9,7 @@ class BestSeller extends Component {
   constructor() {
     super();
     this.state = {
-      itemList: [],
+      bestSeller: [],
     };
   }
 
@@ -18,7 +18,7 @@ class BestSeller extends Component {
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          itemList: res.data,
+          bestSeller: res.data,
         });
       });
   }
@@ -34,7 +34,7 @@ class BestSeller extends Component {
       customPaging: () => <div>☐</div>,
     };
 
-    const { itemList } = this.state;
+    const { bestSeller } = this.state;
 
     return (
       <div className="BestSeller">
@@ -47,7 +47,7 @@ class BestSeller extends Component {
         <span className="seeMore">MORE →</span>
         <div className="bestSellerList">
           <Slider {...settings}>
-            {itemList.map((item) => {
+            {bestSeller.map((item) => {
               return <ItemBox item={item} />;
             })}
           </Slider>

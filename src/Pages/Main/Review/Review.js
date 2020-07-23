@@ -8,74 +8,20 @@ class Review extends Component {
   constructor() {
     super();
     this.state = {
-      itemList: [
-        {
-          id: 1,
-          img: "리뷰이미지",
-          hash: "#해시태그",
-          name: "상품이름",
-          desc: "상품설명",
-          review: "리뷰부분",
-        },
-        {
-          id: 2,
-          img: "리뷰이미지",
-          hash: "#해시태그",
-          name: "상품이름",
-          desc: "상품설명",
-          review: "리뷰부분",
-        },
-        {
-          id: 3,
-          img: "리뷰이미지",
-          hash: "#해시태그",
-          name: "상품이름",
-          desc: "상품설명",
-          review: "리뷰부분",
-        },
-        {
-          id: 4,
-          img: "리뷰이미지",
-          hash: "#해시태그",
-          name: "상품이름",
-          desc: "상품설명",
-          review: "리뷰부분",
-        },
-        {
-          id: 5,
-          img: "리뷰이미지",
-          hash: "#해시태그",
-          name: "상품이름",
-          desc: "상품설명",
-          review: "리뷰부분",
-        },
-        {
-          id: 6,
-          img: "리뷰이미지",
-          hash: "#해시태그",
-          name: "상품이름",
-          desc: "상품설명",
-          review: "리뷰부분",
-        },
-        {
-          id: 7,
-          img: "리뷰이미지",
-          hash: "#해시태그",
-          name: "상품이름",
-          desc: "상품설명",
-          review: "리뷰부분",
-        },
-        {
-          id: 8,
-          img: "리뷰이미지",
-          hash: "#해시태그",
-          name: "상품이름",
-          desc: "상품설명",
-          review: "리뷰부분",
-        },
-      ],
+      reviewData: [],
     };
   }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/mockdata/data.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          reviewData: res.reviewData,
+        });
+      });
+  }
+
   render() {
     const settings = {
       dots: true,
@@ -86,7 +32,7 @@ class Review extends Component {
       arrow: true,
       customPaging: () => <div>☐</div>,
     };
-    const { itemList } = this.state;
+    const { reviewData } = this.state;
     return (
       <div className="Review">
         <div className="reviewTitle">
@@ -98,7 +44,7 @@ class Review extends Component {
 
         <div className="reviewList">
           <Slider {...settings}>
-            {itemList.map((item) => {
+            {reviewData.map((item) => {
               return (
                 <div className="itemFrame">
                   <div className="itemBox">

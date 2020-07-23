@@ -72,5 +72,128 @@
       "price": "25,000",
       "prevPrice": "29,000"
     }
+  ],
+
+  "onlyOneItems": [
+    {
+      "id": "1",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/06/20200630_1641030_694_210x210.png",
+      "hash": "#피지제거포밍크림",
+      "name": "에빠끌라",
+      "desc": "딥 클렌징 포밍 크림",
+      "price": "22,000",
+      "prevPrice": "25,000"
+    },
+    {
+      "id": "2",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/06/20200630_1641030_694_210x210.png",
+      "hash": "#피지케어토너",
+      "name": "에빠끌라",
+      "desc": "클래리파잉 로션 [병원판매제품]",
+      "price": "30,000",
+      "prevPrice": "32,000"
+    }
+  ],
+
+  "hotDealItems": [
+    {
+      "id": "1",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/06/20200630_1641030_694_210x210.png",
+      "hash": "#피지제거포밍크림",
+      "name": "에빠끌라",
+      "desc": "딥 클렌징 포밍 크림",
+      "price": "22,000",
+      "prevPrice": "25,000"
+    }
+  ],
+
+  "reviewData": [
+    {
+      "id": 1,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 2,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 3,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 4,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 5,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 6,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 7,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 8,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    }
+  ],
+
+  "skinSolution": [
+    {
+      "id": 1,
+      "text": "트러블* 케어"
+    },
+    {
+      "id": 2,
+      "text": "민감 피부 케어"
+    },
+    {
+      "id": 3,
+      "text": "외부 환경으로 자극받은 피부 케어"
+    },
+    {
+      "id": 4,
+      "text": "UV케어"
+    },
+    {
+      "id": 5,
+      "text": "민감 피부 탄력 & \n 주름* 케어"
+    }
   ]
 }

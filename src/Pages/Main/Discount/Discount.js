@@ -6,7 +6,7 @@ class Discount extends Component {
   constructor() {
     super();
     this.state = {
-      itemList: [],
+      discountList: [],
     };
   }
 
@@ -15,7 +15,7 @@ class Discount extends Component {
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          itemList: res.data,
+          discountList: res.data,
         });
       });
   }
@@ -26,7 +26,7 @@ class Discount extends Component {
         <h1 className="discountTitle">공식몰만의 할인구성</h1>
         <div className="discountList">
           <Slides
-            itemList={this.state.itemList}
+            slideList={this.state.discountList}
             settings={this.state.settings}
             dots={false}
             slidesToShow={4}

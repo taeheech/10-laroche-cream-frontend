@@ -5,8 +5,8 @@ class ItemBox extends Component {
   render() {
     const { item } = this.props;
     return (
-      <div className="itemFrame">
-        <div className="itemBox">
+      <div className="ItemBox">
+        <div className="itemBoxFrame">
           <img alt="" src={item.img} />
           <p className="itemHash">{item.hash}</p>
           <p className="itemName">{item.name}</p>

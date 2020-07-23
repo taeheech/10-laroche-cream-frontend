@@ -14,25 +14,27 @@ class Slides extends Component {
       slidesToScroll: this.props.slidesToScroll,
       arrow: true,
     };
-    const { itemList } = this.props;
+    const { slideList } = this.props;
     return (
-      <Slider {...settings}>
-        {itemList.map((item) => {
-          return (
-            <div className="itemList">
-              <div className="slideItemBox">
-                <img className="itemImg" alt="" src={item.img} />
-                <p className="itemDesc">{item.desc}</p>
-                <p className="itemPrice">
-                  {item.price}
-                  <span>원</span>
-                </p>
-                <p className="prevPrice">{item.prevPrice}</p>
+      <div className="Slides">
+        <Slider {...settings}>
+          {slideList.map((item) => {
+            return (
+              <div className="slideList">
+                <div className="slideItemBox">
+                  <img className="itemImg" alt="" src={item.img} />
+                  <p className="itemDesc">{item.desc}</p>
+                  <p className="itemPrice">
+                    {item.price}
+                    <span>원</span>
+                  </p>
+                  <p className="prevPrice">{item.prevPrice}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </Slider>
+            );
+          })}
+        </Slider>
+      </div>
     );
   }
 }

@@ -6,7 +6,7 @@ class Suggestion extends Component {
   constructor() {
     super();
     this.state = {
-      itemList: [],
+      suggestedItems: [],
     };
   }
 
@@ -15,7 +15,7 @@ class Suggestion extends Component {
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          itemList: res.data,
+          suggestedItems: res.data,
         });
       });
   }
@@ -26,7 +26,7 @@ class Suggestion extends Component {
         <h1 className="suggestionTitle">고객님 피부고민을 위한 맞춤 추천</h1>
         <div className="suggestionList">
           <Slides
-            itemList={this.state.itemList}
+            slideList={this.state.suggestedItems}
             settings={this.state.settings}
             dots={false}
             slidesToShow={4}

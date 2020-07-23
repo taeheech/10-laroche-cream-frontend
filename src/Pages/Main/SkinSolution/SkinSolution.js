@@ -8,29 +8,18 @@ class SkinSolution extends Component {
   constructor() {
     super();
     this.state = {
-      solution: [
-        {
-          id: 1,
-          text: "트러블* 케어",
-        },
-        {
-          id: 2,
-          text: "민감 피부 케어",
-        },
-        {
-          id: 3,
-          text: "외부 환경으로 자극받은 피부 케어",
-        },
-        {
-          id: 4,
-          text: "UV케어",
-        },
-        {
-          id: 5,
-          text: "민감 피부 탄력 & \n 주름* 케어",
-        },
-      ],
+      skinSolution: [],
     };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/mockdata/data.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          skinSolution: res.skinSolution,
+        });
+      });
   }
 
   render() {
@@ -44,7 +33,7 @@ class SkinSolution extends Component {
       customPaging: () => <div>☐</div>,
     };
 
-    const { solution } = this.state;
+    const { skinSolution } = this.state;
     return (
       <div className="SkinSolution">
         <h1 className="skinSolutionTitle">
@@ -55,7 +44,7 @@ class SkinSolution extends Component {
         </h1>
         <div className="solutionList">
           <Slider {...settings}>
-            {solution.map((item) => {
+            {skinSolution.map((item) => {
               return (
                 <div className="solutionItemBox">
                   <img

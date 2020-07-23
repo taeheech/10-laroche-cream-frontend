@@ -11,8 +11,8 @@ class BrandStoryBanner extends Component {
   render() {
     const { storyBox } = this.state;
     return (
-      <div className="BrandStoryFrame">
-        <ul className="brandStory">
+      <div className="BrandStoryBanner">
+        <ul className="brandStoryFrame">
           {storyBox.map((item) => {
             return (
               <li className="storyItem">
