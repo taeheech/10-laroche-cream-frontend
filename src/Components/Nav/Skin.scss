@@ -1,0 +1,130 @@
+.Skin {
+  display: flex;
+  justify-content: center;
+  width: 850px;
+
+  .HideMenu {
+    display: flex;
+    border: 1px solid #e9e9e9;
+    width: 1150px;
+    height: 550px;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+
+    .menu_Kategorie {
+      display: flex;
+      padding-left: 40px;
+
+      .menu_list {
+        width: 200px;
+      }
+      .menu_top {
+        color: #222;
+        width: 150px;
+        padding-bottom: 10px;
+        font-weight: bold;
+        border-bottom: 1.3px solid gainsboro;
+        font-size: 16px;
+        line-height: 1;
+      }
+      li {
+        font-size: 14px;
+        height: 10px;
+        margin-top: 25px;
+
+        a {
+          color: gray;
+        }
+      }
+    }
+
+    .menu_box {
+      border-right: 2px solid #e9e9e9;
+      padding-right: 50px;
+
+      .menu_box1 {
+        border: 1.5px solid #e9e9e9;
+        height: 40px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        padding-left: 20px;
+        color: black;
+
+        .arrow {
+          display: flex;
+          justify-content: flex-end;
+          top: 14px;
+          margin-left: 75px;
+          width: 14px;
+          height: 9px;
+          content: "";
+          background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
+            no-repeat -269px -128px;
+          background-size: 300px;
+        }
+      }
+      .menu_box2 {
+        border: 1.5px solid #e9e9e9;
+        height: 40px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        padding-left: 20px;
+        color: black;
+
+        .arrow {
+          display: flex;
+          justify-content: flex-end;
+          top: 14px;
+          margin-left: 30px;
+          width: 14px;
+          height: 9px;
+          content: "";
+          background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
+            no-repeat -269px -128px;
+          background-size: 300px;
+        }
+      }
+    }
+
+    .menu_img_box {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .menu_img {
+        width: 50%;
+        display: flex;
+      }
+      .menu_img_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+
+        .menu_img_text1 {
+          color: black;
+          font-size: 20px;
+          margin-bottom: 8px;
+        }
+        .menu_img_text2 {
+          margin-bottom: 12px;
+          color: gray;
+        }
+        .menu_img_text3 {
+          margin-bottom: 12px;
+          color: #009ee3;
+          font-weight: bold;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
