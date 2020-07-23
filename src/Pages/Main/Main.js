@@ -9,6 +9,8 @@ import OnlynHot from "./OnlynHot/OnlynHot";
 import SkinSolution from "./SkinSolution/SkinSolution";
 import Memebership from "./Membership/Membership";
 import Video from "./Video/Video";
+import Review from "./Review/Review";
+import Notice from "./Notice/Notice";
 
 class Main extends Component {
   render() {
@@ -24,6 +26,8 @@ class Main extends Component {
         <SkinSolution />
         <Memebership />
         <Video />
+        <Review />
+        <Notice />
       </div>
     );
   }

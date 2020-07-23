@@ -23,7 +23,10 @@ class Slides extends Component {
               <div className="slideItemBox">
                 <img className="itemImg" alt="" src={item.img} />
                 <p className="itemDesc">{item.desc}</p>
-                <p className="itemPrice">{item.price}</p>
+                <p className="itemPrice">
+                  {item.price}
+                  <span>원</span>
+                </p>
                 <p className="prevPrice">{item.prevPrice}</p>
               </div>
             </div>

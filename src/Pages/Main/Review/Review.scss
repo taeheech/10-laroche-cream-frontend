@@ -1,0 +1,135 @@
+.Review {
+  display: block;
+  margin: 0 auto;
+  padding: 80px 0 50px;
+  background-color: #dfeff8;
+
+  .reviewTitle {
+    position: relative;
+    width: 1140px;
+    margin: 0 auto;
+
+    .mainTitle {
+      text-align: center;
+      font-size: 40px;
+    }
+    .reviewSubTitle {
+      margin: 5px 0 40px;
+      text-align: center;
+      color: #959595;
+      font-size: 16px;
+    }
+  }
+
+  .reviewList {
+    width: 1140px;
+    margin: 0 auto;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    .slick-slide {
+      div {
+        text-align: center;
+        .itemFrame {
+          width: 270px !important;
+          height: 430px !important;
+          margin: 0 auto;
+          outline: none;
+
+          .itemBox {
+            width: 100%;
+            height: 100%;
+            display: block;
+            padding: 15px;
+            align-items: center;
+            text-align: center;
+            background-color: white;
+            &:hover {
+              border: 1px solid lightgray;
+            }
+            .itemImg {
+              margin: 0 0 15px;
+              width: 240px;
+              height: 160px;
+              overflow: hidden;
+            }
+            .itemInfo {
+              width: 210px;
+              margin: 0 auto;
+              p {
+                text-align: left;
+              }
+              .itemHash {
+                color: #959595;
+                margin: 25px 0 12px;
+              }
+              .itemName {
+                font-weight: bold;
+              }
+              .itemDesc {
+                line-height: 24px;
+                margin-bottom: 17px;
+                font-weight: 300;
+              }
+              .itemReview {
+                color: #8f8f8f;
+                height: 80px;
+              }
+            }
+            .reviewUserInfo {
+              border-top: #e9e9e9 solid 1px;
+              .userId {
+                color: #8f8f8f;
+                margin-top: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      width: 17px;
+      height: 30px;
+    }
+
+    .slick-prev::before {
+      display: none;
+    }
+
+    .slick-prev {
+      left: -30px;
+      background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
+        no-repeat -169px 0;
+    }
+
+    .slick-next::before {
+      display: none;
+    }
+
+    .slick-next {
+      top: 50%;
+      right: -30px;
+      background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
+        no-repeat -191px 0;
+    }
+
+    .slick-dots {
+      li {
+        top: 20px;
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+        background: none;
+        color: gray;
+        margin: 0 4px;
+        vertical-align: text-bottom;
+      }
+      .slick-active {
+        height: 18px;
+        border: none;
+      }
+    }
+  }
+}

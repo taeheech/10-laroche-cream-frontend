@@ -11,7 +11,10 @@ class ItemBox extends Component {
           <p className="itemHash">{item.hash}</p>
           <p className="itemName">{item.name}</p>
           <p className="itemDesc">{item.desc}</p>
-          <p className="itemPrice">{item.price}</p>
+          <p className="itemPrice">
+            <strong>{item.price}</strong>
+            <span>원</span>
+          </p>
           <div className="over">
             <div className="detailView"></div>
             <div className="addCart"></div>
