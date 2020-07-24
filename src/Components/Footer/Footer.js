@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Footer.scss";
 
 class Footer extends Component {
@@ -7,27 +8,24 @@ class Footer extends Component {
       <footer className="Footer">
         <section className="footNav">
           <nav>
-            <ul className="Left">
+            <ul className="left">
               <li>ABOUT US</li>
               <li>이용약관</li>
               <li className="privacy">개인정보처리방침</li>
-
-              <a
+              <Link
                 className="facebook"
-                href="https://www.facebook.com/larocheposayKR"
-              ></a>
-
-              <a
+                to="https://www.facebook.com/larocheposayKR"
+              />
+              <Link
                 className="blog"
-                href="https://m.post.naver.com/larocheposay_korea"
-              ></a>
-
-              <a
+                to="https://m.post.naver.com/larocheposay_korea"
+              />
+              <Link
                 className="youtube"
-                href="https://www.youtube.com/channel/UCtbZ_cymnMVQwqlwsdl2pFw"
-              ></a>
+                to="https://www.youtube.com/channel/UCtbZ_cymnMVQwqlwsdl2pFw"
+              />
             </ul>
-            <ul className="Right">
+            <ul className="right">
               <li>GLOBAL SITE</li>
             </ul>
           </nav>
@@ -43,9 +41,7 @@ class Footer extends Component {
                 <span>대표 : 크리스티앙 마르코스 아르나이</span>
               </li>
               <li>
-                <a href="none">
-                  <span>사업자 정보 확인</span>
-                </a>
+                <span>사업자 정보 확인</span>
               </li>
             </ul>
             <ul className="cs">
@@ -71,11 +67,11 @@ class Footer extends Component {
                 개인정보보호책임자 현희경 (IMC&amp;E-commerce Director)
               </span>
               <span>호스팅서비스사업자 : (주)아이네트</span>
-              <button type="button">
+              <span className="escrow">
                 라로슈포제 공식 온라인 몰은 고객님의 안전한 전자상거래를 위해
                 퍼스트데이터코리아(유)에서 제공하는 구매안전서비스(에스크로)를
                 이용하고 있습니다.
-              </button>
+              </span>
             </address>
           </div>
         </section>

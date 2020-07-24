@@ -19,7 +19,6 @@
     }
 
     p {
-      flex-direction: column;
       margin: 0 0 8px;
     }
 
@@ -43,7 +42,7 @@
         font-weight: bold;
       }
       span {
-        font-size: 16px !important;
+        font-size: 16px;
       }
     }
 

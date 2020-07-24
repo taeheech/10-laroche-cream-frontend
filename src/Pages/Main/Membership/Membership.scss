@@ -13,8 +13,7 @@
     .membershipLogo {
       width: 69px;
       height: 69px;
-      margin: 0 auto;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
       background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
         no-repeat 100% -147px;
     }
@@ -33,57 +32,55 @@
   }
 
   .right {
-    .rightFlex {
-      display: flex;
+    display: flex;
 
-      .lastBox {
-        border-style: none !important;
+    .lastBox {
+      border-style: none;
+    }
+
+    .membershipBox {
+      width: 230px;
+      height: 132px;
+      border-right: 0.1px solid lightgray;
+
+      .membershipImg {
+        width: 64px;
+        height: 60px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        background-repeat: no-repeat;
       }
 
-      .membershipBox {
-        width: 230px;
-        height: 132px;
-        border-right: 0.1px solid lightgray;
+      .membershipImg:hover {
+        transform: scale(1.1);
+        transition: 0.1s;
+      }
 
-        .membershipImg {
-          width: 64px;
-          height: 60px;
-          margin: 0 auto;
-          margin-bottom: 20px;
-          background-repeat: no-repeat;
-        }
+      .join {
+        background-image: url(https://www.larocheposay.co.kr/images/main/ico_mem1.jpg);
+      }
 
-        .membershipImg:hover {
-          transform: scale(1.1);
-          transition: 0.1s;
-        }
+      .firstBuy {
+        background-image: url(https://www.larocheposay.co.kr/images/main/ico_mem2.jpg);
+      }
 
-        .join {
-          background-image: url(https://www.larocheposay.co.kr/images/main/ico_mem1.jpg);
-        }
+      .birthdayImg {
+        background-image: url(https://www.larocheposay.co.kr/images/main/ico_mem3.jpg);
+      }
 
-        .firstBuy {
-          background-image: url(https://www.larocheposay.co.kr/images/main/ico_mem2.jpg);
-        }
+      .confirmPurchaseImg {
+        background-image: url(https://www.larocheposay.co.kr/images/main/ico_mem4.jpg);
+        border-style: none;
+      }
 
-        .birthdayImg {
-          background-image: url(https://www.larocheposay.co.kr/images/main/ico_mem3.jpg);
-        }
+      .condition {
+        font-size: 18px;
+        color: #222222;
+        margin: 0 0 10px;
+      }
 
-        .confirmPurchaseImg {
-          background-image: url(https://www.larocheposay.co.kr/images/main/ico_mem4.jpg);
-          border-style: none;
-        }
-
-        .condition {
-          font-size: 18px;
-          color: #222222;
-          margin: 0 0 10px;
-        }
-
-        .detail {
-          color: #8f8f8f;
-        }
+      .detail {
+        color: #8f8f8f;
       }
     }
   }

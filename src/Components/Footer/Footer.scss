@@ -11,7 +11,7 @@
       height: 58px;
       justify-content: space-between;
 
-      .Left {
+      .left {
         display: flex;
         margin-left: -20px;
         li {
@@ -98,18 +98,13 @@
           line-height: 22px;
           color: #222222;
         }
-        button {
-          background-color: transparent;
-          text-align: initial;
-          border-style: none;
-          padding: 0;
+        .escrow {
           color: #8f8f8f;
         }
       }
     }
   }
   .copyright {
-    display: block;
     width: 1140px;
     margin: 0 auto 20px;
     color: #666666;
