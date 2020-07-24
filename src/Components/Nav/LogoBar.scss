@@ -1,11 +1,11 @@
-.nav_input {
+.navInput {
   justify-content: flex-end;
   width: 1140px;
   height: 55px;
   margin: 0 auto;
   display: flex;
 
-  .nav_right {
+  .navRight {
     display: flex;
     align-items: center;
 
@@ -19,14 +19,12 @@
       &:focus {
         outline: none;
       }
-    }
-
-    input::placeholder {
-      color: #bcbcbc;
+      &::placeholder {
+        color: #bcbcbc;
+      }
     }
 
     .magnifier {
-      content: " ";
       display: flex;
       width: 22px;
       height: 23px;
@@ -35,7 +33,6 @@
         no-repeat 0 0;
     }
     .cart {
-      content: "";
       display: flex;
       width: 22px;
       height: 22px;
@@ -47,14 +44,14 @@
   }
 }
 
-.nav_logo_text {
+.navLogoText {
   display: flex;
   justify-content: space-between;
   width: 1125px;
   margin: 0 auto;
   margin-bottom: 10px;
 
-  .nav_left_logo {
+  .navLeftLogo {
     display: flex;
     content: "";
     width: 23px;
@@ -65,7 +62,7 @@
     margin: 1px 6px 0 0;
   }
 
-  .nav_left {
+  .navLeft {
     display: flex;
     line-height: 24px;
     font-size: 16px;
@@ -73,11 +70,7 @@
     margin-right: 10px;
   }
 
-  .hashtag_box {
-    margin-left: 200px;
-  }
-
-  .hash_tag {
+  .hashTag {
     line-height: 20px;
     padding: 0 8px;
     margin-right: 4px;

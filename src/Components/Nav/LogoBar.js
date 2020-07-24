@@ -5,8 +5,8 @@ class LogoBar extends Component {
   render() {
     return (
       <>
-        <div className="nav_input">
-          <div className="nav_right">
+        <div className="navInput">
+          <div className="navRight">
             <input
               type="search"
               placeholder="데일리 트러블 애프터캐어 단독구성"
@@ -16,18 +16,16 @@ class LogoBar extends Component {
             <div className="cart"> </div>
           </div>
         </div>
-        <div className="nav_logo_text">
-          <div className="nav_left">
-            <div className="nav_left_logo"></div>
-            <a className="nav_left_text">
-              민감성 피부의 삶을 바꾸는 라로슈포제
-            </a>
+        <div className="navLogoText">
+          <div className="navLeft">
+            <div className="navLeftLogo"></div>
+            <a>민감성 피부의 삶을 바꾸는 라로슈포제</a>
           </div>
-          <marquee className="hashtag_box" width="290px" scrollamount="3">
-            <a className="hash_tag">#최대25%즉시할인</a>
-            <a className="hash_tag">#16,000원 상당 BEST 샘플증정!</a>
-            <a className="hash_tag">#마일리지 3배증정</a>
-            <a className="hash_tag">#7월 신규회원님 시카밤5일케어증정</a>
+          <marquee width="290px" scrollamount="3">
+            <a className="hashTag">#최대25%즉시할인</a>
+            <a className="hashTag">#16,000원 상당 BEST 샘플증정!</a>
+            <a className="hashTag">#마일리지 3배증정</a>
+            <a className="hashTag">#7월 신규회원님 시카밤5일케어증정</a>
           </marquee>
         </div>
       </>

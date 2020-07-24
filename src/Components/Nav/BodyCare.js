@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./MomBaby.scss";
+import "./BodyCare.scss";
 
-class MomBaby extends Component {
+class BodyCare extends Component {
   render() {
     return (
-      <div className="MomBaby">
+      <div className="BodyCare">
         <div className="hideMenu">
           <div className="menuKategorie">
             <div>
@@ -15,14 +15,8 @@ class MomBaby extends Component {
                     <div className="menuTop">피부 고민별</div>
                   </Link>
                 </li>
-                <li className="menu_list_top">
+                <li>
                   <Link href="/">전체</Link>
-                </li>
-                <li>
-                  <Link href="/">민감성 피부</Link>
-                </li>
-                <li>
-                  <Link href="/">지성/트러블 피부</Link>
                 </li>
                 <li>
                   <Link href="/">손상 피부</Link>
@@ -31,7 +25,7 @@ class MomBaby extends Component {
                   <Link href="/">건조한 피부</Link>
                 </li>
                 <li>
-                  <Link href="/">UV 차단</Link>
+                  <Link href="/">두피 모발 강화</Link>
                 </li>
               </ul>
             </div>
@@ -42,26 +36,17 @@ class MomBaby extends Component {
                     <div className="menuTop">제품 라인별</div>
                   </Link>
                 </li>
-                <li className="menu_list_top">
+                <li>
                   <Link href="/">전체</Link>
-                </li>
-                <li>
-                  <Link href="/">시카플라스트</Link>
-                </li>
-                <li>
-                  <Link href="/">똘러리앙</Link>
                 </li>
                 <li>
                   <Link href="/">리피카</Link>
                 </li>
                 <li>
-                  <Link href="/">안뗼리오스</Link>
+                  <Link href="/">시카플라스트</Link>
                 </li>
                 <li>
-                  <Link href="/">오 떼르말</Link>
-                </li>
-                <li>
-                  <Link href="/">세로징크</Link>
+                  <Link href="/">키리움</Link>
                 </li>
               </ul>
             </div>
@@ -72,26 +57,20 @@ class MomBaby extends Component {
                     <div className="menuTop">사용 단계별</div>
                   </Link>
                 </li>
-                <li className="menu_list_top">
+                <li>
                   <Link href="/">전체</Link>
                 </li>
                 <li>
                   <Link href="/">클렌징</Link>
                 </li>
                 <li>
-                  <Link href="/">토너</Link>
-                </li>
-                <li>
                   <Link href="/">로션/크림</Link>
                 </li>
                 <li>
-                  <Link href="/">UV 차단</Link>
+                  <Link href="/">세럼/바디케어</Link>
                 </li>
                 <li>
-                  <Link href="/">바디 케어</Link>
-                </li>
-                <li>
-                  <Link href="/">미스트</Link>
+                  <Link href="/">헤어케어</Link>
                 </li>
               </ul>
             </div>
@@ -110,13 +89,11 @@ class MomBaby extends Component {
           <div className="menuImgBox">
             <img
               className="menuImg"
-              src="https://www.larocheposay.co.kr/upload/product/main/2020/07/20200717_1757028_235_210x210.png"
+              src="https://www.larocheposay.co.kr/upload/product/main/2020/04/20200429_1739030_209_210x210.png"
             />
             <div className="menuImgText">
-              <div className="menuImgTextTop">오 떼르말</div>
-              <div className="menuImgTextMiddle">
-                온천수미스트 [300ml] +45ml 샘플 증정
-              </div>
+              <div className="menuImgTextTop">시카플라스트</div>
+              <div className="menuImgTextMiddle">젤B5기획세트</div>
               <div className="menuImgTextBottom">22,000원</div>
             </div>
           </div>
@@ -126,4 +103,4 @@ class MomBaby extends Component {
   }
 }
 
-export default MomBaby;
+export default BodyCare;

@@ -1,26 +1,26 @@
-.Body {
+.BodyCare {
   display: flex;
   justify-content: center;
-  width: 610px;
+  position: absolute;
+  width: 740px;
 
-  .HideMenu {
+  .hideMenu {
     display: flex;
     border: 1px solid #e9e9e9;
     width: 1150px;
     height: 350px;
     margin: 0 auto;
-    position: absolute;
     z-index: 1;
     background-color: white;
 
-    .menu_Kategorie {
+    .menuKategorie {
       display: flex;
       padding-left: 40px;
 
-      .menu_list {
+      .menuList {
         width: 200px;
 
-        .menu_top {
+        .menuTop {
           color: #222;
           width: 150px;
           padding-bottom: 10px;
@@ -44,11 +44,11 @@
       }
     }
 
-    .menu_box {
+    .menuBox {
       border-right: 2px solid #e9e9e9;
       padding-right: 50px;
 
-      .menu_box1 {
+      .menuBoxTop {
         border: 1.5px solid #e9e9e9;
         height: 40px;
         width: 200px;
@@ -71,7 +71,7 @@
           background-size: 300px;
         }
       }
-      .menu_box2 {
+      .menuBoxBottom {
         border: 1.5px solid #e9e9e9;
         height: 40px;
         width: 200px;
@@ -96,33 +96,29 @@
       }
     }
 
-    .menu_img_box {
+    .menuImgBox {
       width: 400px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      .menu_img {
+      .menuImg {
         width: 50%;
-        display: flex;
       }
-      .menu_img_text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      .menuImgText {
+        text-align: center;
         margin-top: 20px;
 
-        .menu_img_text1 {
+        .menuImgTextTop {
           color: black;
           font-size: 20px;
           margin-bottom: 8px;
         }
-        .menu_img_text2 {
+        .menuImgTextMiddle {
           margin-bottom: 12px;
           color: gray;
         }
-        .menu_img_text3 {
+        .menuImgTextBottom {
           margin-bottom: 12px;
           color: #009ee3;
           font-weight: bold;
