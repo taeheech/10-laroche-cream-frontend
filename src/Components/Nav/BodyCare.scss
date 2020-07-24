@@ -3,6 +3,9 @@
   justify-content: center;
   position: absolute;
   width: 740px;
+  animation-name: fade;
+  animation-duration: 0.8s;
+  animation-iteration-count: initial;
 
   .hideMenu {
     display: flex;
@@ -126,5 +129,13 @@
         }
       }
     }
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
