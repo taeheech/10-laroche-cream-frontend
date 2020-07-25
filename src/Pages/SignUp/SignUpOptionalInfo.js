@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./SignUpOptionalInfo.scss";
 
-class SignUpOptional extends Component {
+class SignUpOptionalInfo extends Component {
   render() {
     return (
       <section className="SignUpOptionalInfo">
@@ -215,4 +215,4 @@ class SignUpOptional extends Component {
     );
   }
 }
-export default SignUpOptional;
+export default SignUpOptionalInfo;

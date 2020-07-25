@@ -9,13 +9,15 @@ class SignUpInfo extends Component {
         <ul className="customer_info">
           <li>
             <input
-              onChange={this.props.handleName}
+              onChange={this.props.inputHandler}
+              name="name"
               type="text"
               placeholder="이름"
             />
             <div className="input_id">
               <input
-                onChange={this.props.handleId}
+                onChange={this.props.inputHandler}
+                name="account"
                 className="inputId"
                 type="text"
                 placeholder="아이디 (영문, 숫자 조합 8~20자 내외)"
@@ -25,12 +27,14 @@ class SignUpInfo extends Component {
               </button>
             </div>
             <input
-              onChange={this.props.handlePw}
+              onChange={this.props.inputHandler}
+              name="password"
               type="password"
               placeholder="비밀번호 (영문, 숫자, 특수문자 중 2가지 이상 조합 8~20자 내외)"
             />
             <input
-              onChange={this.props.checkPw}
+              onChange={this.props.inputHandler}
+              name="checkpw"
               type="password"
               placeholder="비밀번호 확인"
             />
@@ -39,19 +43,25 @@ class SignUpInfo extends Component {
             <div className="email_box">
               <div className="email">
                 <input
-                  onChange={this.props.handleEmail}
+                  onChange={this.props.inputHandler}
+                  name="email"
                   className="id"
                   type="text"
                   placeholder="이메일"
                 />
                 <span>@</span>
                 <input
-                  onChange={this.props.handleDomainInput}
+                  onChange={this.props.inputHandler}
+                  name="domain"
                   className="domain"
                   type="text"
                 />
               </div>
-              <select className="select_domain">
+              <select
+                onClick={this.props.inputHandler}
+                name="domain"
+                className="select_domain"
+              >
                 <option>직접입력</option>
                 <option value="naver.com">naver.com</option>
                 <option value="hanmail.net">hanmail.net</option>
@@ -61,16 +71,34 @@ class SignUpInfo extends Component {
               </select>
             </div>
             <div className="birthday">
-              <input className="birthday_input" type="text" />
-              <button type="button" className="male">
+              <input
+                onChange={this.props.inputHandler}
+                name="birthday"
+                className="birthday_input"
+                type="text"
+              />
+              <button
+                onClick={this.props.inputHandler}
+                name="male"
+                value="male"
+                type="button"
+                className="male"
+              >
                 남자
               </button>
-              <button type="button" className="female">
+              <button
+                onClick={this.props.inputHandler}
+                name="female"
+                value="female"
+                type="button"
+                className="female"
+              >
                 여자
               </button>
             </div>
             <input
-              onChange={this.props.handlePhonneNum}
+              onChange={this.props.inputHandler}
+              name="phoneNumber"
               type="text"
               placeholder="휴대폰 번호"
             />
