@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Footer.scss";
 
 class Footer extends Component {
@@ -12,20 +13,20 @@ class Footer extends Component {
               <li>이용약관</li>
               <li className="privacy">개인정보처리방침</li>
 
-              <a
+              <Link
                 className="facebook"
-                href="https://www.facebook.com/larocheposayKR"
-              ></a>
+                to="https://www.facebook.com/larocheposayKR"
+              />
 
-              <a
+              <Link
                 className="blog"
-                href="https://m.post.naver.com/larocheposay_korea"
-              ></a>
+                to="https://m.post.naver.com/larocheposay_korea"
+              />
 
-              <a
+              <Link
                 className="youtube"
-                href="https://www.youtube.com/channel/UCtbZ_cymnMVQwqlwsdl2pFw"
-              ></a>
+                to="https://www.youtube.com/channel/UCtbZ_cymnMVQwqlwsdl2pFw"
+              />
             </ul>
             <ul className="Right">
               <li>GLOBAL SITE</li>

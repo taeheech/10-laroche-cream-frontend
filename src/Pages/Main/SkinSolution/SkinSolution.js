@@ -32,7 +32,7 @@ class SkinSolution extends Component {
       arrow: true,
       customPaging: () => (
         <div>
-          <span>◽️</span>
+          <span>🀫</span>
         </div>
       ),
     };

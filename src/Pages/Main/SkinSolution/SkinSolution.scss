@@ -30,19 +30,14 @@
       height: 52px;
     }
 
-    .slick-prev::before {
-      display: none;
-    }
-
-    .slick-next::before {
-      display: none;
-    }
-
     .slick-prev {
       left: -30px;
       background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
         no-repeat -110px -129px;
       z-index: 1;
+      &:before {
+        display: none;
+      }
     }
 
     .slick-next {
@@ -50,6 +45,9 @@
       background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
         no-repeat -167px -129px;
       z-index: 1;
+      &:before {
+        display: none;
+      }
     }
 
     .slick-disabled {

@@ -1,0 +1,66 @@
+.SideLeft {
+  width: 190px;
+  .sideCateTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0 30px;
+    margin: 0 0 18px;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+    button {
+      width: 15px;
+      height: 15px;
+      background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
+        no-repeat -38px -285px;
+      border-style: none;
+      cursor: pointer;
+    }
+  }
+
+  .sideCateList {
+    .sideCateItem {
+      h2 {
+        margin: 12px 0;
+        font-size: 18px;
+        font-weight: 400;
+        cursor: pointer;
+        &:hover {
+          color: #009ee3;
+        }
+      }
+      p {
+        padding: 9px 0;
+        font-size: 14px;
+        cursor: pointer;
+        &:hover {
+          color: #009ee3;
+          text-decoration: underline;
+        }
+      }
+    }
+    .filterTitle {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #222222;
+      cursor: pointer;
+      &:hover {
+        color: #009ee3;
+      }
+    }
+    .filter {
+      display: flex;
+      align-items: center;
+      color: #222222;
+
+      input {
+        width: 20px;
+        height: 20px;
+        margin: 10px 10px 10px 0;
+      }
+      input[type="checkbox"] + label {
+        cursor: pointer;
+      }
+    }
+  }
+}
