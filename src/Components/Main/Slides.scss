@@ -4,12 +4,8 @@
     margin-bottom: 30px;
 
     .slideItemBox {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
       width: 225px;
       margin: 0 auto;
-      text-align: center;
       align-items: center;
       outline: none;
       cursor: pointer;
@@ -17,7 +13,7 @@
       .itemImg {
         width: 225px;
         height: 225px;
-        margin: 10px;
+        margin-bottom: 15px;
       }
 
       p {

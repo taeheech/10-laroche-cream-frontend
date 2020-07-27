@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Nav from "../../Components/Nav";
 import Categories from "./Categories";
 import SideLeft from "./SideLeft";
 import ItemList from "./ItemList";
@@ -9,15 +10,18 @@ import "./ProductList.scss";
 class ProductList extends Component {
   render() {
     return (
-      <div className="ProductList">
-        <Categories />
-        <div className="mainContents">
-          <SideLeft />
-          <ItemList />
+      <>
+        <Nav />
+        <div className="ProductList">
+          <Categories />
+          <div className="mainContents">
+            <SideLeft />
+            <ItemList />
+          </div>
+          <FloatBar />
+          <Footer />
         </div>
-        <FloatBar />
-        <Footer />
-      </div>
+      </>
     );
   }
 }

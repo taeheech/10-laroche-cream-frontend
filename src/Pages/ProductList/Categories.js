@@ -32,7 +32,6 @@ class Categories extends Component {
   render() {
     const { categoryData, clickedCategory, isActivated } = this.state;
     const { handleClickEvent } = this;
-
     return (
       <div className="Categories">
         <section>

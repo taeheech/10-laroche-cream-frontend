@@ -7,16 +7,29 @@ class ItemBox extends Component {
     super();
     this.state = {
       isActive: false,
-      access_token: localStorage.getItem("access_token"),
     };
   }
 
   addLikeItem = (key) => {
     console.log(key);
+    fetch("api주소", {
+      method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("access_token"),
+      },
+      body: JSON.stringify({ product_id: key }),
+    }).then((res) => res.json());
   };
 
   removeLikeItem = (key) => {
     console.log(key);
+    fetch("api주소", {
+      method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("access_token"),
+      },
+      body: JSON.stringify({ product_id: key }),
+    }).then((res) => res.json());
   };
 
   handleClickLikes = (key) => {

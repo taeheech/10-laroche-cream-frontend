@@ -1,15 +1,9 @@
 import React, { Component } from "react";
 import "./BrandStoryBanner.scss";
 
+const storyBox = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 class BrandStoryBanner extends Component {
-  constructor() {
-    super();
-    this.state = {
-      storyBox: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
-    };
-  }
   render() {
-    const { storyBox } = this.state;
     return (
       <div className="BrandStoryBanner">
         <ul className="brandStoryFrame">

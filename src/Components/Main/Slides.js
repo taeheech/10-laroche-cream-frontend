@@ -22,7 +22,9 @@ class Slides extends Component {
             return (
               <div className="slideList" key={idx}>
                 <div className="slideItemBox">
-                  <img className="itemImg" alt="" src={item.img} />
+                  <div className="test">
+                    <img className="itemImg" alt="" src={item.img} />
+                  </div>
                   <p className="itemDesc">{item.desc}</p>
                   <p className="itemPrice">
                     {item.price}
