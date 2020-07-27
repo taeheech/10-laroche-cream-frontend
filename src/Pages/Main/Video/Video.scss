@@ -1,0 +1,39 @@
+.Video {
+  position: relative;
+  height: 880px;
+  background: url(https://www.larocheposay.co.kr/images/main/bg_movielink_200410.jpg)
+    no-repeat 50% 100%;
+
+  .videoTitle {
+    display: block;
+    margin: 0 0 80px;
+    padding-top: 80px;
+    font-size: 40px;
+    height: 100px;
+    color: white;
+    text-align: center;
+
+    .videoSubTitle {
+      display: block;
+      margin: 5px 0 0;
+      font-size: 16px;
+    }
+  }
+
+  .displayNone {
+    display: none;
+  }
+
+  .youtubeImage {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .youtubeVideo {
+    display: block;
+    margin: 0 auto;
+    width: 1140px;
+    height: 641px;
+  }
+}

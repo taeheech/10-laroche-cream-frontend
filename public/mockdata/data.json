@@ -1,0 +1,232 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#피지제거포밍크림",
+      "name": "에빠끌라",
+      "desc": "딥 클렌징 포밍 크림",
+      "price": "22,000",
+      "prevPrice": "25,000"
+    },
+    {
+      "id": "2",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#피지케어토너",
+      "name": "에빠끌라",
+      "desc": "클래리파잉 로션 [병원판매제품]",
+      "price": "30,000",
+      "prevPrice": "32,000"
+    },
+    {
+      "id": "3",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#피지케어크림",
+      "name": "에빠끌라",
+      "desc": "MAT 세보 컨트롤링 모이스춰라이저",
+      "price": "29,000",
+      "prevPrice": "33,000"
+    },
+    {
+      "id": "4",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#미세미세클렌저",
+      "name": "똘러리앙",
+      "desc": "퓨리파잉 포밍 크림",
+      "price": "25,000",
+      "prevPrice": "28,000"
+    },
+    {
+      "id": "5",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#피지제거포밍크림",
+      "name": "에빠끌라",
+      "desc": "딥 클렌징 포밍 크림",
+      "price": "22,000",
+      "prevPrice": "25,000"
+    },
+    {
+      "id": "6",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#피지케어토너",
+      "name": "에빠끌라",
+      "desc": "클래리파잉 로션 [병원판매제품]",
+      "price": "30,000",
+      "prevPrice": "35,000"
+    },
+    {
+      "id": "7",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#피지케어크림",
+      "name": "에빠끌라",
+      "desc": "MAT 세보 컨트롤링 모이스춰라이저",
+      "price": "29,000",
+      "prevPrice": "34,000"
+    },
+    {
+      "id": "8",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#미세미세클렌저",
+      "name": "똘러리앙",
+      "desc": "퓨리파잉 포밍 크림",
+      "price": "25,000",
+      "prevPrice": "29,000"
+    }
+  ],
+
+  "onlyOneItems": [
+    {
+      "id": "1",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#피지제거포밍크림",
+      "name": "에빠끌라",
+      "desc": "딥 클렌징 포밍 크림",
+      "price": "22,000",
+      "prevPrice": "25,000"
+    },
+    {
+      "id": "2",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#피지케어토너",
+      "name": "에빠끌라",
+      "desc": "클래리파잉 로션 [병원판매제품]",
+      "price": "30,000",
+      "prevPrice": "32,000"
+    }
+  ],
+
+  "hotDealItems": [
+    {
+      "id": "1",
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "hash": "#피지제거포밍크림",
+      "name": "에빠끌라",
+      "desc": "딥 클렌징 포밍 크림",
+      "price": "22,000",
+      "prevPrice": "25,000"
+    }
+  ],
+
+  "reviewData": [
+    {
+      "id": 1,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 2,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 3,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 4,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 5,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 6,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 7,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    },
+    {
+      "id": 8,
+      "img": "리뷰이미지",
+      "hash": "#해시태그",
+      "name": "상품이름",
+      "desc": "상품설명",
+      "review": "리뷰부분"
+    }
+  ],
+
+  "skinSolution": [
+    {
+      "id": 1,
+      "text": "트러블* 케어"
+    },
+    {
+      "id": 2,
+      "text": "민감 피부 케어"
+    },
+    {
+      "id": 3,
+      "text": "외부 환경으로 자극받은 피부 케어"
+    },
+    {
+      "id": 4,
+      "text": "UV케어"
+    },
+    {
+      "id": 5,
+      "text": "민감 피부 탄력 & \n 주름* 케어"
+    }
+  ],
+
+  "topSlideImg": [
+    {
+      "id": 1,
+      "name": "img1",
+      "img": "https://www.larocheposay.co.kr/upload/site/main/2020/07/20200714_1612041_146.jpg"
+    },
+    {
+      "id": 2,
+      "name": "img2",
+      "img": "https://www.larocheposay.co.kr/upload/site/main/2020/02/20200225_1840003_152.jpg"
+    },
+    {
+      "id": 3,
+      "name": "img3",
+      "img": "https://www.larocheposay.co.kr/upload/site/main/2020/02/20200225_1841014_156.jpg"
+    },
+    {
+      "id": 4,
+      "name": "img4",
+      "img": "https://www.larocheposay.co.kr/upload/site/main/2020/07/20200720_1429049_268.jpg"
+    },
+    {
+      "id": 5,
+      "name": "img5",
+      "img": "https://www.larocheposay.co.kr/upload/site/main/2020/06/20200629_1039052_486.jpg"
+    },
+    {
+      "id": 6,
+      "name": "img6",
+      "img": "https://www.larocheposay.co.kr/upload/site/main/2020/02/20200225_1840027_154.jpg"
+    }
+  ]
+}

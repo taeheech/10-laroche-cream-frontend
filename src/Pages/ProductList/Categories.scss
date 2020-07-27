@@ -1,0 +1,52 @@
+.Categories {
+  height: 50px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  .totalCate {
+    width: 1140px;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    font-size: 13px;
+    color: #8f8f8f;
+
+    .Cate {
+      //   justify-content: center;
+      line-height: 50px;
+      display: flex;
+      flex-direction: column;
+
+      .cateTitle {
+        align-content: center;
+        padding-left: 20px;
+        cursor: pointer;
+        span {
+          font-size: 10px;
+          margin: 10px;
+        }
+      }
+      ul {
+        position: absolute;
+        padding: 20px;
+        width: 150px;
+        top: 50px;
+        border: 1px solid lightgray;
+        background-color: white;
+
+        li {
+          line-height: 30px;
+          display: flex;
+        }
+      }
+      .on {
+        display: block;
+      }
+      .displayNone {
+        display: none;
+      }
+    }
+    li:firstchild {
+      padding-left: 0;
+    }
+  }
+}

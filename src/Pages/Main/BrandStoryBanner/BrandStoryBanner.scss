@@ -1,0 +1,40 @@
+.BrandStoryBanner {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+
+  .brandStoryFrame {
+    position: relative;
+    justify-content: center;
+    display: flex;
+
+    .storyItem {
+      margin: 1px;
+      width: 284px;
+      height: 270px;
+
+      .storyHoverImage {
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        transition: 0.5s;
+      }
+
+      .storyHoverImage:hover {
+        opacity: 1;
+        transition: 0.8s;
+      }
+
+      .storyImage {
+        position: absolute;
+      }
+    }
+
+    .storyRef {
+      position: absolute;
+      bottom: -15px;
+      color: #8f8f8f;
+      font-size: 10px;
+    }
+  }
+}
