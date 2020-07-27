@@ -1,6 +1,5 @@
 .BrandStoryBanner {
   position: relative;
-  display: block;
   margin: 0 auto;
 
   .brandStoryFrame {
@@ -17,11 +16,11 @@
         position: absolute;
         cursor: pointer;
         opacity: 0;
-      }
-
-      .storyHoverImage:hover {
-        opacity: 1;
-        transition: 0.8s;
+        transition: 0.5s;
+        &:hover {
+          opacity: 1;
+          transition: 0.5s;
+        }
       }
 
       .storyImage {

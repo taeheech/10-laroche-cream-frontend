@@ -739,5 +739,156 @@
       "gift": false,
       "sale": false
     }
+  ],
+
+  "bestSeller": [
+    {
+      "product_line": "에빠끌라",
+      "name": "듀오[+] 에센스 트리플 세트",
+      "desc": "유럽 NO.1* 트러블 케어 에센스 (미백 기능성) (본품 3개 묶음 제품)",
+      "sale_price": 67500,
+      "price": 75000,
+      "hash": "#트러블케어에센스,#유럽NO1에센스,#미백에센스,#다크스팟케어,#에빠끌라",
+      "best": null,
+      "new": true,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "gift": true,
+      "sale": false
+    },
+    {
+      "product_line": "오 떼르말",
+      "name": "온천수 미스트 [300ml] + 45ml 샘플 증정",
+      "desc": "탁월한 피부진정 효과의 100% 라로슈포제 온천수",
+      "sale_price": null,
+      "price": 22000,
+      "hash": "#진정미스트,#라로슈포제온천수,#프랑스가사랑하는온천수,#스킨리밸런싱,#오떼르말",
+      "best": true,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200717_1757028_235.png",
+      "gift": true,
+      "sale": false
+    },
+    {
+      "product_line": "히알루 B5",
+      "name": "세럼 + 빛타민세럼 증정",
+      "desc": "민감피부 집중 탄력강화 세럼",
+      "sale_price": null,
+      "price": 52000,
+      "hash": "#민감피부탄력강화세럼,#진짜탄력레시피,#민감피부탄력,#민감피부세럼,#히알루B5",
+      "best": true,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200716_1631053_202.png",
+      "gift": true,
+      "sale": false
+    },
+    {
+      "product_line": "퓨어 비타민 C10",
+      "name": "항산화 앰플 세럼",
+      "desc": "순수 비타민C 저자극 항산화 앰플세럼 (주름개선 기능성 화장품)",
+      "sale_price": null,
+      "price": 52000,
+      "hash": "#빛타민세럼,#항상 항산화하라,#민감피부를 위한 순수 비타민 C,#저자극 항산화,#주름개선 기능성,#순수한,#퓨어 비타민",
+      "best": true,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200716_1624022_193.png",
+      "gift": false,
+      "sale": false
+    },
+    {
+      "product_line": "똘러리앙",
+      "name": "덤알레르고+샘플2종 증정",
+      "desc": "민감 피부를 위한 S.O.S 진정 보습 세럼",
+      "sale_price": null,
+      "price": 45000,
+      "hash": "#S.O.S 진정보습세럼,#민감피부세럼,#피부장벽강화,#48시간수분지속",
+      "best": true,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200716_1622039_192.png",
+      "gift": false,
+      "sale": true
+    },
+    {
+      "product_line": "똘러리앙",
+      "name": "울트라 로션 + 크림 세트",
+      "desc": "피부 진정 및 피부 장벽을 강화시켜주는 크림 (촉촉한 타입)",
+      "sale_price": null,
+      "price": 56000,
+      "hash": "#민감피부진정,#울트라 진정”촉촉”크림,#리얼 공병템,#SOS진정촉촉크림,#민감한눈가에도OK,#피부장벽강화크림,#100%밀폐특수용기,#똘러리앙",
+      "best": true,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200716_1559048_189.png",
+      "gift": true,
+      "sale": false
+    },
+    {
+      "product_line": "에빠끌라",
+      "name": "저자극 각질케어 토너+수분크림",
+      "desc": "건조한 트러블성 피부를 위한 피부보호 보습크림",
+      "sale_price": null,
+      "price": 56000,
+      "hash": "#각질케어,#트러블케어보습크림,#수분지속보습크림,#H크림,#보습빵빵크림,#에빠끌라",
+      "best": true,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200716_1549042_182.png",
+      "gift": false,
+      "sale": false
+    },
+    {
+      "product_line": "에빠끌라",
+      "name": "피지컨트롤토너+수분크림",
+      "desc": "산뜻한 피부결 정돈 모공케어 토너, 논코메도제닉",
+      "sale_price": null,
+      "price": 59000,
+      "hash": "#피지케어,#매티파잉토너,#번들거림NO,#유분잡는토너,#지성피부를위한,#에빠끌라",
+      "best": true,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200716_1832059_213.png",
+      "gift": true,
+      "sale": false
+    }
+  ],
+
+  "onlyOneItems": [
+    {
+      "product_line": "에빠끌라",
+      "name": "퓨리파잉 포밍 젤",
+      "desc": "민감한 트러블성 피부를 위한 저자극 약산성 클렌징 젤",
+      "sale_price": null,
+      "price": 22000,
+      "hash": "#트러블케어클렌징젤,#약산성클렌징젤,#민감피부포밍젤,#트러블피부를위한,#에빠끌라",
+      "best": null,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200702_1441033_191.png",
+      "gift": false,
+      "sale": true
+    },
+    {
+      "product_line": "에빠끌라",
+      "name": "H 리밸런싱 하이드레이션 로션",
+      "desc": "트러블성 피부를 위한 저자극 각질케어 & 피부결 정돈 수분토너 *24시간 보습지속 (* 18-70세 여성 24명을 대상으로 진행한 기기 평가 결과)",
+      "sale_price": null,
+      "price": 27000,
+      "hash": "#저자극각질케어토너,#수부지토너,#24시간보습지속,#H토너,#에빠끌라",
+      "best": null,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/06/20200630_1627001_667.png",
+      "gift": false,
+      "sale": false
+    }
+  ],
+  "hotDealItems": [
+    {
+      "product_line": "오 떼르말",
+      "name": "온천수 미스트 [300ml] + 45ml 샘플 증정",
+      "desc": "탁월한 피부진정 효과의 100% 라로슈포제 온천수",
+      "sale_price": null,
+      "price": 22000,
+      "hash": "#진정미스트,#라로슈포제온천수,#프랑스가사랑하는온천수,#스킨리밸런싱,#오떼르말",
+      "best": true,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200717_1757028_235.png",
+      "gift": true,
+      "sale": false
+    }
   ]
 }

@@ -38,8 +38,8 @@ class FloatBar extends Component {
       slidesToScroll: 1,
       arrow: true,
     };
-    const floatProducts = this.state.floatProducts;
-    const likedProducts = this.state.likedProducts;
+    const { floatProducts } = this.state;
+    const { likedProducts } = this.state;
     return (
       <div className="FloatBar">
         <div className="floatContainer">

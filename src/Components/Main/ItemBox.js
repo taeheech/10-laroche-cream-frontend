@@ -13,55 +13,40 @@ class ItemBox extends Component {
 
   addLikeItem = (key) => {
     console.log(key);
-    // fetch("api주소", {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    //     access_token: this.state.access_token,
-    //     user_id: key,     // key값 확인
-    //   }),
-    // }).then((res) => res.json());
   };
 
   removeLikeItem = (key) => {
     console.log(key);
-    // fetch("api주소", {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    //     access_token: this.state.access_token,
-    //     user_id: key,     // key값 확인
-    //   }),
-    // }).then((res) => res.json());
   };
 
   handleClickLikes = (key) => {
-    if (this.state.access_token) {
-      if (this.state.isActive) {
-        console.log("삭제!");
-        alert("찜하기 취소!");
-        this.addLikeItem(key);
-        this.setState({
-          isActive: false,
-        });
-      } else {
-        console.log("추가!");
-        alert("찜하기 성공!");
-        this.removeLikeItem(key);
-        this.setState({
-          isActive: true,
-        });
-      }
-    } else {
+    if (!this.state.access_token) {
       alert("먼저 로그인 해주세요");
+      return;
+    }
+
+    if (this.state.isActive) {
+      console.log("삭제!");
+      alert("찜하기 취소!");
+      this.addLikeItem(key);
+      this.setState({
+        isActive: false,
+      });
+    } else {
+      console.log("추가!");
+      alert("찜하기 성공!");
+      this.removeLikeItem(key);
+      this.setState({
+        isActive: true,
+      });
     }
   };
 
   render() {
     const { item, width, showLikes, isBest, isNew, hash } = this.props;
-
+    const { img, product_line, name, price, sale_price } = this.props.item;
     const { isActive } = this.state;
     const { handleClickLikes } = this;
-    console.log(item.price);
-    console.log(item.sale_price > 0);
     return (
       <div className="ItemBox">
         <li>
@@ -86,34 +71,31 @@ class ItemBox extends Component {
               </div>
             </div>
 
-            <img alt="" src={item.img} />
+            <img alt="" src={img} />
             <p className="itemHash">{hash}</p>
-            <p className="itemLine">{item.product_line}</p>
-            <p className="itemName">{item.name}</p>
+            <p className="itemLine">{product_line}</p>
+            <p className="itemName">{name}</p>
             <div className="itemPrice">
               <div className="discount">
-                <span
-                  className={item.sale_price ? "discountRate" : "displayNone"}
-                >
-                  {Math.round(
-                    ((item.price - item.sale_price) / item.price) * 100
-                  ) + "%"}
+                <span className={sale_price ? "discountRate" : "displayNone"}>
+                  {Math.round(((price - item.sale_price) / price) * 100) + "%"}
                 </span>
-                <p className={item.sale_price ? "salePrice" : "sellingPrice"}>
-                  {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
-                    "원"}
+                <p className={sale_price ? "salePrice" : "sellingPrice"}>
+                  {price
+                    .toLocaleString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"}
                 </p>
               </div>
-              <p className={item.sale_price ? "sellingPrice" : "displayNone"}>
-                {item.sale_price > 0 &&
-                  item.sale_price
-                    .toString()
+              <p className={sale_price ? "sellingPrice" : "displayNone"}>
+                {sale_price > 0 &&
+                  sale_price
+                    .toLocaleString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"}
               </p>
             </div>
             <div className="over">
-              <Link to="/" className="detailView"></Link>
-              <Link to="/" className="addCart"></Link>
+              <Link to="/" className="hoverBtn detailView"></Link>
+              <Link to="/" className="hoverBtn addCart"></Link>
             </div>
           </div>
         </li>

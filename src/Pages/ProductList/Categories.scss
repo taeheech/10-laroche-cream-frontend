@@ -13,8 +13,6 @@
 
     .Cate {
       line-height: 50px;
-      display: flex;
-      flex-direction: column;
 
       .cateTitle {
         align-content: center;
@@ -41,7 +39,6 @@
 
         li {
           line-height: 30px;
-          display: flex;
           cursor: pointer;
         }
       }

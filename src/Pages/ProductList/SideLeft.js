@@ -7,6 +7,7 @@ class SideLeft extends Component {
     super();
     this.state = {
       sideBarMenu: [],
+      stage: [],
     };
   }
 
@@ -16,12 +17,14 @@ class SideLeft extends Component {
       .then((res) => {
         this.setState({
           sideBarMenu: res.sideBarMenu,
+          stage: res.stage,
         });
       });
   }
 
   render() {
-    const { sideBarMenu } = this.state;
+    const { sideBarMenu, stage } = this.state;
+
     return (
       <div className="SideLeft">
         <div className="sideCateTitle">FACE</div>
@@ -43,38 +46,14 @@ class SideLeft extends Component {
         </div>
         <ul className="sideCateList">
           <div className="filterTitle">사용 단계 별</div>
-          <li className="filter">
-            <input type="checkbox" id="cleansing"></input>
-            <label htmlFor="cleansing">클렌징</label>
-          </li>
-          <li className="filter">
-            <input type="checkbox" id="toner"></input>
-            <label htmlFor="toner">토너</label>
-          </li>
-          <li className="filter">
-            <input type="checkbox" id="essence"></input>
-            <label htmlFor="essence">세럼/에센스</label>
-          </li>
-          <li className="filter">
-            <input type="checkbox" id="cream"></input>
-            <label htmlFor="cream">로션/크림</label>
-          </li>
-          <li className="filter">
-            <input type="checkbox" id="mask"></input>
-            <label htmlFor="mask">마스크/팩</label>
-          </li>
-          <li className="filter">
-            <input type="checkbox" id="uv"></input>
-            <label htmlFor="uv">UV차단</label>
-          </li>
-          <li className="filter">
-            <input type="checkbox" id="bb"></input>
-            <label htmlFor="bb">BB/파운데이션</label>
-          </li>
-          <li className="filter">
-            <input type="checkbox" id="mist"></input>
-            <label htmlFor="mist">미스트</label>
-          </li>
+          {stage.map((item) => {
+            return (
+              <label className="filter">
+                <input type="checkbox" id="cleansing" />
+                {item.id}
+              </label>
+            );
+          })}
         </ul>
       </div>
     );

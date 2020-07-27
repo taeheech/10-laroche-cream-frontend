@@ -7,7 +7,7 @@ class Footer extends Component {
     return (
       <footer className="Footer">
         <section className="footNav">
-          <nav>
+          <div className="footNavFrame">
             <ul className="Left">
               <li>ABOUT US</li>
               <li>이용약관</li>
@@ -31,7 +31,7 @@ class Footer extends Component {
             <ul className="Right">
               <li>GLOBAL SITE</li>
             </ul>
-          </nav>
+          </div>
         </section>
 
         <section className="footContents">
@@ -44,9 +44,7 @@ class Footer extends Component {
                 <span>대표 : 크리스티앙 마르코스 아르나이</span>
               </li>
               <li>
-                <a href="none">
-                  <span>사업자 정보 확인</span>
-                </a>
+                <span className="underLine">사업자 정보 확인</span>
               </li>
             </ul>
             <ul className="cs">

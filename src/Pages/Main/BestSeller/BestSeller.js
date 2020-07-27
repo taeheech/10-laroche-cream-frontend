@@ -14,11 +14,11 @@ class BestSeller extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/data.json")
+    fetch("http://localhost:3000/mockdata/mockupdata.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          bestSeller: res.data,
+          bestSeller: res.bestSeller,
         });
       });
   }
@@ -51,8 +51,18 @@ class BestSeller extends Component {
         <span className="seeMore">MORE →</span>
         <div className="bestSellerList">
           <Slider {...settings}>
-            {bestSeller.map((item) => {
-              return <ItemBox item={item} />;
+            {bestSeller.map((item, idx) => {
+              const hash = item.hash.split(",")[0];
+              return (
+                <ItemBox
+                  item={item}
+                  key={idx}
+                  product_line={item.product_line}
+                  name={item.name}
+                  width={"wide"}
+                  hash={hash.toString()}
+                />
+              );
             })}
           </Slider>
         </div>

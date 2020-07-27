@@ -93,24 +93,23 @@
             transition: 0.5s;
           }
         }
-      }
-
-      .solutionItemBox:hover {
-        .solutionImages {
-          transform: scale(1.1);
-          transition: 0.5s;
-        }
-        .hoverItems {
-          .solutionText {
-            color: #009ee3;
+        &:hover {
+          .solutionImages {
+            transform: scale(1.1);
             transition: 0.5s;
           }
-          hr {
-            left: 0;
-            width: 0;
-            opacity: 0;
-            color: #009ee3;
-            transition: 0.5s;
+          .hoverItems {
+            .solutionText {
+              color: #009ee3;
+              transition: 0.5s;
+            }
+            hr {
+              left: 0;
+              width: 0;
+              opacity: 0;
+              color: #009ee3;
+              transition: 0.5s;
+            }
           }
         }
       }
