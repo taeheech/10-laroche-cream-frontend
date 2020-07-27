@@ -23,3 +23,40 @@
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
+
+"categoryData" : [
+  {
+    title: "FACE",
+    list: [
+      { id: "FACE" },
+      { id: "BODY" },
+      { id: "SUN CARE" },
+      { id: "MOM/BABY" },
+    ],
+  },
+  {
+    title: "피부 고민별",
+    list: [
+      { id: "피부 고민별" },
+      { id: "제품 라인별" },
+      { id: "사용 단계별" },
+    ],
+  },
+  {
+    title: "전체",
+    list: [
+      { id: "전체보기" },
+      { id: "민감성 피부" },
+      { id: "지성/트러블 피부" },
+      { id: "손상 피부" },
+      { id: "건조한 피부" },
+      { id: "UV 차단" },
+      { id: "톤업/메이크업" },
+      { id: "탄력" },
+      { id: "주름" },
+      { id: "브라이트닝" },
+    ],
+  },
+]
+
+

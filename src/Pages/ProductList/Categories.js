@@ -1,56 +1,36 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Categories.scss";
 
 class Categories extends Component {
   constructor() {
     super();
     this.state = {
-      categoryData: [
-        {
-          title: "FACE",
-          list: [
-            { id: "FACE" },
-            { id: "BODY" },
-            { id: "SUN CARE" },
-            { id: "MOM/BABY" },
-          ],
-        },
-        {
-          title: "피부 고민별",
-          list: [
-            { id: "피부 고민별" },
-            { id: "제품 라인별" },
-            { id: "사용 단계별" },
-          ],
-        },
-        {
-          title: "전체",
-          list: [
-            { id: "전체보기" },
-            { id: "민감성 피부" },
-            { id: "지성/트러블 피부" },
-            { id: "손상 피부" },
-            { id: "건조한 피부" },
-            { id: "UV 차단" },
-            { id: "톤업/메이크업" },
-            { id: "탄력" },
-            { id: "주름" },
-            { id: "브라이트닝" },
-          ],
-        },
-      ],
-      isClicked: false,
+      categoryData: [],
+      isActivated: false,
+      clickedCategory: -1,
     };
   }
 
-  handleClickEvent = () => {
+  componentDidMount() {
+    fetch("http://localhost:3000/mockdata/data.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          categoryData: res.categoryData,
+        });
+      });
+  }
+
+  handleClickEvent = (idx) => {
     this.setState({
-      isClicked: !this.state.isClicked,
+      isActivated: !this.state.isActivated,
+      clickedCategory: idx,
     });
   };
 
   render() {
-    const { categoryData, isClicked } = this.state;
+    const { categoryData, clickedCategory, isActivated } = this.state;
     const { handleClickEvent } = this;
     return (
       <div className="Categories">
@@ -59,27 +39,31 @@ class Categories extends Component {
             <ol className="totalCate">
               <li className="Cate">
                 <div className="cateTitle">
-                  <div href="/">
-                    <i>HOME</i>
-                  </div>
+                  <Link to="/">HOME</Link>
                 </div>
               </li>
               {categoryData.map((category, idx) => {
+                const categoryShown =
+                  clickedCategory === idx && isActivated === true;
                 return (
-                  <li className="Cate">
-                    <div className="cateTitle">
-                      <a onClick={handleClickEvent}>
+                  <li key={idx} className="Cate">
+                    <div
+                      className="cateTitle"
+                      onClick={() => handleClickEvent(idx)}
+                    >
+                      <div>
                         <i>{category.title}</i>
-                        <span>▲</span>
-                      </a>
+                        <span className={categoryShown ? "on" : "displayNone"}>
+                          ▼
+                        </span>
+                        <span className={categoryShown ? "displayNone" : "on"}>
+                          ▲
+                        </span>
+                      </div>
                     </div>
-                    <ul key={idx} className={isClicked ? "on" : "displayNone"}>
-                      {category.list.map((item) => {
-                        return (
-                          <a href="/">
-                            <li>{item.id}</li>
-                          </a>
-                        );
+                    <ul className={categoryShown ? "on" : "displayNone"}>
+                      {category.list.map((item, idx) => {
+                        return <li key={idx}>{item.id}</li>;
                       })}
                     </ul>
                   </li>

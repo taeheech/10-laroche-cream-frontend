@@ -58,7 +58,11 @@ class MenuBar extends Component {
               onMouseLeave={() => this.setCurrentIdx(0)}
             >
               <span
-                className={this.state.currentNavMenu === 1 ? "blue" : "black"}
+                className={
+                  this.state.currentNavMenu === 1
+                    ? "blue center"
+                    : "black center"
+                }
               >
                 {currentNavMenu === 1 ? "FACE" : "스킨케어"}
               </span>
@@ -70,7 +74,11 @@ class MenuBar extends Component {
               onMouseEnter={() => this.setCurrentIdx(2)}
               onMouseLeave={() => this.setCurrentIdx(0)}
             >
-              <span className={currentNavMenu === 2 ? "blue" : "black"}>
+              <span
+                className={
+                  currentNavMenu === 2 ? "blue center" : "black center"
+                }
+              >
                 {currentNavMenu === 2 ? "BODY" : "바디케어"}
               </span>
 
@@ -81,7 +89,11 @@ class MenuBar extends Component {
               onMouseEnter={() => this.setCurrentIdx(3)}
               onMouseLeave={() => this.setCurrentIdx(0)}
             >
-              <span className={currentNavMenu === 3 ? "blue" : "black"}>
+              <span
+                className={
+                  currentNavMenu === 3 ? "blue center" : "black center"
+                }
+              >
                 {currentNavMenu === 3 ? "SUN CARE" : "UV 케어"}
               </span>
 
@@ -92,14 +104,18 @@ class MenuBar extends Component {
               onMouseEnter={() => this.setCurrentIdx(4)}
               onMouseLeave={() => this.setCurrentIdx(0)}
             >
-              <span className={currentNavMenu === 4 ? "blue" : "black"}>
+              <span
+                className={
+                  currentNavMenu === 4 ? "blue center" : "black center"
+                }
+              >
                 {currentNavMenu === 4 ? "MOM/BABY" : "맘/베이비"}
               </span>
 
               {currentNavMenu === 4 && <MomBaby />}
             </a>
             <a href="">
-              <span>리얼리뷰</span>
+              <span className="center">리얼리뷰</span>
             </a>
           </span>
           <div className="menuBarRight">

@@ -18,9 +18,9 @@ class Slides extends Component {
     return (
       <div className="Slides">
         <Slider {...settings}>
-          {slideList.map((item) => {
+          {slideList.map((item, idx) => {
             return (
-              <div className="slideList">
+              <div className="slideList" key={idx}>
                 <div className="slideItemBox">
                   <div className="test">
                     <img className="itemImg" alt="" src={item.img} />

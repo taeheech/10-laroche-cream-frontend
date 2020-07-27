@@ -12,13 +12,10 @@ class OnlynHot extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/data.json")
+    fetch("http://localhost:3000/mockdata/mockupdata.json")
       .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          onlyOneItems: res.onlyOneItems,
-          hotDealItems: res.hotDealItems,
-        });
+      .then(({ onlyOneItems, hotDealItems }) => {
+        this.setState({ onlyOneItems, hotDealItems });
       });
   }
 

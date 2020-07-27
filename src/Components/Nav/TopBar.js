@@ -1,15 +1,18 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./TopBar.scss";
 
 class TopBar extends Component {
   render() {
     return (
       <nav>
-        <img
-          className="navLogo"
-          onClick=""
-          src="https://www.larocheposay.co.kr/images/common/logo.png?1"
-        ></img>
+        <Link to="/">
+          <img
+            className="navLogo"
+            onClick=""
+            src="https://www.larocheposay.co.kr/images/common/logo.png?1"
+          ></img>
+        </Link>
         <ul className="topNav">
           <li>
             <a href="">로그인</a>
