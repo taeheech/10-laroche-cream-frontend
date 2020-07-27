@@ -1,0 +1,119 @@
+.Footer {
+  .footNav {
+    border-top: 1px solid #222222;
+    border-bottom: 1px solid lightgray;
+    .footNavFrame {
+      width: 1140px;
+      margin: 0 auto;
+      padding-top: 23px;
+      display: flex;
+      height: 58px;
+      justify-content: space-between;
+
+      .left {
+        display: flex;
+        margin-left: -20px;
+        li {
+          height: 15px;
+          padding: 0 15px;
+          border-right: 1px solid lightgray;
+        }
+
+        .privacy {
+          color: #009ee3;
+          margin-right: 20px;
+        }
+        a {
+          margin: 0 10px;
+        }
+        .facebook {
+          width: 7px;
+          height: 15px;
+          background: url(https://www.larocheposay.co.kr/images/common/bg_button.png?1)
+            no-repeat -171px 0;
+        }
+        .blog {
+          width: 15px;
+          height: 15px;
+          background: url(https://www.larocheposay.co.kr/images/common/bg_button.png?1)
+            no-repeat -330px 0;
+        }
+        .youtube {
+          width: 19px;
+          height: 15px;
+          background: url(https://www.larocheposay.co.kr/images/common/bg_button.png?1)
+            no-repeat -306px 0;
+        }
+      }
+    }
+  }
+  .footContents {
+    display: flex;
+    width: 1140px;
+    margin: 30px auto 0;
+    .contentsLeft {
+      display: block;
+      width: 570px;
+      border-right: 1px solid lightgray;
+      .info {
+        display: flex;
+        li {
+          font-size: 13px;
+          padding-right: 10px;
+          line-height: 22px;
+          color: #222222;
+          .underLine {
+            text-decoration: underline;
+          }
+        }
+      }
+      .cs {
+        li {
+          font-size: 13px;
+          padding-right: 10px;
+          line-height: 22px;
+          color: #222222;
+        }
+        .csCenter {
+          display: flex;
+          p {
+            padding-right: 10px;
+          }
+        }
+        .bull {
+          color: #8f8f8f;
+          list-style: none;
+        }
+      }
+    }
+    .contentsRight {
+      display: block;
+      width: 570px;
+      padding-left: 30px;
+
+      address {
+        display: flex;
+        flex-direction: column;
+        span {
+          font-size: 13px;
+          padding-right: 10px;
+          line-height: 22px;
+          color: #222222;
+        }
+        .escrow {
+          color: #8f8f8f;
+        }
+      }
+    }
+  }
+  .copyright {
+    width: 1140px;
+    margin: 0 auto 20px;
+    color: #666666;
+    height: 16px;
+    span {
+      font-size: 13px;
+      text-align: left;
+    }
+  }
+}
