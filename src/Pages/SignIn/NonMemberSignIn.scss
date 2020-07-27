@@ -1,0 +1,48 @@
+.NonMemberSignIn {
+    width: 580px;
+    margin: 0 auto;
+    background-color: white;
+  
+    header {
+      display: flex;
+      justify-content: center;
+    }
+  
+    main {
+      p {
+        text-align: center;
+        font-size: 20px;
+        em {
+          color: #009ee3;
+          font-style: normal;
+        }
+      }
+      
+    }
+    
+    footer {
+      font-family: 'notokr-demilight';
+      
+      div {
+        display: flex;
+        justify-content: center;
+        span {
+          margin-top: 30px;
+          color: #222222;
+          font-size: 15px;
+          }
+          .privacy {
+            padding-left: 15px;
+            border-left: 1px solid #d9d9d9;
+            margin-left: 15px;
+            color: #009ee3;
+            }
+      }
+      .copyright {
+        font-size: 13px;
+        color: #8f8f8f;
+        padding: 20px 0 70px;
+        text-align: center;
+      }
+    }
+}
