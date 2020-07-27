@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Route from "./Route";
+import Routes from "./Routes";
+import "../src/reset.scss";
 
-ReactDOM.render(<Route />, document.getElementById("root"));
+ReactDOM.render(<Routes />, document.getElementById("root"));
