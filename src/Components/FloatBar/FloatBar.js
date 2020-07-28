@@ -19,7 +19,7 @@ class FloatBar extends Component {
       .then((res) => {
         this.setState({
           floatProducts: res.data,
-          likedProducts: res.data, // db에 있는 찜목록
+          likedProducts: res.likeItemTable, // db에 있는 찜목록
         });
       });
   }

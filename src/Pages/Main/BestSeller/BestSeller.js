@@ -61,6 +61,8 @@ class BestSeller extends Component {
                   name={item.name}
                   width={"wide"}
                   hash={hash.toString()}
+                  isGift={item.gift}
+                  ifSale={item.sale}
                 />
               );
             })}

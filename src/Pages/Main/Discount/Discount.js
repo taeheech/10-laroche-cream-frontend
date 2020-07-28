@@ -11,7 +11,7 @@ class Discount extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/data.json")
+    fetch("http://localhost:3000/mockdata/mockupdata.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -21,12 +21,13 @@ class Discount extends Component {
   }
 
   render() {
+    const result = this.state.discountList.filter((item) => item.sale === true);
     return (
       <div className="Discount">
         <h1 className="discountTitle">공식몰만의 할인구성</h1>
         <div className="discountList">
           <Slides
-            slideList={this.state.discountList}
+            slideList={result}
             settings={this.state.settings}
             dots={false}
             slidesToShow={4}

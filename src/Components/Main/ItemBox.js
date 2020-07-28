@@ -7,6 +7,7 @@ class ItemBox extends Component {
     super();
     this.state = {
       isActive: false,
+      access_token: localStorage.getItem("access_token"),
     };
   }
 
@@ -56,12 +57,21 @@ class ItemBox extends Component {
   };
 
   render() {
-    const { item, width, showLikes, isBest, isNew, hash } = this.props;
+    const {
+      item,
+      width,
+      showLikes,
+      isBest,
+      isNew,
+      isGift,
+      isSale,
+      hash,
+    } = this.props;
     const { img, product_line, name, price, sale_price } = this.props.item;
     const { isActive } = this.state;
     const { handleClickLikes } = this;
     return (
-      <div className="ItemBox">
+      <Link to={`/detailpage/${item.id}`} className="ItemBox">
         <li>
           <div
             className={
@@ -106,13 +116,20 @@ class ItemBox extends Component {
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"}
               </p>
             </div>
+            <div className="giftSaleTag">
+              <p className={isGift ? "gift" : "displayNone"}>증정</p>
+              <p className={isSale ? "sale" : "displayNone"}>세일</p>
+            </div>
             <div className="over">
-              <Link to="/" className="hoverBtn detailView"></Link>
+              <Link
+                to={`detailpage/${item.id}`}
+                className="hoverBtn detailView"
+              ></Link>
               <Link to="/" className="hoverBtn addCart"></Link>
             </div>
           </div>
         </li>
-      </div>
+      </Link>
     );
   }
 }

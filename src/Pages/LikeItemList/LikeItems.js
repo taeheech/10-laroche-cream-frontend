@@ -1,44 +1,38 @@
 import React, { Component } from "react";
 import ItemBox from "../../Components/Main/ItemBox";
-import "./ItemList.scss";
+import "./LikeItems.scss";
 
-class ItemList extends Component {
+class LikeItems extends Component {
   constructor() {
     super();
     this.state = {
-      itemTable: [],
+      likeItemTable: [],
     };
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/mockupdata.json")
+    fetch("http://localhost:3000/mockdata/data.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          itemTable: res.data,
+          likeItemTable: res.likeItemTable,
         });
       });
   }
 
   render() {
-    const { itemTable } = this.state;
+    const { likeItemTable } = this.state;
     return (
-      <div className="ItemList">
+      <div className="LikeItems">
         <div className="itemListTitle">
-          <h1>전체</h1>
-          <div className="sortingArea">
-            <div className="totalCount">57개</div>
-            <ul className="sortingCriteria">
-              <li>판매량 순</li>
-              <li>최근 등록 순</li>
-              <li>리뷰 많은 순</li>
-              <li>낮은 가격 순</li>
-              <li>높은 가격 순</li>
-            </ul>
+          <h1>찜 제품</h1>
+          <div className="btnWrap">
+            <button className="cartBtn">장바구니</button>
+            <button className="deleteBtn">삭제</button>
           </div>
         </div>
         <ul className="itemTable">
-          {itemTable.map((item, idx) => {
+          {likeItemTable.map((item, idx) => {
             const hash = item.hash.split(",")[0];
             return (
               <>
@@ -47,11 +41,9 @@ class ItemList extends Component {
                   item={item}
                   width={"narrow"}
                   hash={hash.toString()}
-                  showLikes={true}
+                  showLikes={false}
                   isBest={item.best}
                   isNew={item.new}
-                  isGift={item.gift}
-                  isSale={item.sale}
                 />
               </>
             );
@@ -61,4 +53,5 @@ class ItemList extends Component {
     );
   }
 }
-export default ItemList;
+
+export default LikeItems;

@@ -7,14 +7,13 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
-import "./SideLeft.scss";
+import "./MyPageSideBar.scss";
 
-class SideLeft extends Component {
+class MyPageSideBar extends Component {
   constructor() {
     super();
     this.state = {
-      sideBarMenu: [],
-      stage: [],
+      myPageSideBarList: [],
     };
   }
 
@@ -23,20 +22,18 @@ class SideLeft extends Component {
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          sideBarMenu: res.sideBarMenu,
-          stage: res.stage,
+          myPageSideBarList: res.myPageSideBarList,
         });
       });
   }
-
   render() {
-    const { sideBarMenu, stage } = this.state;
-
+    const { myPageSideBarList } = this.state;
     return (
-      <div className="SideLeft">
-        <div className="sideCateTitle">FACE</div>
+      <div className="MyPageSideBar">
+        <div className="myPageSideBarTitle">MY PAGE</div>
+
         <Accordion>
-          {sideBarMenu.map((category) => {
+          {myPageSideBarList.map((category) => {
             return (
               <AccordionItem>
                 <AccordionItemHeading>
@@ -44,31 +41,16 @@ class SideLeft extends Component {
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   {category.list.map((el) => {
-                    return <li>- {el.id}</li>;
+                    return <li>- {el.item}</li>;
                   })}
                 </AccordionItemPanel>
               </AccordionItem>
             );
           })}
         </Accordion>
-        <div className="sideCateTitle">
-          FILTER
-          <button></button>
-        </div>
-        <ul className="sideCateList">
-          <div className="filterTitle">사용 단계 별</div>
-          {stage.map((item) => {
-            return (
-              <label className="filter">
-                <input type="checkbox" id="cleansing" />
-                {item.id}
-              </label>
-            );
-          })}
-        </ul>
       </div>
     );
   }
 }
 
-export default SideLeft;
+export default MyPageSideBar;

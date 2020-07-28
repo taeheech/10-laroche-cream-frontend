@@ -172,42 +172,6 @@
     }
   ],
 
-  "onlyOneItems": [
-    {
-      "id": "1",
-      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
-      "hash": "#피지제거포밍크림",
-      "best": true,
-      "name": "에빠끌라",
-      "desc": "딥 클렌징 포밍 크림",
-      "price": "22,000",
-      "prevPrice": "25,000"
-    },
-    {
-      "id": "2",
-      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
-      "hash": "#피지케어토너",
-      "best": false,
-      "name": "에빠끌라",
-      "desc": "클래리파잉 로션 [병원판매제품]",
-      "price": "30,000",
-      "prevPrice": "32,000"
-    }
-  ],
-
-  "hotDealItems": [
-    {
-      "id": "1",
-      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
-      "hash": "#피지제거포밍크림",
-      "best": false,
-      "name": "에빠끌라",
-      "desc": "딥 클렌징 포밍 크림",
-      "price": "22,000",
-      "prevPrice": "25,000"
-    }
-  ],
-
   "reviewData": [
     {
       "id": 1,
@@ -394,12 +358,35 @@
     {
       "id": "line",
       "title": "제품 라인별",
-      "list": []
+      "list": [
+        { "id": "전체보기" },
+        { "id": "에빠끌라" },
+        { "id": "시카플라스트" },
+        { "id": "똘러리앙" },
+        { "id": "히알루 B5" },
+        { "id": "유비데아" },
+        { "id": "퓨어비타민C10" },
+        { "id": "안뗄리오스" },
+        { "id": "세로징크" },
+        { "id": "오 떼르말" },
+        { "id": "미셀라 클렌징 워터" },
+        { "id": "리더믹" }
+      ]
     },
     {
       "id": "stage",
       "title": "사용 단계별",
-      "list": []
+      "list": [
+        { "id": "전체보기" },
+        { "id": "클렌징" },
+        { "id": "토너" },
+        { "id": "세럼/에센스" },
+        { "id": "로션/크림" },
+        { "id": "마스크/팩" },
+        { "id": "UV차단" },
+        { "id": "BB/파운데이션" },
+        { "id": "미스트" }
+      ]
     }
   ],
   "stage": [
@@ -411,5 +398,68 @@
     { "id": "UV차단" },
     { "id": "BB/파운데이션" },
     { "id": "미스트" }
+  ],
+
+  "myPageSideBarList": [
+    {
+      "title": "MY 쇼핑관리",
+      "list": [{ "item": "주문/배송조회" }, { "item": "취소/반품/교환" }]
+    },
+    {
+      "title": "MY 제품관리",
+      "list": [{ "item": "찜 제품" }, { "item": "최근 본 제품" }]
+    },
+    {
+      "title": "MY 혜택관리",
+      "list": [{ "item": "쿠폰 현황" }, { "item": "마일리지 현황" }]
+    },
+    {
+      "title": "MY 활동관리",
+      "list": [
+        { "item": "1:1 상담내역" },
+        { "item": "리얼리뷰 내역" },
+        { "item": "이벤트 참여내역" }
+      ]
+    },
+    {
+      "title": "MY 정보관리",
+      "list": [
+        { "item": "회원정보수정" },
+        { "item": "배송지 관리" },
+        { "item": "회원탈퇴" }
+      ]
+    },
+    { "title": "MY 피부 민감도", "list": [] }
+  ],
+
+  "likeItemTable": [
+    {
+      "id": 1,
+      "product_line": "에빠끌라",
+      "name": "듀오[+] 에센스 트리플 세트",
+      "desc": "유럽 NO.1* 트러블 케어 에센스 (미백 기능성) (본품 3개 묶음 제품)",
+      "sale_price": 67500,
+      "price": 75000,
+      "hash": "#트러블케어에센스,#유럽NO1에센스,#미백에센스,#다크스팟케어,#에빠끌라",
+      "best": null,
+      "new": true,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
+      "gift": true,
+      "sale": false
+    },
+    {
+      "id": 2,
+      "product_line": "오 떼르말",
+      "name": "온천수 미스트 [300ml] + 45ml 샘플 증정",
+      "desc": "탁월한 피부진정 효과의 100% 라로슈포제 온천수",
+      "sale_price": null,
+      "price": 22000,
+      "hash": "#진정미스트,#라로슈포제온천수,#프랑스가사랑하는온천수,#스킨리밸런싱,#오떼르말",
+      "best": true,
+      "new": null,
+      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200717_1757028_235.png",
+      "gift": true,
+      "sale": false
+    }
   ]
 }
