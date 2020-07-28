@@ -1,0 +1,54 @@
+.Categories {
+  height: 50px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+
+  .totalCate {
+    width: 1140px;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    font-size: 13px;
+    color: #8f8f8f;
+
+    .Cate {
+      line-height: 50px;
+
+      .cateTitle {
+        align-content: center;
+        padding-right: 30px;
+        cursor: pointer;
+
+        a {
+          color: #8f8f8f;
+        }
+
+        span {
+          font-size: 10px;
+          margin: 10px;
+        }
+      }
+
+      ul {
+        position: absolute;
+        padding: 20px;
+        width: 150px;
+        border: 1px solid lightgray;
+        background-color: white;
+
+        li {
+          line-height: 30px;
+          cursor: pointer;
+        }
+      }
+
+      .on {
+        z-index: 10;
+      }
+
+      .displayNone {
+        display: none;
+      }
+    }
+  }
+}

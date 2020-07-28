@@ -4,6 +4,7 @@ import Main from "./Pages/Main/Main";
 import SignUp from "./Pages/SignUp/SignUp";
 import SignIn from "./Pages/SignIn/SignIn";
 import NonMemberSignIn from "./Pages/SignIn/NonMemberSignIn";
+import ProductList from "./Pages/ProductList/ProductList";
 
 class Routes extends Component {
   render() {
@@ -14,6 +15,7 @@ class Routes extends Component {
           <Route exact path="/signUp" component={SignUp} />
           <Route exact path="/signIn" component={SignIn} />
           <Route exact path="/signIn2" component={NonMemberSignIn} />
+          <Route exact path="/product" component={ProductList} />
         </Switch>
       </Router>
     );
