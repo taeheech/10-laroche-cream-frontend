@@ -2,7 +2,39 @@ import React, { Component } from "react";
 import "./SignUpOptionalInfo.scss";
 
 class SignUpOptionalInfo extends Component {
+  constructor() {
+    super();
+    this.state = {
+      troubleTable: [
+        {"skinTrouble": "민감성피부"},
+        {"skinTrouble": "손상 피부"},
+        {"skinTrouble": "지성/트러블 피부"},
+        {"skinTrouble": "건조한 피부"},
+        {"skinTrouble": "주름"},
+        {"skinTrouble": "탄력"},
+        {"skinTrouble": "브라이트닝"},
+        {"skinTrouble": "톤업/메이크업"},
+        {"skinTrouble": "UV차단"},
+        {"skinTrouble": "두피 모발 강화"},
+        ],
+      typeTable: [
+        {'type': "건성 (얼굴 전체적으로 당김)"},
+        {'type': '복합성 (양 볼만 당김, T존 번들거림)'},
+        {'type': '중성 (건성과 지성의 중간)'},
+        {'type': '지성 (얼굴 전체적으로 번들거림)'}
+      ],
+      sensitivity: [
+        {'sens': '1'},
+        {'sens': '2'},
+        {'sens': '3'},
+        {'sens': '4'},
+        {'sens': '5'}
+      ],
+    }
+  }
+
   render() {
+    const {inputHandler} = this.props;
     return (
       <section className="SignUpOptionalInfo">
         <h3>선택항목</h3>
@@ -74,30 +106,16 @@ class SignUpOptionalInfo extends Component {
           <li>
             <h4>피부타입</h4>
             <div className="radio_wrap_skin_type">
-              <span className="radiocss">
-                <input type="radio" />
-                <label>
-                  <em>건성 (얼굴 전체적으로 당김)</em>
-                </label>
-              </span>
-              <span className="radiocss">
-                <input type="radio" />
-                <label>
-                  <em>복합성 (양 볼만 당김, T존 번들거림)</em>
-                </label>
-              </span>
-              <span className="radiocss">
-                <input type="radio" />
-                <label>
-                  <em>중성 (건성과 지성의 중간)</em>
-                </label>
-              </span>
-              <span className="radiocss">
-                <input type="radio" />
-                <label>
-                  <em>지성 (얼굴 전체적으로 번들거림)</em>
-                </label>
-              </span>
+              {this.state.typeTable.map((el) => {
+                return(
+                  <span className="radiocss">
+                    <input type="radio" />
+                    <label>
+                      <em>{el.type}</em>
+                    </label>
+                  </span>
+                )
+              })}
             </div>
           </li>
           <li>
@@ -106,66 +124,16 @@ class SignUpOptionalInfo extends Component {
               <span>(최대 3개 선택)</span>
             </h4>
             <div className="check_box_skin_problem">
-              <span className="checkcss">
-                <input type="checkbox" />
-                <label>
-                  <em>민감성 피부</em>
-                </label>
-              </span>
-              <span className="checkcss">
-                <input type="checkbox" />
-                <label>
-                  <em>손상 피부</em>
-                </label>
-              </span>
-              <span className="checkcss">
-                <input type="checkbox" />
-                <label>
-                  <em>지성/트러블 피부</em>
-                </label>
-              </span>
-              <span className="checkcss">
-                <input type="checkbox" />
-                <label>
-                  <em>건조한 피부</em>
-                </label>
-              </span>
-              <span className="checkcss">
-                <input type="checkbox" />
-                <label>
-                  <em>주름</em>
-                </label>
-              </span>
-              <span className="checkcss">
-                <input type="checkbox" />
-                <label>
-                  <em>탄력</em>
-                </label>
-              </span>
-              <span className="checkcss">
-                <input type="checkbox" />
-                <label>
-                  <em>브라이트닝</em>
-                </label>
-              </span>
-              <span className="checkcss">
-                <input type="checkbox" />
-                <label>
-                  <em>톤업/메이크업</em>
-                </label>
-              </span>
-              <span className="checkcss">
-                <input type="checkbox" />
-                <label>
-                  <em>UV차단</em>
-                </label>
-              </span>
-              <span className="checkcss">
-                <input type="checkbox" />
-                <label>
-                  <em>두피 모발 강화</em>
-                </label>
-              </span>
+                  {this.state.troubleTable.map((el) => {
+                    return(
+                    <span className="checkcss">
+                      <input type="checkbox" onClick={inputHandler} name="skinTrouble" value={el.skinTrouble} />
+                      <label>
+                        <em>{el.skinTrouble}</em>
+                      </label>
+                    </span>
+                    )
+                  })}
             </div>
           </li>
           <li>
@@ -174,38 +142,18 @@ class SignUpOptionalInfo extends Component {
               <span>(5점 척도)</span>
             </h4>
             <div className="radio_wrap_sensitivity">
-              <div className="radiocss">
-                <input type="radio" />
+            {this.state.sensitivity.map((el)=> {
+              return(
+              <div className="radiocss" onClick={inputHandler} name='skinSensitivity' value={el.sens}>
+                <input type="radio"/>
                 <label>
-                  <em>1</em>
+                  <em>{el.sens}</em>
                 </label>
               </div>
-              <div className="radiocss">
-                <input type="radio" />
-                <label>
-                  <em>2</em>
-                </label>
-              </div>
-              <div className="radiocss">
-                <input type="radio" />
-                <label>
-                  <em>3</em>
-                </label>
-              </div>
-              <div className="radiocss">
-                <input type="radio" />
-                <label>
-                  <em>4</em>
-                </label>
-              </div>
-              <div className="radiocss">
-                <input type="radio" />
-                <label>
-                  <em>5</em>
-                </label>
-              </div>
+              )
+            })}
             </div>
-            <div className="sensitive">
+            <div className="sensitivityRange">
               <span className="left">전혀 민감하지 않다</span>
               <span className="right">매우 민감하다</span>
             </div>

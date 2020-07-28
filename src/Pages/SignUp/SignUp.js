@@ -28,8 +28,8 @@ class SignUp extends Component {
         gender_type: "여자",
         skinType: "지성",
         skinTrouble: "건조한 피부",
-        skinSensitivity: "2",
-      }),
+        skinSensitivity: this.state.skinSensitivity,
+      })
     });
   };
 
@@ -62,7 +62,7 @@ class SignUp extends Component {
             <div className="join_form">
               <h2>정보입력</h2>
               <SignUpInfo inputHandler={this.inputHandler} />
-              <SignUpOptionalInfo />
+              <SignUpOptionalInfo inputHandler={this.inputHandler} />
             </div>
             <div className="btn_wrap">
               <button type="button">이전단계</button>
