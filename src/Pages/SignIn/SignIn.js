@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import MemberSignIn from "./MemberSignIn";
+import NonMemberSignIn from "./NonMemberSignIn";
 import "./SignIn.scss";
 
 class SignIn extends Component {
@@ -7,8 +9,20 @@ class SignIn extends Component {
     this.state = {
       account: "",
       password: "",
+      activeID: 0,
     };
   }
+
+  handleInput = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  tabHandler = (id) => {
+    console.log(id);
+    this.setState({ activeID: id });
+  };
 
   handleLoginBtn = () => {
     fetch("http://10.58.3.224:8000/user/signin", {
@@ -31,19 +45,8 @@ class SignIn extends Component {
       });
   };
 
-  handleId = (e) => {
-    this.setState({
-      account: e.target.value,
-    });
-  };
-
-  handlePw = (e) => {
-    this.setState({
-      password: e.target.value,
-    });
-  };
-
   render() {
+    console.log(this.state);
     return (
       <div className="SignIn">
         <header>
@@ -59,70 +62,34 @@ class SignIn extends Component {
           </p>
           <div>
             <div className="memberSignIn">
-              <div className="tab">
-                <a>회원로그인</a>
-                <a>비회원로그인</a>
-              </div>
-              <div className="idpw">
-                <div className="input">
-                  <input
-                    onChange={this.handleId}
-                    className="account"
-                    type="text"
-                    placeholder="아이디"
-                  />
-                  <input
-                    onChange={this.handlePw}
-                    className="account"
-                    type="text"
-                    placeholder="비밀번호"
-                  />
-                  <button onClick={this.handleLoginBtn} className="login_btn">
-                    로그인
-                  </button>
-                  <button className="btn">회원가입하고 혜택받기</button>
-                </div>
-                <div className="save_find">
-                  <div>
-                    <input type="checkbox" />
-                    <label for="checkbox">아이디저장</label>
-                  </div>
-                  <div>
-                    <a className="find_id">아이디 찾기</a>
-                    <a>비밀번호 찾기</a>
-                  </div>
-                </div>
-                <div className="sns">
-                  <div className="snsBox">
-                    <div className="naver_logo"></div>
-                    <div className="sns_login">
-                      <a>네이버 로그인</a>
-                    </div>
-                  </div>
-                  <div className="snsBox">
-                    <div className="facebook_logo"></div>
-                    <div className="sns_login">
-                      <a>페이스북 로그인</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="sns">
-                  <div className="snsBox">
-                    <div className="kakao_logo"></div>
-                    <div className="sns_login">
-                      <a>카카오 로그인</a>
-                    </div>
-                  </div>
-                  <div className="snsBox">
-                    <div className="payco_logo"></div>
-                    <div className="sns_login">
-                      <a>페이코 로그인</a>
-                    </div>
-                  </div>
-                </div>
-                <p>
-                  라로슈포제 계정으로 로그인 후, SNS 계정을 연결할 수 있습니다.
-                </p>
+              <ul className="tab">
+                <li
+                  className={
+                    this.state.activeID === 0
+                      ? "selectedTabs"
+                      : "unselectedTabs"
+                  }
+                  onClick={() => this.tabHandler(0)}
+                >
+                  <span className="memberTab">회원로그인</span>
+                </li>
+                <li
+                  className={
+                    this.state.activeID === 1
+                      ? "selectedTabs"
+                      : "unselectedTabs"
+                  }
+                  onClick={() => this.tabHandler(1)}
+                >
+                  <span className="nonmemberTab">비회원로그인(주문조회)</span>
+                </li>
+              </ul>
+              <div>
+                {this.state.activeID === 0 ? (
+                  <MemberSignIn handleInput={this.handleInput} />
+                ) : (
+                  <NonMemberSignIn />
+                )}
               </div>
             </div>
           </div>
