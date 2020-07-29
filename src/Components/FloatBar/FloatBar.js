@@ -14,6 +14,10 @@ class FloatBar extends Component {
   }
 
   componentDidMount() {
+    this.showFloatBar();
+  }
+
+  showFloatBar = () => {
     fetch("http://localhost:3000/mockdata/data.json")
       .then((res) => res.json())
       .then((res) => {
@@ -22,7 +26,7 @@ class FloatBar extends Component {
           likedProducts: res.likeItemTable, // db에 있는 찜목록
         });
       });
-  }
+  };
 
   goToTop = () => {
     window.scrollTo(0, 0);

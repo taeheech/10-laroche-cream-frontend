@@ -11,23 +11,29 @@ class Discount extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/mockupdata.json")
+    this.showDiscount();
+  }
+
+  showDiscount = () => {
+    fetch("http://10.58.4.187:8000/product/allitem")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          discountList: res.data,
+          discountList: res.data.filter(
+            (item) =>
+              Number(item.product.price) !== Number(item.product.sale_price)
+          ),
         });
       });
-  }
+  };
 
   render() {
-    const result = this.state.discountList.filter((item) => item.sale === true);
     return (
       <div className="Discount">
         <h1 className="discountTitle">공식몰만의 할인구성</h1>
         <div className="discountList">
           <Slides
-            slideList={result}
+            slideList={this.state.discountList}
             settings={this.state.settings}
             dots={false}
             slidesToShow={4}

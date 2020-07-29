@@ -11,18 +11,22 @@ class Suggestion extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/mockupdata.json")
+    this.showSuggestion();
+  }
+
+  showSuggestion = () => {
+    fetch("http://10.58.4.187:8000/product/allitem")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           suggestedItems: res.data,
         });
       });
-  }
+  };
 
   render() {
     const result = this.state.suggestedItems.filter((item) =>
-      item.hash.includes("트러블")
+      item.product.hash_tag.includes("트러블")
     );
     return (
       <div className="Suggestion">

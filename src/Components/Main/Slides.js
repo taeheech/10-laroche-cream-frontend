@@ -15,12 +15,11 @@ class Slides extends Component {
       slidesToScroll: this.props.slidesToScroll,
       arrow: true,
     };
-    const { slideList } = this.props;
     return (
       <div className="Slides">
         <Slider {...settings}>
-          {slideList.map((item, idx) => {
-            const hash = item.hash.split(",")[0];
+          {this.props.slideList.map((item, idx) => {
+            const hash = item.product.hash_tag.split(",");
             return (
               <ItemBox
                 item={item}
@@ -28,7 +27,7 @@ class Slides extends Component {
                 product_line={item.product_line}
                 name={item.name}
                 width={"wide"}
-                hash={hash.toString()}
+                hash={hash}
                 isSale={item.sale}
               />
             );

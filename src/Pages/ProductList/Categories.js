@@ -13,14 +13,16 @@ class Categories extends Component {
   }
 
   componentDidMount() {
+    this.showCategories();
+  }
+
+  showCategories = () => {
     fetch("http://localhost:3000/mockdata/data.json")
       .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          categoryData: res.categoryData,
-        });
+      .then(({ categoryData }) => {
+        this.setState({ categoryData });
       });
-  }
+  };
 
   handleClickEvent = (idx) => {
     this.setState({
@@ -63,7 +65,7 @@ class Categories extends Component {
                     </div>
                     <ul className={categoryShown ? "on" : "displayNone"}>
                       {category.list.map((item, idx) => {
-                        return <li key={idx}>{item.id}</li>;
+                        return <li key={idx}>{item}</li>;
                       })}
                     </ul>
                   </li>

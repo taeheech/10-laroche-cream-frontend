@@ -19,15 +19,16 @@ class SideLeft extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/data.json")
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          sideBarMenu: res.sideBarMenu,
-          stage: res.stage,
-        });
-      });
+    this.showSideLeft();
   }
+
+  showSideLeft = () => {
+    fetch("http://localhost:3000/mockdata/sideBar.json")
+      .then((res) => res.json())
+      .then(({ sideBarMenu, stage }) => {
+        this.setState({ sideBarMenu, stage });
+      });
+  };
 
   render() {
     const { sideBarMenu, stage } = this.state;
@@ -44,7 +45,7 @@ class SideLeft extends Component {
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   {category.list.map((el) => {
-                    return <li>- {el.id}</li>;
+                    return <li>- {el}</li>;
                   })}
                 </AccordionItemPanel>
               </AccordionItem>
@@ -61,7 +62,7 @@ class SideLeft extends Component {
             return (
               <label className="filter">
                 <input type="checkbox" id="cleansing" />
-                {item.id}
+                {item}
               </label>
             );
           })}

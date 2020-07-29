@@ -12,12 +12,19 @@ class OnlynHot extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/mockupdata.json")
-      .then((res) => res.json())
-      .then(({ onlyOneItems, hotDealItems }) => {
-        this.setState({ onlyOneItems, hotDealItems });
-      });
+    this.showOnlynHot();
   }
+
+  showOnlynHot = () => {
+    fetch("http://10.58.4.187:8000/product/allitem")
+      .then((res) => res.json())
+      .then((res) =>
+        this.setState({
+          onlyOneItems: res.data.slice(1, 3),
+          hotDealItems: res.data.slice(8, 9),
+        })
+      );
+  };
 
   render() {
     const { onlyOneItems, hotDealItems } = this.state;
@@ -29,8 +36,21 @@ class OnlynHot extends Component {
             <p class="subTitle">오직 공식몰에만 있다, 라로슈포제 추천템!</p>
           </div>
           <ul className="flexList">
-            {onlyOneItems.map((item) => {
-              return <ItemBox item={item} />;
+            {onlyOneItems.map((item, idx) => {
+              const product = item.product;
+              const hash = product.hash_tag.split(",");
+              return (
+                <>
+                  <ItemBox
+                    key={idx}
+                    item={item}
+                    width={"narrow"}
+                    hash={hash}
+                    isGift={item.gift}
+                    isSale={item.sale}
+                  />
+                </>
+              );
             })}
           </ul>
         </div>
@@ -40,8 +60,21 @@ class OnlynHot extends Component {
             <p class="subTitle">이건 사야해, 라로슈포제 세일템!</p>
           </div>
           <ul className="flexList">
-            {hotDealItems.map((item) => {
-              return <ItemBox item={item} />;
+            {hotDealItems.map((item, idx) => {
+              const product = item.product;
+              const hash = product.hash_tag.split(",");
+              return (
+                <>
+                  <ItemBox
+                    key={idx}
+                    item={item}
+                    width={"narrow"}
+                    hash={hash}
+                    isGift={item.gift}
+                    isSale={item.sale}
+                  />
+                </>
+              );
             })}
           </ul>
         </div>

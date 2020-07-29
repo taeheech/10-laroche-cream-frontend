@@ -11,14 +11,16 @@ class LikeItems extends Component {
   }
 
   componentDidMount() {
+    this.showLikeItems();
+  }
+
+  showLikeItems = () => {
     fetch("http://localhost:3000/mockdata/data.json")
       .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          likeItemTable: res.likeItemTable,
-        });
+      .then(({ likeItemTable }) => {
+        this.setState({ likeItemTable });
       });
-  }
+  };
 
   render() {
     const { likeItemTable } = this.state;
@@ -33,17 +35,19 @@ class LikeItems extends Component {
         </div>
         <ul className="itemTable">
           {likeItemTable.map((item, idx) => {
-            const hash = item.hash.split(",")[0];
+            const product = item.product;
+            const hash = product.hash_tag.split(",");
+            console.log(hash[0]);
             return (
               <>
                 <ItemBox
                   key={idx}
                   item={item}
                   width={"narrow"}
-                  hash={hash.toString()}
+                  hash={hash}
                   showLikes={false}
-                  isBest={item.best}
-                  isNew={item.new}
+                  isGift={item.gift}
+                  isSale={item.sale}
                 />
               </>
             );

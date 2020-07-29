@@ -1,5 +1,6 @@
 .MyPageSideBar {
   width: 190px;
+
   .myPageSideBarTitle {
     display: flex;
     justify-content: space-between;
@@ -9,11 +10,14 @@
     font-weight: bold;
     border-bottom: 1px solid lightgray;
   }
+
   .accordion {
     border-style: none;
+
     .current {
       color: #009ee3;
     }
+
     .accordion__button {
       font-size: 18px;
       background-color: transparent;
@@ -21,17 +25,21 @@
       outline: none;
       color: #222;
       cursor: pointer;
+
       &:before {
         display: none;
       }
+
       &:hover {
         color: #009ee3;
       }
     }
+
     .accordion__item {
       border-style: none;
       cursor: pointer;
     }
+
     .accordion__panel {
       padding: 0;
 
@@ -46,6 +54,7 @@
       }
     }
   }
+
   .myPageSideBarList {
     .myPageSideBarItem {
       h2 {
@@ -57,10 +66,12 @@
           color: #009ee3;
         }
       }
+
       p {
         padding: 9px 0;
         font-size: 14px;
         cursor: pointer;
+
         &:hover {
           color: #009ee3;
           text-decoration: underline;

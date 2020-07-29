@@ -1,9 +1,32 @@
 .ItemBox {
   position: relative;
   list-style: none;
+  border: 1px solid transparent;
+
+  .showModal {
+    visibility: hidden;
+    animation: anime 1s 1;
+  }
+
+  @keyframes anime {
+    0% {
+      visibility: hidden;
+    }
+    50% {
+      visibility: visible;
+    }
+    100% {
+      visibility: hidden;
+    }
+  }
+
+  .displayNone {
+    display: none;
+  }
 
   .narrowFrame {
     width: 270px;
+    margin: 0 auto;
   }
 
   .wideFrame {

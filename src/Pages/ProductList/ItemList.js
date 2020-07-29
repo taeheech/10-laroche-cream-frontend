@@ -11,14 +11,18 @@ class ItemList extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/mockupdata.json")
+    this.showItemList();
+  }
+
+  showItemList = () => {
+    fetch("http://10.58.4.187:8000/product/allitem")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           itemTable: res.data,
         });
       });
-  }
+  };
 
   render() {
     const { itemTable } = this.state;
@@ -27,7 +31,7 @@ class ItemList extends Component {
         <div className="itemListTitle">
           <h1>전체</h1>
           <div className="sortingArea">
-            <div className="totalCount">57개</div>
+            <div className="totalCount">{itemTable.length}개</div>
             <ul className="sortingCriteria">
               <li>판매량 순</li>
               <li>최근 등록 순</li>
@@ -39,14 +43,15 @@ class ItemList extends Component {
         </div>
         <ul className="itemTable">
           {itemTable.map((item, idx) => {
-            const hash = item.hash.split(",")[0];
+            const product = item.product;
+            const hash = product.hash_tag.split(",");
             return (
               <>
                 <ItemBox
                   key={idx}
                   item={item}
                   width={"narrow"}
-                  hash={hash.toString()}
+                  hash={hash}
                   showLikes={true}
                   isBest={item.best}
                   isNew={item.new}

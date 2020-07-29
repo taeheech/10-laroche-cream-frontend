@@ -1,0 +1,26 @@
+.Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: #fb7777;
+  padding-top: 55px;
+  z-index: 10;
+  .alertImg {
+    display: block;
+    width: 55px;
+    height: 51px;
+    margin: 0 auto;
+    background: url(https://www.larocheposay.co.kr/images/mypage/bg_mypage_sp.png) -60px -124px
+      no-repeat;
+  }
+  .alertText {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+  }
+}

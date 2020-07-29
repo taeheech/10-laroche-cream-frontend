@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Modal from "./Modal";
 import "./ItemBox.scss";
 
 class ItemBox extends Component {
@@ -11,27 +12,27 @@ class ItemBox extends Component {
     };
   }
 
-  addLikeItem = (key) => {
-    console.log(key);
-    fetch("api주소", {
-      method: "POST",
-      headers: {
-        Authorization: localStorage.getItem("access_token"),
-      },
-      body: JSON.stringify({ product_id: key }),
-    }).then((res) => res.json());
-  };
+  // addLikeItem = (key) => {
+  //   console.log(key);
+  //   fetch("api주소", {
+  //     method: "POST",
+  //     headers: {
+  //       Authorization: localStorage.getItem("access_token"),
+  //     },
+  //     body: JSON.stringify({ product_id: key }),
+  //   }).then((res) => res.json());
+  // };
 
-  removeLikeItem = (key) => {
-    console.log(key);
-    fetch("api주소", {
-      method: "POST",
-      headers: {
-        Authorization: localStorage.getItem("access_token"),
-      },
-      body: JSON.stringify({ product_id: key }),
-    }).then((res) => res.json());
-  };
+  // removeLikeItem = (key) => {
+  //   console.log(key);
+  //   fetch("api주소", {
+  //     method: "POST",
+  //     headers: {
+  //       Authorization: localStorage.getItem("access_token"),
+  //     },
+  //     body: JSON.stringify({ product_id: key }),
+  //   }).then((res) => res.json());
+  // };
 
   handleClickLikes = (key) => {
     if (!this.state.access_token) {
@@ -40,16 +41,12 @@ class ItemBox extends Component {
     }
 
     if (this.state.isActive) {
-      console.log("삭제!");
-      alert("찜하기 취소!");
-      this.addLikeItem(key);
+      // this.addLikeItem(key);
       this.setState({
         isActive: false,
       });
     } else {
-      console.log("추가!");
-      alert("찜하기 성공!");
-      this.removeLikeItem(key);
+      // this.removeLikeItem(key);
       this.setState({
         isActive: true,
       });
@@ -57,21 +54,19 @@ class ItemBox extends Component {
   };
 
   render() {
-    const {
-      item,
-      width,
-      showLikes,
-      isBest,
-      isNew,
-      isGift,
-      isSale,
-      hash,
-    } = this.props;
-    const { img, product_line, name, price, sale_price } = this.props.item;
+    const { item, width, showLikes, isBest, isNew, isGift, hash } = this.props;
+    const { images, product } = this.props.item;
+    const { id, name, price, product_line, sale_price } = product;
+    const priceNum = Number(price);
+    const sale_priceNum = Number(sale_price);
     const { isActive } = this.state;
     const { handleClickLikes } = this;
+
     return (
-      <Link to={`/detailpage/${item.id}`} className="ItemBox">
+      <div className="ItemBox" key={id}>
+        <div className={isActive ? "showModal" : "displayNone"}>
+          <Modal />
+        </div>
         <li>
           <div
             className={
@@ -94,42 +89,59 @@ class ItemBox extends Component {
               </div>
             </div>
 
-            <img alt="" src={img} />
-            <p className="itemHash">{hash}</p>
+            <img
+              alt=""
+              src={`https://www.larocheposay.co.kr${images[0].slice(
+                1,
+                images[0].length - 1
+              )}`}
+            />
+
+            <p className="itemHash">{hash[0]}</p>
             <p className="itemLine">{product_line}</p>
             <p className="itemName">{name}</p>
             <div className="itemPrice">
               <div className="discount">
-                <span className={sale_price ? "discountRate" : "displayNone"}>
-                  {Math.round(((price - item.sale_price) / price) * 100) + "%"}
+                <span
+                  className={
+                    sale_price !== price ? "discountRate" : "displayNone"
+                  }
+                >
+                  {Math.round(((priceNum - sale_priceNum) / priceNum) * 100) +
+                    "%"}
                 </span>
-                <p className={sale_price ? "salePrice" : "sellingPrice"}>
-                  {price
-                    .toLocaleString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"}
+                <p
+                  className={
+                    sale_price !== price ? "salePrice" : "sellingPrice"
+                  }
+                >
+                  {priceNum.toLocaleString() + "원"}
                 </p>
               </div>
-              <p className={sale_price ? "sellingPrice" : "displayNone"}>
-                {sale_price > 0 &&
-                  sale_price
-                    .toLocaleString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"}
+              <p
+                className={
+                  sale_price !== price ? "sellingPrice" : "displayNone"
+                }
+              >
+                {sale_priceNum > 0 && sale_priceNum.toLocaleString() + "원"}
               </p>
             </div>
             <div className="giftSaleTag">
               <p className={isGift ? "gift" : "displayNone"}>증정</p>
-              <p className={isSale ? "sale" : "displayNone"}>세일</p>
+              <p className={sale_price !== price ? "sale" : "displayNone"}>
+                세일
+              </p>
             </div>
             <div className="over">
               <Link
-                to={`detailpage/${item.id}`}
+                to={`detailpage/${product.id}`}
                 className="hoverBtn detailView"
               ></Link>
-              <Link to="/" className="hoverBtn addCart"></Link>
+              <div to="/" className="hoverBtn addCart"></div>
             </div>
           </div>
         </li>
-      </Link>
+      </div>
     );
   }
 }

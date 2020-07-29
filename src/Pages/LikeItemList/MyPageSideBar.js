@@ -18,14 +18,17 @@ class MyPageSideBar extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/data.json")
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          myPageSideBarList: res.myPageSideBarList,
-        });
-      });
+    this.showMyPageSideBar();
   }
+
+  showMyPageSideBar = () => {
+    fetch("http://localhost:3000/mockdata/sideBar.json")
+      .then((res) => res.json())
+      .then(({ myPageSideBarList }) => {
+        this.setState({ myPageSideBarList });
+      });
+  };
+
   render() {
     const { myPageSideBarList } = this.state;
     return (
@@ -41,7 +44,7 @@ class MyPageSideBar extends Component {
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   {category.list.map((el) => {
-                    return <li>- {el.item}</li>;
+                    return <li>- {el}</li>;
                   })}
                 </AccordionItemPanel>
               </AccordionItem>
