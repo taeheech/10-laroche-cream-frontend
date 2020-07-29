@@ -8,6 +8,7 @@ class TopBar extends Component {
       <nav>
         <Link to="/">
           <img
+            alt=""
             className="navLogo"
             onClick=""
             src="https://www.larocheposay.co.kr/images/common/logo.png?1"
@@ -15,18 +16,18 @@ class TopBar extends Component {
         </Link>
         <ul className="topNav">
           <li>
-            <a href="">로그인</a>
+            <Link to="">로그인</Link>
           </li>
           <li>
-            <a href="">회원가입</a>
+            <Link to="/signup">회원가입</Link>
           </li>
           <li>
-            <a href="">주문/배송조회</a>
+            <Link to="">주문/배송조회</Link>
           </li>
           <li>
-            <a href="" className="topNavEnd">
+            <Link to="">className="topNavEnd">
               고객케어센터
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
