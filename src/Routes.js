@@ -5,6 +5,7 @@ import SignUp from "./Pages/SignUp/SignUp";
 import ProductList from "./Pages/ProductList/ProductList";
 // import DetailPage from "./Pages/DetailPage/DetailPage";
 import LikeItemList from "./Pages/LikeItemList/LikeItemList";
+import Cart from "./Pages/Cart/Cart";
 
 class Routes extends Component {
   render() {
@@ -17,6 +18,7 @@ class Routes extends Component {
           <Route exact path="/likeitemlist" component={LikeItemList} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/product" component={ProductList} />
+          <Route exact path="/cart" component={Cart} />
         </Switch>
       </Router>
     );

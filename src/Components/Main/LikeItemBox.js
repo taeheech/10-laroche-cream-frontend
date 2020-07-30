@@ -96,9 +96,16 @@ class ItemBox extends Component {
   };
 
   render() {
-    const { width, showLikes, isBest, isNew, isGift, hash } = this.props;
-    const { images, product } = this.props.item;
-    const { id, name, price, product_line, sale_price } = product;
+    const { item, width, showLikes, isBest, isNew, isGift, hash } = this.props;
+    const {
+      id,
+      name,
+      price,
+      product_line,
+      sale_price,
+      images,
+    } = this.props.item;
+    const firstImg = images.slice(1, images.length - 1).split(",")[0];
     const priceNum = Number(price);
     const sale_priceNum = Number(sale_price);
     const { addLike, addCart } = this.state;
@@ -136,9 +143,9 @@ class ItemBox extends Component {
 
             <img
               alt=""
-              src={`https://www.larocheposay.co.kr${images[0].slice(
+              src={`https://www.larocheposay.co.kr${firstImg.slice(
                 1,
-                images[0].length - 1
+                firstImg.length - 1
               )}`}
             />
 
@@ -179,7 +186,7 @@ class ItemBox extends Component {
             </div>
             <div className="over">
               <Link
-                to={`detailpage/${product.id}`}
+                to={`detailpage/${item.id}`}
                 className="hoverBtn detailView"
               ></Link>
               <div

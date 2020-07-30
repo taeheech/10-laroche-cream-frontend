@@ -59,7 +59,6 @@ class BestSeller extends Component {
             {bestSeller.map((item, idx) => {
               const product = item.product;
               const hash = product.hash_tag.split(",");
-              console.log(hash[0]);
               return (
                 <>
                   <ItemBox

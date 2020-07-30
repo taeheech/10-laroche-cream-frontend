@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ItemBox from "../../Components/Main/ItemBox";
+import LikeItemBox from "../../Components/Main/LikeItemBox";
 import "./LikeItems.scss";
 
 class LikeItems extends Component {
@@ -15,15 +15,22 @@ class LikeItems extends Component {
   }
 
   showLikeItems = () => {
-    fetch("http://localhost:3000/mockdata/data.json")
+    fetch("http://10.58.4.80:8000/user/likeproduct", {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("Authorization"),
+      },
+    })
       .then((res) => res.json())
-      .then(({ likeItemTable }) => {
-        this.setState({ likeItemTable });
+      .then((res) => {
+        console.log(res);
+        this.setState({ likeItemTable: res.like_list });
       });
   };
 
   render() {
     const { likeItemTable } = this.state;
+
     return (
       <div className="LikeItems">
         <div className="itemListTitle">
@@ -35,13 +42,12 @@ class LikeItems extends Component {
         </div>
         <ul className="itemTable">
           {likeItemTable.map((item, idx) => {
-            const product = item.product;
-            const hash = product.hash_tag.split(",");
+            const hash = item.hash_tag.split(",");
             console.log(hash[0]);
             return (
               <>
-                <ItemBox
-                  key={idx}
+                <LikeItemBox
+                  id={idx}
                   item={item}
                   width={"narrow"}
                   hash={hash}
