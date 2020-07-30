@@ -13,14 +13,16 @@ class TopSlideBar extends Component {
   }
 
   componentDidMount() {
+    this.showTopSlideBar();
+  }
+
+  showTopSlideBar = () => {
     fetch("http://localhost:3000/mockdata/data.json")
       .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          topSlideImg: res.topSlideImg,
-        });
+      .then(({ topSlideImg }) => {
+        this.setState({ topSlideImg });
       });
-  }
+  };
 
   render() {
     const settings = {

@@ -5,6 +5,9 @@ import SignUp from "./Pages/SignUp/SignUp";
 import SignIn from "./Pages/SignIn/SignIn";
 import NonMemberSignIn from "./Pages/SignIn/NonMemberSignIn";
 import ProductList from "./Pages/ProductList/ProductList";
+import DetailPage from "./Pages/DetailPage/DetailPage";
+import LikeItemList from "./Pages/LikeItemList/LikeItemList";
+import Cart from "./Pages/Cart/Cart";
 
 class Routes extends Component {
   render() {
@@ -12,9 +15,12 @@ class Routes extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Main} />
-          <Route exact path="/signUp" component={SignUp} />
+          <Route exact path="/productlist" component={ProductList} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/likeitemlist" component={LikeItemList} />
+          <Route exact parth="/detailpage/:id" component={DetailPage} />
+          <Route exact path="/signup" component={SignUp} />
           <Route exact path="/signIn" component={SignIn} />
-          <Route exact path="/product" component={ProductList} />
         </Switch>
       </Router>
     );

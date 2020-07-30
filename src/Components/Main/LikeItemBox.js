@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { likeAPI, cartAPI } from "../../config";
+import { cartAPI, likeAPI } from "../../config";
 import Modal from "./Modal";
 import "./ItemBox.scss";
 
@@ -64,6 +64,7 @@ class ItemBox extends Component {
 
   render() {
     const {
+      item,
       width,
       showLikes,
       isBest,
@@ -71,11 +72,16 @@ class ItemBox extends Component {
       isGift,
       hash,
       price,
-      productLine,
       discountPrice,
+      productLine,
     } = this.props;
-    const { images, product } = this.props.item;
-    const { id, name } = product;
+    const {
+      id,
+      name,
+
+      images,
+    } = this.props.item;
+    const firstImg = images.slice(1, images.length - 1).split(",")[0];
     const priceNum = Number(price);
     const discountPriceNum = Number(discountPrice);
     const { addLike, addCart } = this.state;
@@ -104,14 +110,18 @@ class ItemBox extends Component {
 
             <div className="itemTag">
               <div className={isBest ? "best" : "displayNone"}>BEST</div>
-              <div className={isNew ? "new" : "displayNone"}>NEW</div>
+              <div
+                className={isNew ? (isBest ? "bestnew" : "new") : "displayNone"}
+              >
+                NEW
+              </div>
             </div>
 
             <img
               alt=""
-              src={`https://www.larocheposay.co.kr${images[0].slice(
+              src={`https://www.larocheposay.co.kr${firstImg.slice(
                 1,
-                images[0].length - 1
+                firstImg.length - 1
               )}`}
             />
 
@@ -154,7 +164,7 @@ class ItemBox extends Component {
             </div>
             <div className="over">
               <Link
-                to={`detailpage/${product.id}`}
+                to={`detailpage/${item.id}`}
                 className="hoverBtn detailView"
               ></Link>
               <div

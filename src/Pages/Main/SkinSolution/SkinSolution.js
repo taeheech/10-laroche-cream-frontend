@@ -13,14 +13,16 @@ class SkinSolution extends Component {
   }
 
   componentDidMount() {
+    this.showSkinSolution();
+  }
+
+  showSkinSolution = () => {
     fetch("http://localhost:3000/mockdata/data.json")
       .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          skinSolution: res.skinSolution,
-        });
+      .then(({ skinSolution }) => {
+        this.setState({ skinSolution });
       });
-  }
+  };
 
   render() {
     const settings = {

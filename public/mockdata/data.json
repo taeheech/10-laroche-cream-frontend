@@ -172,42 +172,6 @@
     }
   ],
 
-  "onlyOneItems": [
-    {
-      "id": "1",
-      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
-      "hash": "#피지제거포밍크림",
-      "best": true,
-      "name": "에빠끌라",
-      "desc": "딥 클렌징 포밍 크림",
-      "price": "22,000",
-      "prevPrice": "25,000"
-    },
-    {
-      "id": "2",
-      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
-      "hash": "#피지케어토너",
-      "best": false,
-      "name": "에빠끌라",
-      "desc": "클래리파잉 로션 [병원판매제품]",
-      "price": "30,000",
-      "prevPrice": "32,000"
-    }
-  ],
-
-  "hotDealItems": [
-    {
-      "id": "1",
-      "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
-      "hash": "#피지제거포밍크림",
-      "best": false,
-      "name": "에빠끌라",
-      "desc": "딥 클렌징 포밍 크림",
-      "price": "22,000",
-      "prevPrice": "25,000"
-    }
-  ],
-
   "reviewData": [
     {
       "id": 1,
@@ -342,74 +306,105 @@
   "categoryData": [
     {
       "title": "FACE",
-      "list": [
-        { "id": "FACE" },
-        { "id": "BODY" },
-        { "id": "SUN CARE" },
-        { "id": "MOM/BABY" }
-      ]
+      "list": ["FACE", "BODY", "SUN CARE", "MOM/BABY"]
     },
     {
       "title": "피부 고민별",
-      "list": [
-        { "id": "피부 고민별" },
-        { "id": "제품 라인별" },
-        { "id": "사용 단계별" }
-      ]
+      "list": ["피부 고민별", "제품 라인별", "사용 단계별"]
     },
     {
       "title": "전체",
       "list": [
-        { "id": "전체" },
-        { "id": "민감성 피부" },
-        { "id": "지성/트러블 피부" },
-        { "id": "손상 피부" },
-        { "id": "건조한 피부" },
-        { "id": "UV 차단" },
-        { "id": "톤업/메이크업" },
-        { "id": "탄력" },
-        { "id": "주름" },
-        { "id": "브라이트닝" }
+        "전체",
+        "민감성 피부",
+        "지성/트러블 피부",
+        "손상 피부",
+        "건조한 피부",
+        "UV 차단",
+        "톤업/메이크업",
+        "탄력",
+        "주름",
+        "브라이트닝"
       ]
     }
   ],
 
-  "sideBarMenu": [
+  "myPageSideBarList": [
     {
-      "id": "type",
-      "title": "피부 고민별",
+      "title": "MY 쇼핑관리",
+      "list": [{ "item": "주문/배송조회" }, { "item": "취소/반품/교환" }]
+    },
+    {
+      "title": "MY 제품관리",
+      "list": [{ "item": "찜 제품" }, { "item": "최근 본 제품" }]
+    },
+    {
+      "title": "MY 혜택관리",
+      "list": [{ "item": "쿠폰 현황" }, { "item": "마일리지 현황" }]
+    },
+    {
+      "title": "MY 활동관리",
       "list": [
-        { "id": "전체보기" },
-        { "id": "민감성 피부" },
-        { "id": "지성/트러블 피부" },
-        { "id": "손상 피부" },
-        { "id": "건조한 피부" },
-        { "id": "UV 차단" },
-        { "id": "톤업/메이크업" },
-        { "id": "탄력" },
-        { "id": "주름" },
-        { "id": "브라이트닝" }
+        { "item": "1:1 상담내역" },
+        { "item": "리얼리뷰 내역" },
+        { "item": "이벤트 참여내역" }
       ]
     },
     {
-      "id": "line",
-      "title": "제품 라인별",
-      "list": []
+      "title": "MY 정보관리",
+      "list": [
+        { "item": "회원정보수정" },
+        { "item": "배송지 관리" },
+        { "item": "회원탈퇴" }
+      ]
+    },
+    { "title": "MY 피부 민감도", "list": [] }
+  ],
+
+  "likeItemTable": [
+    {
+      "product": {
+        "id": 1,
+        "product_line": "에빠끌라",
+        "name": "듀오[+] 에센스 트리플 세트",
+        "sale_price": "67500.00",
+        "price": "75000.00",
+        "hash_tag": "#트러블케어에센스,#유럽NO1에센스,#미백에센스,#다크스팟케어,#에빠끌라"
+      },
+      "images": [
+        "'/upload/product/main/2020/07/20200715_1348021_162.png'",
+        " '/upload/product/main/2020/07/20200715_1348022_163.png'",
+        " '/upload/product/main/2020/07/20200715_1350046_164.png'",
+        " '/upload/product/main/2020/07/20200715_1351005_165.png'",
+        " '/upload/product/main/2020/07/20200715_1351035_166.png'",
+        " ''"
+      ],
+      "best": true,
+      "new": false,
+      "gift": false,
+      "sale": true
     },
     {
-      "id": "stage",
-      "title": "사용 단계별",
-      "list": []
+      "product": {
+        "id": 2,
+        "product_line": "에빠끌라",
+        "name": "듀오[+] 에센스 트리플 세트",
+        "sale_price": "67500.00",
+        "price": "75000.00",
+        "hash_tag": "#트러블케어에센스,#유럽NO1에센스,#미백에센스,#다크스팟케어,#에빠끌라"
+      },
+      "images": [
+        "'/upload/product/main/2020/07/20200715_1348021_162.png'",
+        " '/upload/product/main/2020/07/20200715_1348022_163.png'",
+        " '/upload/product/main/2020/07/20200715_1350046_164.png'",
+        " '/upload/product/main/2020/07/20200715_1351005_165.png'",
+        " '/upload/product/main/2020/07/20200715_1351035_166.png'",
+        " ''"
+      ],
+      "best": true,
+      "new": false,
+      "gift": false,
+      "sale": true
     }
-  ],
-  "stage": [
-    { "id": "클렌징" },
-    { "id": "토너" },
-    { "id": "세럼/에센스" },
-    { "id": "로션/크림" },
-    { "id": "마스크/팩" },
-    { "id": "UV차단" },
-    { "id": "BB/파운데이션" },
-    { "id": "미스트" }
   ]
 }
