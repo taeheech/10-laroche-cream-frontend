@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ItemBox from "../../../Components/Main/ItemBox";
+import { allAPI } from "../../../config";
 import "./OnlynHot.scss";
 
 class OnlynHot extends Component {
@@ -16,7 +17,7 @@ class OnlynHot extends Component {
   }
 
   showOnlynHot = () => {
-    fetch("http://10.58.4.187:8000/product/allitem")
+    fetch(allAPI)
       .then((res) => res.json())
       .then((res) =>
         this.setState({
@@ -46,6 +47,11 @@ class OnlynHot extends Component {
                     item={item}
                     width={"narrow"}
                     hash={hash}
+                    price={product.price}
+                    discountPrice={product.sale_price}
+                    productLine={product.product_line}
+                    isBest={item.best}
+                    isNew={item.new}
                     isGift={item.gift}
                     isSale={item.sale}
                   />
@@ -70,6 +76,11 @@ class OnlynHot extends Component {
                     item={item}
                     width={"narrow"}
                     hash={hash}
+                    price={product.price}
+                    discountPrice={product.sale_price}
+                    productLine={product.product_line}
+                    isBest={item.best}
+                    isNew={item.new}
                     isGift={item.gift}
                     isSale={item.sale}
                   />

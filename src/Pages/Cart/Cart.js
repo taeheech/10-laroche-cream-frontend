@@ -3,7 +3,6 @@ import Nav from "../../Components/Nav";
 import CartItems from "./CartItems";
 import FloatBar from "../../Components/FloatBar/FloatBar";
 import Footer from "../../Components/Footer/Footer";
-import "./Cart.scss";
 
 class Cart extends Component {
   render() {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import { allAPI } from "../../../config";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./BestSeller.scss";
@@ -18,13 +19,11 @@ class BestSeller extends Component {
   }
 
   showBestSeller = () => {
-    fetch("http://10.58.4.187:8000/product/allitem")
+    fetch(allAPI)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          bestSeller: res.data
-            .filter((item) => item.best === true)
-            .slice(0, 12),
+          bestSeller: res.data.filter((item) => item.best).slice(0, 12),
         });
       });
   };
@@ -64,9 +63,13 @@ class BestSeller extends Component {
                   <ItemBox
                     key={idx}
                     item={item}
-                    width="narrow"
+                    width={"narrow"}
                     hash={hash}
-                    showLikes={false}
+                    price={product.price}
+                    discountPrice={product.sale_price}
+                    productLine={product.product_line}
+                    isBest={item.best}
+                    isNew={item.new}
                     isGift={item.gift}
                     isSale={item.sale}
                   />

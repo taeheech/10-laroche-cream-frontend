@@ -5,7 +5,7 @@ class Notice extends Component {
   render() {
     return (
       <div className="Notice">
-        <div className="Left">
+        <div className="left">
           <div className="noticeInfoTop">
             <h1>공지사항</h1>
             <p>[제품명/패키지 변경 안내] 안뗄리오스 울트라 논퍼퓸드 크림</p>
@@ -48,7 +48,7 @@ class Notice extends Component {
           </div>
         </div>
 
-        <div className="Right">
+        <div className="right">
           <a href="none">
             <img
               src="https://www.larocheposay.co.kr/upload/site/main/2018/09/20180903_1303026_001.jpg"

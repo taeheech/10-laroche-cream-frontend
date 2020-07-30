@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { cartAPI, likeAPI } from "../../config";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -28,7 +29,7 @@ class FloatBar extends Component {
         });
       });
 
-    fetch("http://10.58.4.80:8000/user/cartproduct", {
+    fetch(cartAPI, {
       method: "GET",
       headers: {
         Authorization: localStorage.getItem("Authorization"),
@@ -40,7 +41,7 @@ class FloatBar extends Component {
         this.setState({ cartProducts: res.cart_list });
       });
 
-    fetch("http://10.58.4.80:8000/user/likeproduct", {
+    fetch(likeAPI, {
       method: "GET",
       headers: {
         Authorization: localStorage.getItem("Authorization"),

@@ -55,27 +55,25 @@
     }
   }
 
-  .myPageSideBarList {
-    .myPageSideBarItem {
-      h2 {
-        margin: 12px 0;
-        font-size: 18px;
-        font-weight: 400;
-        cursor: pointer;
-        &:hover {
-          color: #009ee3;
-        }
+  .myPageSideBarItem {
+    h2 {
+      margin: 12px 0;
+      font-size: 18px;
+      font-weight: 400;
+      cursor: pointer;
+      &:hover {
+        color: #009ee3;
       }
+    }
 
-      p {
-        padding: 9px 0;
-        font-size: 14px;
-        cursor: pointer;
+    p {
+      padding: 9px 0;
+      font-size: 14px;
+      cursor: pointer;
 
-        &:hover {
-          color: #009ee3;
-          text-decoration: underline;
-        }
+      &:hover {
+        color: #009ee3;
+        text-decoration: underline;
       }
     }
   }

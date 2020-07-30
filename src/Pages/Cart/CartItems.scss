@@ -1,23 +1,28 @@
 .CartItems {
   width: 1140px;
   margin: 0 auto;
+
   .itemListTitle {
     display: flex;
     text-align: center;
     padding: 60px 0;
     justify-content: center;
     list-style: none;
+
     li {
       margin: 0 20px;
       color: #8f8f8f;
       font-size: 20px;
+
       span {
         font-weight: bolder;
       }
     }
+
     .cartOn {
       color: #009ee3;
     }
+
     .stageArrow {
       width: 11px;
       height: 20px;
@@ -36,10 +41,12 @@
     .memberlevel {
       display: flex;
       align-items: center;
+
       p {
         margin-left: 50px;
         font-size: 22px;
       }
+
       .memberIcon {
         position: absolute;
         width: 35px;
@@ -48,6 +55,7 @@
         background-repeat: no-repeat;
         background-size: auto 35px;
       }
+
       span {
         padding: 0 10px;
         font-size: 26px;
@@ -63,12 +71,15 @@
       border: 1px solid #8f8f8f;
       background-color: transparent;
     }
+
     .mileage {
       display: flex;
+
       p {
         margin: 0 10px;
         font-size: 14px;
         color: #666;
+
         span {
           margin: 0 5px;
           font-size: 20px;
@@ -78,6 +89,7 @@
       }
     }
   }
+
   .cartTableTitle {
     display: flex;
     justify-content: space-between;
@@ -88,14 +100,17 @@
       font-size: 22px;
       font-weight: bolder;
       color: #222;
+
       span {
         color: #009ee3;
       }
     }
+
     .titleRight {
       color: #fa2b49;
       font-size: 14px;
       font-weight: bolder;
+
       button {
         color: #666;
         border: 1px solid #666;
@@ -105,8 +120,10 @@
       }
     }
   }
+
   .cartItemTable {
     margin-bottom: 100px;
+
     thead {
       tr {
         th {
@@ -119,47 +136,58 @@
           vertical-align: middle;
           background-color: transparent;
         }
+
         .firstC {
           width: 60px;
         }
+
         .secondC {
           width: 655px;
         }
+
         .thirdC {
           width: 155px;
         }
+
         .firthC {
           width: 120px;
         }
+
         .fifthC {
           width: 130px;
         }
       }
     }
+
     tbody {
       .items {
         .secondC {
           display: flex;
+
           img {
             width: 100px;
             height: 100px;
             margin-right: 20px;
           }
+
           .productInfo {
             width: 100%;
             padding: 10px 20px;
+
             .productLine {
               font-size: 16px;
               font-weight: bolder;
               color: #222;
               margin-bottom: 5px;
             }
+
             .productName {
               font-size: 14px;
               color: #787878;
             }
           }
         }
+
         td {
           height: 150px;
           padding: 25px;
@@ -176,6 +204,7 @@
               border: 1px solid #d9d9d9;
               background-color: white;
             }
+
             input {
               width: 35px;
               height: 35px;
@@ -185,6 +214,7 @@
               border-width: 1px 0 1px !important;
             }
           }
+
           .confirmChange {
             margin-top: 5px;
             width: 105px;
@@ -193,17 +223,20 @@
             border: 1px solid #bcbcbc;
           }
         }
+
         .price {
           padding: 20px;
           text-align: center;
           font-size: 18px;
           font-weight: bolder;
           color: #009ee3;
+
           em {
             font-size: 16px;
             color: #222;
           }
         }
+
         .buttons {
           button {
             width: 80px;
@@ -215,6 +248,7 @@
             border: 1px solid #bcbcbc;
             border-radius: 0;
           }
+
           .cyan {
             background-color: #009ee3;
             border: 1px solid #009ee3;
@@ -223,6 +257,7 @@
         }
       }
     }
+
     .total {
       width: 1140px;
       height: 130px;
@@ -231,6 +266,7 @@
       display: flex;
       background-color: #f8fcfe;
       border-bottom: 1px solid #bcbcbc;
+
       .ordered {
         position: absolute;
         content: "";
@@ -241,10 +277,12 @@
         background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp2.png) -53px -195px
           no-repeat;
       }
+
       span {
         text-align: center;
         height: 47px;
         font-weight: bolder;
+
         .totalItem {
           width: 265px;
           font-size: 14px;
@@ -252,21 +290,23 @@
           display: block;
           margin: 0 0 10px;
         }
+
         strong {
           font-size: 28px;
-
           color: #222;
         }
+
         .dicountCount {
           color: #fa2b49;
         }
+
         .totalCount {
           font-size: 34px;
-
           color: #009ee3;
         }
       }
     }
+
     .cartBtn {
       display: flex;
       margin: 60px auto 80px;
@@ -277,30 +317,36 @@
         height: 48px;
         margin: 2px;
       }
+
       .continue {
         color: #666;
         border: 1px solid #666;
         background-color: white;
       }
+
       .orderChosen {
         color: white;
         border: 1px solid #666;
         background-color: #666;
       }
+
       .orderAll {
         color: white;
         border: 1px solid #009ee3;
         background-color: #009ee3;
       }
     }
+
     .cartNotification {
       .notifications {
         padding: 30px 0 30px 100px;
         background-color: #f7f7f7;
         list-style: square;
+
         li {
           color: #666;
           padding-bottom: 12px;
+
           span {
             color: #009ee3;
           }

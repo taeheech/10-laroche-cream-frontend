@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ItemBox from "../../Components/Main/ItemBox";
+import { allAPI } from "../../config";
 import "./ItemList.scss";
 
 class ItemList extends Component {
@@ -15,7 +16,7 @@ class ItemList extends Component {
   }
 
   showItemList = () => {
-    fetch("http://10.58.4.187:8000/product/allitem")
+    fetch(allAPI)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -46,19 +47,20 @@ class ItemList extends Component {
             const product = item.product;
             const hash = product.hash_tag.split(",");
             return (
-              <>
-                <ItemBox
-                  key={idx}
-                  item={item}
-                  width={"narrow"}
-                  hash={hash}
-                  showLikes={true}
-                  isBest={item.best}
-                  isNew={item.new}
-                  isGift={item.gift}
-                  isSale={item.sale}
-                />
-              </>
+              <ItemBox
+                key={idx}
+                item={item}
+                width={"narrow"}
+                hash={hash}
+                price={product.price}
+                discountPrice={product.sale_price}
+                productLine={product.product_line}
+                showLikes={true}
+                isBest={item.best}
+                isNew={item.new}
+                isGift={item.gift}
+                isSale={item.sale}
+              />
             );
           })}
         </ul>

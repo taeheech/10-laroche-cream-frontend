@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { likeAPI, cartAPI } from "../../config";
 import Modal from "./Modal";
 import "./ItemBox.scss";
 
@@ -13,94 +14,70 @@ class ItemBox extends Component {
     };
   }
 
-  addLikeItem = (key) => {
-    console.log(key);
-    fetch("http://10.58.4.80:8000/user/likeproduct", {
+  handleLikeItem = (id) => {
+    fetch(likeAPI, {
       method: "POST",
       headers: {
         Authorization: localStorage.getItem("Authorization"),
       },
-      body: JSON.stringify({ product_id: key }),
+      body: JSON.stringify({ product_id: id }),
     }).then((res) => res.json());
   };
 
-  removeLikeItem = (key) => {
-    console.log(key);
-    fetch("http://10.58.4.80:8000/user/likeproduct", {
+  handleCartItem = (id) => {
+    fetch(cartAPI, {
       method: "POST",
       headers: {
         Authorization: localStorage.getItem("Authorization"),
       },
-      body: JSON.stringify({ product_id: key }),
+      body: JSON.stringify({ product_id: id }),
     }).then((res) => res.json());
   };
 
-  addCartItem = (key) => {
-    console.log(key);
-    fetch("http://10.58.4.80:8000/user/cartproduct", {
-      method: "POST",
-      headers: {
-        Authorization: localStorage.getItem("Authorization"),
-      },
-      body: JSON.stringify({ product_id: key }),
-    }).then((res) => res.json());
-  };
-
-  removeCartItem = (key) => {
-    console.log(key);
-    fetch("http://10.58.4.80:8000/user/cartproduct", {
-      method: "POST",
-      headers: {
-        Authorization: localStorage.getItem("Authorization"),
-      },
-      body: JSON.stringify({ product_id: key }),
-    }).then((res) => res.json());
-  };
-
-  handleClickLikes = (key) => {
+  handleClickLikes = (id) => {
     if (!this.state.Authorization) {
       alert("먼저 로그인 해주세요");
       return;
-    }
-
-    if (this.state.addLike) {
-      this.addLikeItem(key);
-      this.setState({
-        addLike: false,
-      });
     } else {
-      this.removeLikeItem(key);
-      this.setState({
-        addLike: true,
-      });
+      return (
+        this.handleLikeItem(id),
+        this.setState({
+          addLike: !this.state.addLike,
+        })
+      );
     }
   };
 
-  handleClickCart = (key) => {
+  handleClickCart = (id) => {
     if (!this.state.Authorization) {
       alert("먼저 로그인 해주세요");
       return;
-    }
-
-    if (this.state.addCart) {
-      this.addCartItem(key);
-      this.setState({
-        addCart: false,
-      });
     } else {
-      this.removeCartItem(key);
-      this.setState({
-        addCart: true,
-      });
+      return (
+        this.handleCartItem(id),
+        this.setState({
+          addCart: !this.state.addCart,
+        })
+      );
     }
   };
 
   render() {
-    const { width, showLikes, isBest, isNew, isGift, hash } = this.props;
+    const {
+      width,
+      showLikes,
+      isBest,
+      isNew,
+      isGift,
+      hash,
+      price,
+      productLine,
+      discountPrice,
+    } = this.props;
     const { images, product } = this.props.item;
-    const { id, name, price, product_line, sale_price } = product;
+    const { id, name } = product;
     const priceNum = Number(price);
-    const sale_priceNum = Number(sale_price);
+    const discountPriceNum = Number(discountPrice);
     const { addLike, addCart } = this.state;
     const { handleClickLikes, handleClickCart } = this;
 
@@ -127,11 +104,7 @@ class ItemBox extends Component {
 
             <div className="itemTag">
               <div className={isBest ? "best" : "displayNone"}>BEST</div>
-              <div
-                className={isNew ? (isBest ? "bestnew" : "new") : "displayNone"}
-              >
-                NEW
-              </div>
+              <div className={isNew ? "new" : "displayNone"}>NEW</div>
             </div>
 
             <img
@@ -143,21 +116,22 @@ class ItemBox extends Component {
             />
 
             <p className="itemHash">{hash[0]}</p>
-            <p className="itemLine">{product_line}</p>
+            <p className="itemLine">{productLine}</p>
             <p className="itemName">{name}</p>
             <div className="itemPrice">
               <div className="discount">
                 <span
                   className={
-                    sale_price !== price ? "discountRate" : "displayNone"
+                    discountPrice !== price ? "discountRate" : "displayNone"
                   }
                 >
-                  {Math.round(((priceNum - sale_priceNum) / priceNum) * 100) +
-                    "%"}
+                  {Math.round(
+                    ((priceNum - discountPriceNum) / priceNum) * 100
+                  ) + "%"}
                 </span>
                 <p
                   className={
-                    sale_price !== price ? "salePrice" : "sellingPrice"
+                    discountPrice !== price ? "discountPrice" : "sellingPrice"
                   }
                 >
                   {priceNum.toLocaleString() + "원"}
@@ -165,15 +139,16 @@ class ItemBox extends Component {
               </div>
               <p
                 className={
-                  sale_price !== price ? "sellingPrice" : "displayNone"
+                  discountPrice !== price ? "sellingPrice" : "displayNone"
                 }
               >
-                {sale_priceNum > 0 && sale_priceNum.toLocaleString() + "원"}
+                {discountPriceNum > 0 &&
+                  discountPriceNum.toLocaleString() + "원"}
               </p>
             </div>
             <div className="giftSaleTag">
               <p className={isGift ? "gift" : "displayNone"}>증정</p>
-              <p className={sale_price !== price ? "sale" : "displayNone"}>
+              <p className={discountPrice !== price ? "sale" : "displayNone"}>
                 세일
               </p>
             </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { likeAPI } from "../../config";
 import LikeItemBox from "../../Components/Main/LikeItemBox";
 import "./LikeItems.scss";
 
@@ -15,7 +16,7 @@ class LikeItems extends Component {
   }
 
   showLikeItems = () => {
-    fetch("http://10.58.4.80:8000/user/likeproduct", {
+    fetch(likeAPI, {
       method: "GET",
       headers: {
         Authorization: localStorage.getItem("Authorization"),
@@ -43,19 +44,18 @@ class LikeItems extends Component {
         <ul className="itemTable">
           {likeItemTable.map((item, idx) => {
             const hash = item.hash_tag.split(",");
-            console.log(hash[0]);
             return (
-              <>
-                <LikeItemBox
-                  id={idx}
-                  item={item}
-                  width={"narrow"}
-                  hash={hash}
-                  showLikes={false}
-                  isGift={item.gift}
-                  isSale={item.sale}
-                />
-              </>
+              <LikeItemBox
+                id={idx}
+                item={item}
+                width={"narrow"}
+                hash={hash}
+                price={item.price}
+                discountPrice={item.sale_price}
+                productLine={item.product_line}
+                isGift={item.gift}
+                isSale={item.sale}
+              />
             );
           })}
         </ul>

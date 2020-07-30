@@ -7,7 +7,7 @@ class Modal extends Component {
     const like = type === "like";
     return (
       <div className={like ? "likeModal" : "cartModal"}>
-        <div className={like ? "likeImg" : "cartImg"}></div>
+        <div className={like ? "likeImg" : "cartImg"} />
         <div className={like ? "likeText" : "cartText"}>
           <p>선택하신 제품을</p>
           <p className={like ? "displayNone" : "on"}>장바구니에 담았습니다</p>

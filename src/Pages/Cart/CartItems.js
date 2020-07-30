@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./CartItems.scss";
 import ItemCard from "./ItemCard";
+import { cartAPI } from "../../config";
+import "./CartItems.scss";
 
 class CartItems extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class CartItems extends Component {
   }
 
   showCartItems = () => {
-    fetch("http://10.58.4.80:8000/user/cartproduct", {
+    fetch(cartAPI, {
       method: "GET",
       headers: {
         Authorization: localStorage.getItem("Authorization"),

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { allAPI } from "../../../config";
 import Slides from "../../../Components/Main/Slides";
 import "./Discount.scss";
 
@@ -15,7 +16,7 @@ class Discount extends Component {
   }
 
   showDiscount = () => {
-    fetch("http://10.58.4.187:8000/product/allitem")
+    fetch(allAPI)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
