@@ -7,8 +7,6 @@ class SignIn extends Component {
   constructor() {
     super();
     this.state = {
-      account: "",
-      password: "",
       activeID: 0,
     };
   }
@@ -20,16 +18,16 @@ class SignIn extends Component {
   };
 
   tabHandler = (id) => {
-    console.log(id);
     this.setState({ activeID: id });
   };
 
   handleLoginBtn = () => {
+    const { account, password } = this.state;
     fetch("http://10.58.3.224:8000/user/signin", {
       method: "POST",
       body: JSON.stringify({
-        account: this.state.account,
-        password: this.state.password,
+        account,
+        password,
       }),
     })
       .then((res) => res.json())
@@ -61,7 +59,7 @@ class SignIn extends Component {
             회원님만 드리는 <em>풍성한 혜택</em> 놓치지 마세요!
           </p>
           <div>
-            <div className="memberSignIn">
+            <div className="membersSignIn">
               <ul className="tab">
                 <li
                   className={
@@ -86,7 +84,10 @@ class SignIn extends Component {
               </ul>
               <div>
                 {this.state.activeID === 0 ? (
-                  <MemberSignIn handleInput={this.handleInput} />
+                  <MemberSignIn
+                    handleInput={this.handleInput}
+                    handleLoginBtn={this.handleLoginBtn}
+                  />
                 ) : (
                   <NonMemberSignIn />
                 )}

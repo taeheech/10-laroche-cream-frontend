@@ -1,28 +1,30 @@
 import React, { Component } from "react";
+import "./MemberSignIn.scss";
 
 class MemberSignIn extends Component {
   render() {
+    const { handleInput, handleLoginBtn } = this.props;
     return (
-      <div className="idpw">
+      <div className="MemberSignIn">
         <div className="input">
           <input
-            onChange={this.props.handleInput}
+            onChange={handleInput}
             name="account"
             className="account"
             type="text"
             placeholder="아이디"
           />
           <input
-            onChange={this.props.handleInput}
+            onChange={handleInput}
             name="password"
             className="account"
             type="text"
             placeholder="비밀번호"
           />
-          <button onClick={this.props.handleLoginBtn} className="login_btn">
+          <button onClick={handleLoginBtn} className="login_btn btns">
             로그인
           </button>
-          <button className="btn">회원가입하고 혜택받기</button>
+          <button className="btn btns">회원가입하고 혜택받기</button>
         </div>
         <div className="save_find">
           <div>
@@ -36,13 +38,13 @@ class MemberSignIn extends Component {
         </div>
         <div className="sns">
           <div className="snsBox">
-            <div className="naver_logo"></div>
+            <div className="naver_logo sns_logos"></div>
             <div className="sns_login">
               <a>네이버 로그인</a>
             </div>
           </div>
           <div className="snsBox">
-            <div className="facebook_logo"></div>
+            <div className="facebook_logo sns_logos"></div>
             <div className="sns_login">
               <a>페이스북 로그인</a>
             </div>
@@ -50,13 +52,13 @@ class MemberSignIn extends Component {
         </div>
         <div className="sns">
           <div className="snsBox">
-            <div className="kakao_logo"></div>
+            <div className="kakao_logo sns_logos"></div>
             <div className="sns_login">
               <a>카카오 로그인</a>
             </div>
           </div>
           <div className="snsBox">
-            <div className="payco_logo"></div>
+            <div className="payco_logo sns_logos"></div>
             <div className="sns_login">
               <a>페이코 로그인</a>
             </div>
