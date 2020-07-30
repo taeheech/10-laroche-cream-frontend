@@ -4,7 +4,7 @@
   position: absolute;
   width: 320px;
   animation-name: fade;
-  animation-duration: 0.8s;
+  animation-duration: 0.3s;
   animation-iteration-count: initial;
 
   .hideMenu {
@@ -37,9 +37,9 @@
         height: 10px;
         margin-top: 25px;
         a {
-          color: gray;
+          color: #808080;
           &:hover {
-            color: skyblue;
+            color: #87ceeb;
           }
         }
       }
@@ -61,15 +61,14 @@
 
         .arrow {
           display: flex;
-          justify-content: flex-end;
-          top: 14px;
-          margin-left: 75px;
+          justify-content: space-between;
+          top: 15px;
+          margin-left: 60px;
           width: 14px;
           height: 9px;
           content: "";
           background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
             no-repeat -269px -128px;
-          background-size: 300px;
         }
       }
       .menuBoxBottom {
@@ -84,15 +83,14 @@
 
         .arrow {
           display: flex;
-          justify-content: flex-end;
+          justify-content: space-between;
           top: 14px;
-          margin-left: 30px;
+          margin-left: 15px;
           width: 14px;
           height: 9px;
           content: "";
           background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
             no-repeat -269px -128px;
-          background-size: 300px;
         }
       }
     }
@@ -116,7 +114,7 @@
         }
         .menuImgTextMiddle {
           margin-bottom: 12px;
-          color: gray;
+          color: #808080;
           width: 170px;
           margin: 0 auto;
           text-align: center;

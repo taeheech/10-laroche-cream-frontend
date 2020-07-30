@@ -19,6 +19,9 @@
     transform: rotate(220deg);
     width: 15px;
     height: 15px;
+    &:before {
+      display: none;
+    }
   }
   .slick-next {
     border-top: 3px solid;
@@ -27,6 +30,9 @@
     transform: rotate(45deg);
     width: 15px;
     height: 15px;
+    &:before {
+      display: none;
+    }
   }
 
   .sliderPay {

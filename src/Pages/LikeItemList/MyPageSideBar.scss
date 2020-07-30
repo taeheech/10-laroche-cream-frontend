@@ -1,0 +1,80 @@
+.MyPageSideBar {
+  width: 190px;
+
+  .myPageSideBarTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0 30px;
+    margin: 0 0 18px;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .accordion {
+    border-style: none;
+
+    .current {
+      color: #009ee3;
+    }
+
+    .accordion__button {
+      font-size: 18px;
+      background-color: transparent;
+      padding: 12px 0;
+      outline: none;
+      color: #222;
+      cursor: pointer;
+
+      &:before {
+        display: none;
+      }
+
+      &:hover {
+        color: #009ee3;
+      }
+    }
+
+    .accordion__item {
+      border-style: none;
+      cursor: pointer;
+    }
+
+    .accordion__panel {
+      padding: 0;
+
+      li {
+        color: #666;
+        list-style: none;
+        padding: 9px;
+        &:hover {
+          text-decoration: underline;
+          color: #009ee3;
+        }
+      }
+    }
+  }
+
+  .myPageSideBarItem {
+    h2 {
+      margin: 12px 0;
+      font-size: 18px;
+      font-weight: 400;
+      cursor: pointer;
+      &:hover {
+        color: #009ee3;
+      }
+    }
+
+    p {
+      padding: 9px 0;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover {
+        color: #009ee3;
+        text-decoration: underline;
+      }
+    }
+  }
+}

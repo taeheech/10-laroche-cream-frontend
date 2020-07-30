@@ -70,7 +70,7 @@ class DetailSlider extends Component {
           <div>
             <img src="https://www.larocheposay.co.kr/upload/product/main/2020/06/20200630_1621047_642_400x400.png" />
             <div className="sliderPay">에빠끌라A.I 에센스</div>
-            <div className="sliderPay">18,000 원</div>
+            <div className="sliderPay">18,00 원</div>
           </div>
         </Slider>
       </div>

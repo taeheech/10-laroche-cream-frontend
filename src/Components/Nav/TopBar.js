@@ -1,29 +1,74 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { userAPI } from "../../config";
 import "./TopBar.scss";
 
 class TopBar extends Component {
+  constructor() {
+    super();
+    this.state = {
+      userName: "",
+    };
+  }
+  componentDidMount() {
+    fetch(userAPI, {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("Authorization"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ userName: res.경로 });
+      });
+  }
+
   render() {
     return (
       <nav>
-        <img
-          className="navLogo"
-          onClick=""
-          src="https://www.larocheposay.co.kr/images/common/logo.png?1"
-        ></img>
+        <Link to="/">
+          <img
+            alt=""
+            className="navLogo"
+            onClick=""
+            src="https://www.larocheposay.co.kr/images/common/logo.png?1"
+          ></img>
+        </Link>
         <ul className="topNav">
+          {localStorage.getItem("Authorization") ? (
+            <>
+              <li>
+                <Link to="">{this.state.userName} 님</Link>
+              </li>
+              <li>
+                <Link to="">로그아웃</Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/signin">로그인</Link>
+              </li>
+              <li>
+                <Link to="/signup">회원가입</Link>
+              </li>
+            </>
+          )}
+
           <li>
-            <a href="">로그인</a>
+            {/* {localStorage.getItem("Authorization") ? (
+     
+            ) : (
+            
+            )} */}
           </li>
           <li>
-            <a href="">회원가입</a>
+            <Link to="">주문/배송조회</Link>
           </li>
           <li>
-            <a href="">주문/배송조회</a>
-          </li>
-          <li>
-            <a href="" className="topNavEnd">
+            <Link to="" className="topNavEnd">
               고객케어센터
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

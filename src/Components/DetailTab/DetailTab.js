@@ -14,8 +14,6 @@ class DetailTab extends Component {
   }
 
   render() {
-    const { info } = this.state;
-    console.log("info >>> ", info);
     return (
       <>
         <div className="DetailTab">
@@ -27,9 +25,9 @@ class DetailTab extends Component {
             "/upload",
             "https://www.larocheposay.co.kr/upload"
           )} */}
-          {/* <div className="banner">
+          <div className="banner">
             <img src="https://www.larocheposay.co.kr/upload/product/main/2019/02/20200713_1810013_111.jpg" />
-          </div> */}
+          </div>
           {/* {info &&
             console.log(
               info.banner.replace(

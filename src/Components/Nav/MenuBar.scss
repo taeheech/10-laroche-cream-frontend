@@ -1,7 +1,7 @@
 .menuBar {
   display: flex;
   position: relative;
-  height: 53px;
+  height: 54px;
   margin: 0 auto;
   border-top: 1px solid #e9e9e9;
 
@@ -29,14 +29,17 @@
         font-size: 16px;
         font-weight: bold;
         display: flex;
-        justify-content: center;
 
         &.blue {
-          color: skyblue;
+          color: #87ceeb;
         }
 
         &.black {
           color: black;
+        }
+
+        &.center {
+          justify-content: center;
         }
       }
     }
@@ -51,7 +54,6 @@
         font-size: 16px;
         display: flex;
         font-weight: bold;
-        margin-right: 20px;
 
         .couponMemberShip {
           display: flex;

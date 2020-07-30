@@ -16,7 +16,7 @@ class Skin extends Component {
                   </Link>
                 </li>
                 <li className="menu_list_top">
-                  <Link to="/">전체</Link>
+                  <Link to="/productlist">전체</Link>
                 </li>
                 <li>
                   <Link to="/">민감성 피부</Link>

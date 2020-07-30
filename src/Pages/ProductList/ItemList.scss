@@ -1,0 +1,44 @@
+.ItemList {
+  width: 850px;
+
+  .itemListTitle {
+    h1 {
+      padding: 60px 0 30px;
+      font-size: 36px;
+    }
+    .sortingArea {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+
+      .sortingCriteria {
+        display: flex;
+        li {
+          padding: 0 16px;
+          border-right: 1px solid lightgray;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .itemTable {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 870px;
+    margin-bottom: 100px;
+    white-space: nowrap;
+    overflow: ellipsis;
+
+    .like {
+      position: absolute;
+      margin: 10px;
+      width: 28px;
+      height: 26px;
+      background: url(https://www.larocheposay.co.kr/images/product/bg_product_sp.png) -100px
+        0 no-repeat;
+      cursor: pointer;
+    }
+  }
+}
