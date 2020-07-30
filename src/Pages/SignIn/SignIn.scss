@@ -1,0 +1,95 @@
+.SignIn {
+  width: 580px;
+  margin: 0 auto;
+  background-color: white;
+  font-family: notokr-medium;
+
+  header {
+    display: flex;
+    justify-content: center;
+  }
+
+  main {
+    p {
+      margin: 20px 0 50px;
+      text-align: center;
+      font-size: 20px;
+      em {
+        color: #009ee3;
+        font-style: normal;
+      }
+    }
+
+    .membersSignIn {
+      border: 1px solid #d9d9d9;
+
+      .tab {
+        padding-left: 0px;
+        margin-top: 0px;
+        display: inline;
+        list-style: none;
+        display: flex;
+        li {
+          width: 50%;
+          height: 68px;
+          .memberTab {
+            position: relative;
+            top: 22px;
+            left: 94px;
+          }
+          .nonmemberTab {
+            position: relative;
+            top: 22px;
+            left: 40px;
+          }
+        }
+        .selectedTabs {
+          border: 1px solid #d9d9d9;
+          border-top: 3px solid #009ee3;
+          border-bottom: none;
+          color: #009ee3;
+          font-size: 20px;
+        }
+        .unselectedTabs {
+          border: 1px solid #d9d9d9;
+          border-top: none;
+          font-size: 20px;
+          color: #8f8f8f;
+          background: #f0f0f0;
+        }
+      }
+
+      p {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #8f8f8f;
+      }
+    }
+  }
+
+  footer {
+    font-family: "notokr-demilight";
+
+    div {
+      display: flex;
+      justify-content: center;
+      span {
+        margin-top: 30px;
+        color: #222222;
+        font-size: 15px;
+      }
+      .privacy {
+        padding-left: 15px;
+        border-left: 1px solid #d9d9d9;
+        margin-left: 15px;
+        color: #009ee3;
+      }
+    }
+    .copyright {
+      font-size: 13px;
+      color: #8f8f8f;
+      padding: 20px 0 70px;
+      text-align: center;
+    }
+  }
+}
