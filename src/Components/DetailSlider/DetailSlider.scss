@@ -1,0 +1,42 @@
+.DetailSlider {
+  width: 1140px;
+  margin: 0 150px;
+
+  p {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  img {
+    width: 285px;
+    height: 232px;
+  }
+
+  .slick-prev {
+    border-top: 3px solid;
+    border-right: 3px solid;
+    border-color: #000000;
+    transform: rotate(220deg);
+    width: 15px;
+    height: 15px;
+  }
+  .slick-next {
+    border-top: 3px solid;
+    border-right: 3px solid;
+    border-color: #000000;
+    transform: rotate(45deg);
+    width: 15px;
+    height: 15px;
+  }
+
+  .sliderPay {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .SliderSale {
+    text-align: center;
+    text-decoration-line: line-through;
+    font-size: 14px;
+    color: #bababa;
+  }
+}
