@@ -1,0 +1,23 @@
+.DetailLeft {
+  width: 500px;
+  height: 500px;
+  margin-top: 50px;
+
+  .detailSlider {
+    width: 500px;
+    height: 456px;
+  }
+
+  .slick-dots {
+    bottom: -110px;
+
+    li {
+      width: 55px;
+      height: 55px;
+      border: solid 1px gainsboro;
+      img {
+        width: 55px;
+      }
+    }
+  }
+}
