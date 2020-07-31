@@ -5,7 +5,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./FloatBar.scss";
-
 class FloatBar extends Component {
   constructor() {
     super();
@@ -15,11 +14,9 @@ class FloatBar extends Component {
       likedProducts: [],
     };
   }
-
   componentDidMount() {
     this.showFloatBar();
   }
-
   showFloatBar = () => {
     fetch("http://localhost:3000/mockdata/data.json")
       .then((res) => res.json())
@@ -28,7 +25,6 @@ class FloatBar extends Component {
           floatProducts: res.data,
         });
       });
-
     fetch(cartAPI, {
       method: "GET",
       headers: {
@@ -40,7 +36,6 @@ class FloatBar extends Component {
         console.log(res);
         this.setState({ cartProducts: res.cart_list });
       });
-
     fetch(likeAPI, {
       method: "GET",
       headers: {
@@ -52,11 +47,9 @@ class FloatBar extends Component {
         this.setState({ likedProducts: res.like_list });
       });
   };
-
   goToTop = () => {
     window.scrollTo(0, 0);
   };
-
   render() {
     const { goToTop } = this;
     const settings = {

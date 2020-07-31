@@ -6,16 +6,16 @@ class SignUpOptionalInfo extends Component {
     super();
     this.state = {
       troubleTable: [
-        {"skinTrouble": "민감성피부"},
-        {"skinTrouble": "손상 피부"},
-        {"skinTrouble": "지성/트러블 피부"},
-        {"skinTrouble": "건조한 피부"},
-        {"skinTrouble": "주름"},
-        {"skinTrouble": "탄력"},
-        {"skinTrouble": "브라이트닝"},
-        {"skinTrouble": "톤업/메이크업"},
-        {"skinTrouble": "UV차단"},
-        {"skinTrouble": "두피 모발 강화"},
+        {"trouble": "민감성피부"},
+        {"trouble": "손상 피부"},
+        {"trouble": "지성/트러블 피부"},
+        {"trouble": "건조한 피부"},
+        {"trouble": "주름"},
+        {"trouble": "탄력"},
+        {"trouble": "브라이트닝"},
+        {"trouble": "톤업/메이크업"},
+        {"trouble": "UV차단"},
+        {"trouble": "두피 모발 강화"},
         ],
       typeTable: [
         {'type': "건성 (얼굴 전체적으로 당김)"},
@@ -24,17 +24,38 @@ class SignUpOptionalInfo extends Component {
         {'type': '지성 (얼굴 전체적으로 번들거림)'}
       ],
       sensitivity: [
-        {'sens': '1'},
-        {'sens': '2'},
-        {'sens': '3'},
-        {'sens': '4'},
-        {'sens': '5'}
+        {'sens': 1},
+        {'sens': 2},
+        {'sens': 3},
+        {'sens': 4},
+        {'sens': 5}
       ],
+      disable: false,
+    }
+  }
+
+  handleAgree = (e) => {
+    if (e.target.checked === true) {
+      this.setState({
+        disable: false
+      })
+    }
+  }
+
+  handleDisagree = (e) => {
+    if (e.target.checked === true) {
+      this.setState({
+        disable: true
+      })
     }
   }
 
   render() {
+    const {clickedSensitivity} = this.props;
     const {inputHandler} = this.props;
+    const {handleCheckbox} = this.props;
+    const {skinTrouble} = this.props;
+
     return (
       <section className="SignUpOptionalInfo">
         <h3>선택항목</h3>
@@ -76,13 +97,13 @@ class SignUpOptionalInfo extends Component {
             <div className="add_agree">
               <div className="radio_wrap">
                 <span className="radiocss">
-                  <input className="radio" type="radio" />
+                  <input className="radio" onClick={this.handleAgree} name='agree' type="radio" />
                   <label>
                     <em>동의</em>
                   </label>
                 </span>
                 <span className="radiocss">
-                  <input className="radio" type="radio" />
+                  <input className="radio" onClick={this.handleDisagree} name='agree' type="radio" />
                   <label>
                     <em>미동의</em>
                   </label>
@@ -109,7 +130,7 @@ class SignUpOptionalInfo extends Component {
               {this.state.typeTable.map((el) => {
                 return(
                   <span className="radiocss">
-                    <input type="radio" />
+                    <input type="radio" onClick={inputHandler} name='skinType' value={el.type} disabled={this.state.disable}/>
                     <label>
                       <em>{el.type}</em>
                     </label>
@@ -127,12 +148,12 @@ class SignUpOptionalInfo extends Component {
                   {this.state.troubleTable.map((el) => {
                     return(
                     <span className="checkcss">
-                      <input type="checkbox" onClick={inputHandler} name="skinTrouble" value={el.skinTrouble} />
+                      <input type="checkbox" onClick={handleCheckbox} name="skinTrouble" value={el.trouble} unchecked={el.trouble in skinTrouble} disabled={this.state.disable}/>
                       <label>
-                        <em>{el.skinTrouble}</em>
+                        <em>{el.trouble}</em>
                       </label>
                     </span>
-                    )
+                  )
                   })}
             </div>
           </li>
@@ -143,11 +164,11 @@ class SignUpOptionalInfo extends Component {
             </h4>
             <div className="radio_wrap_sensitivity">
             {this.state.sensitivity.map((el)=> {
-              return(
-              <div className="radiocss" onClick={inputHandler} name='skinSensitivity' value={el.sens}>
+              return (
+              <div className={el.sens === this.props.sensitivity ? "selectedRadioCss" : "radioCss"} onClick={!this.state.disable && clickedSensitivity} data-value={el.sens}>
                 <input type="radio"/>
                 <label>
-                  <em>{el.sens}</em>
+                  <em onClick={clickedSensitivity} data-value={el.sens}>{el.sens}</em>
                 </label>
               </div>
               )
@@ -163,4 +184,5 @@ class SignUpOptionalInfo extends Component {
     );
   }
 }
+
 export default SignUpOptionalInfo;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./MemberSignIn.scss";
 
 class MemberSignIn extends Component {
@@ -24,7 +25,9 @@ class MemberSignIn extends Component {
           <button onClick={handleLoginBtn} className="login_btn btns">
             로그인
           </button>
-          <button className="btn btns">회원가입하고 혜택받기</button>
+          <Link to="/signup">
+            <button className="btn btns">회원가입하고 혜택받기</button>
+          </Link>
         </div>
         <div className="save_find">
           <div>
