@@ -50,13 +50,12 @@
 
       .step_text {
         margin-top: 18px;
-
-        .step1_text {
-          margin-right: 125px;
-        }
+        padding-right: 30px;
+        display: flex;
+        justify-content: space-between;
 
         .step2_text {
-          margin-right: 177px;
+          margin-right: 48px;
         }
       }
     }

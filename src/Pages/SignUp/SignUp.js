@@ -7,20 +7,32 @@ class SignUp extends Component {
   constructor() {
     super();
     this.state = {
+      account: '',
+      password: '',
+      phoneNumber: '',
+      name: '',
+      birthday: '',
+      gender_type: '',
+      skinType: '',
       skinTrouble: [],
+      skinSensitivity: '',
     };
   }
 
   inputHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
-    });
+    })
   };
   
-  clickedSensitivity = (e) => {
-    this.setState({
-      sensitivity: Number(e.target.dataset.value)
-    })
+  clickedSensitivity = (sensNum, disableState) => {
+    if(disableState) {
+      return 
+    } else {
+      this.setState({
+        sensitivity: sensNum
+      })
+    }
   }
 
   handleCheckbox = (e) => {
@@ -39,25 +51,46 @@ class SignUp extends Component {
   }
 
   handleSignUp = (e) => {
-    fetch("http://10.58.1.97:8000/user/signup", {
+    const {account, password, domain, phoneNumber, name, birthday, gender_type, skinType, skinTrouble, skinSensitivity} = this.state;
+    fetch("http://10.58.4.80:8000/user/signup", {
       method: "POST",
       body: JSON.stringify({
-        account: this.state.account,
-        password: this.state.password,
-        email: this.state.account + "@" + this.state.domain,
-        phoneNumber: this.state.phoneNumber,
-        name: this.state.name,
-        birthday: this.state.birthday,
-        gender_type: this.state.gender_type,
-        skinType: this.state.skinType,
-        skinTrouble: this.state.skinTrouble,
-        skinSensitivity: this.state.skinSensitivity,
+        account: account,
+        password: password,
+        email: account + "@" + domain,
+        phoneNumber: phoneNumber,
+        name: name,
+        birthday: birthday,
+        gender_type: gender_type,
+        skinType: skinType,
+        skinTrouble: skinTrouble.toString(),
+        skinSensitivity: Number(skinSensitivity),
       })
-    });
+    })
+    .then((res) => res.json())
+    .then((res) => {
+      res.message === 'SIGNUP_SUCCESS' &&
+      this.props.history.push("/")
+    })
   };
 
+  checkID =() => {
+  fetch("http://10.58.4.80:8000/user/accountcheck", {
+    method: 'POST',
+    body: JSON.stringify({
+      account: this.state.account
+    })
+    })
+    .then(response => response.json())
+    .then(response => {
+      response.message === "DUPLICATED_ID"
+      ? alert('nope!')
+      : alert('good!!')
+      console.log(response.message);
+    })
+  }
+
     render() {
-      console.log(this.state);
       return (
         <div className="SignUp">
           <div className="content">
@@ -85,7 +118,7 @@ class SignUp extends Component {
               </div>
               <div className="join_form">
                 <h2>정보입력</h2>
-                <SignUpInfo inputHandler={this.inputHandler} />
+                <SignUpInfo inputHandler={this.inputHandler} checkID={this.checkID}/>
                 <SignUpOptionalInfo clickedSensitivity={this.clickedSensitivity} handleCheckbox={this.handleCheckbox} inputHandler={this.inputHandler} skinTrouble={this.state.skinTrouble} sensitivity={this.state.sensitivity} />
               </div>
               <div className="btn_wrap">

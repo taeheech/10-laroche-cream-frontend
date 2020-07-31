@@ -2,8 +2,23 @@ import React, { Component } from "react";
 import "./SignUpInfo.scss";
 
 class SignUpInfo extends Component {
+
+  // function ValidateEmail(uemail) {
+  //   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  //   if(this.state.account.match(mailformat))
+  //   {
+  //   return true;
+  //   }
+  //   else
+  //   {
+  //   alert("You have entered an invalid email address!");
+  //   uemail.focus();
+  //   return false;
+  //   }
+  //   }
+
   render() {
-    const { inputHandler } = this.props;
+    const { inputHandler, checkID } = this.props;
     return (
       <section className="SignUpInfo">
         <h3>필수항목</h3>
@@ -23,7 +38,7 @@ class SignUpInfo extends Component {
                 type="text"
                 placeholder="아이디 (영문, 숫자 조합 8~20자 내외)"
               />
-              <button className="checkId" type="button">
+              <button className="checkId" type="button" onClick={checkID}>
                 <span>중복확인</span>
               </button>
             </div>
