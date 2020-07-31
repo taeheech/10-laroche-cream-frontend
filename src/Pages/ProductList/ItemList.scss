@@ -1,5 +1,6 @@
 .ItemList {
   width: 850px;
+
   .itemListTitle {
     h1 {
       padding: 60px 0 30px;
@@ -9,6 +10,7 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 50px;
+
       .sortingCriteria {
         display: flex;
         li {
@@ -19,6 +21,7 @@
       }
     }
   }
+
   .itemTable {
     display: flex;
     justify-content: space-between;
@@ -27,6 +30,7 @@
     margin-bottom: 100px;
     white-space: nowrap;
     overflow: ellipsis;
+
     .like {
       position: absolute;
       margin: 10px;

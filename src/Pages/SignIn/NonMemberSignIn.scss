@@ -1,0 +1,25 @@
+.NonMemberSignIn {
+  .orderInfo {
+    padding: 40px 30px;
+    .input {
+      display: flex;
+      flex-direction: column;
+      .orderNum,
+      .order {
+        height: 50px;
+        margin-top: 6px;
+        padding: 0 20px;
+        border: 1px solid #d9d9d9;
+      }
+      .track {
+        height: 68px;
+        padding: 0 20px;
+        margin-top: 24px;
+        border: 1px solid #009ee3;
+        font-size: 24px;
+        color: #fff;
+        background-color: #009ee3;
+      }
+    }
+  }
+}

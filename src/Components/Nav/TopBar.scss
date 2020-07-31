@@ -13,7 +13,9 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 60px;
-
+  span {
+    color: #009ee3;
+  }
   li {
     padding-left: 2px;
     line-height: 36px;
@@ -23,7 +25,6 @@
     padding: 0 8px;
     color: #959595;
     border-right: 1px solid;
-    color: gray;
   }
   .topNavEnd {
     border: none;

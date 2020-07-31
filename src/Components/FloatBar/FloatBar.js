@@ -1,33 +1,68 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { cartAPI, likeAPI, userAPI } from "../../config";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./FloatBar.scss";
-
 class FloatBar extends Component {
   constructor() {
     super();
     this.state = {
       floatProducts: [],
+      cartProducts: [],
       likedProducts: [],
+      userName: "",
+      Authorization: localStorage.getItem("Authorization"),
     };
   }
-
   componentDidMount() {
+    this.showFloatBar();
+  }
+  showFloatBar = () => {
     fetch("http://localhost:3000/mockdata/data.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           floatProducts: res.data,
-          likedProducts: res.data, // db에 있는 찜목록
         });
       });
-  }
-
+    fetch(userAPI, {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("Authorization"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        this.setState({ userName: res.name });
+      });
+    fetch(cartAPI, {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("Authorization"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        this.setState({ cartProducts: res.cart_list });
+      });
+    fetch(likeAPI, {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("Authorization"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ likedProducts: res.like_list });
+      });
+  };
   goToTop = () => {
     window.scrollTo(0, 0);
   };
-
   render() {
     const { goToTop } = this;
     const settings = {
@@ -38,26 +73,44 @@ class FloatBar extends Component {
       slidesToScroll: 1,
       arrow: true,
     };
-    const { floatProducts } = this.state;
-    const { likedProducts } = this.state;
+    const {
+      floatProducts,
+      cartProducts,
+      likedProducts,
+      Authorization,
+    } = this.state;
     return (
       <div className="FloatBar">
         <div className="floatContainer">
-          <div className="floatGreeting">
-            <strong>
-              <em>user</em>님
-            </strong>
-            <p>반갑습니다</p>
+          {Authorization ? (
+            <div className="floatGreeting">
+              <strong>
+                <em>{this.state.userName}</em>님
+              </strong>
+              <p>반갑습니다</p>
+            </div>
+          ) : (
+            <div className="floatGreeting">
+              <p>반갑습니다</p>
+            </div>
+          )}
+          <div className="icon">
+            <Link to="/cart">
+              <div className="floatCart">
+                <p className="count">
+                  {Authorization ? cartProducts.length : 0}
+                </p>
+              </div>
+            </Link>
           </div>
           <div className="icon">
-            <div className="floatCart">
-              <p className="count">1</p>
-            </div>
-          </div>
-          <div className="icon">
-            <div className="floatLike">
-              <p className="count">{likedProducts.length}</p>
-            </div>
+            <Link to="/likeitemlist">
+              <div className="floatLike">
+                <p className="count">
+                  {Authorization ? likedProducts.length : 0}
+                </p>
+              </div>
+            </Link>
           </div>
           <div className="floatProduct">
             <Slider {...settings}>

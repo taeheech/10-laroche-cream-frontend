@@ -13,15 +13,16 @@ class Review extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/data.json")
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          reviewData: res.reviewData,
-        });
-      });
+    this.showReview();
   }
 
+  showReview = () => {
+    fetch("http://localhost:3000/mockdata/data.json")
+      .then((res) => res.json())
+      .then(({ reviewData }) => {
+        this.setState({ reviewData });
+      });
+  };
   render() {
     const settings = {
       dots: true,

@@ -1,0 +1,16 @@
+{
+  "data": {
+    "id": 1,
+    "product_line": "에빠끌라",
+    "name": "듀오[+] 에센스 트리플 세트",
+    "description": "유럽 NO.1* 트러블 케어 에센스 (미백 기능성) (본품 3개 묶음 제품)",
+    "sale_price": 67500,
+    "price": 75000,
+    "hash_tag": "#트러블케어에센스,#유럽NO1에센스,#미백에센스,#다크스팟케어,#에빠끌라",
+    "best": null,
+    "new": true,
+    "image": "/upload/product/main/2020/07/20200715_1348021_162.png,/upload/product/main/2020/07/20200715_1348022_163.png,/upload/product/main/2020/07/20200715_1350046_164.png,/upload/product/main/2020/07/20200715_1351005_165.png,/upload/product/main/2020/07/20200715_1351035_166.png",
+    "gift": true,
+    "sale": true
+  }
+}

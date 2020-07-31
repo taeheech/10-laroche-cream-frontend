@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import { allAPI } from "../../../config";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./BestSeller.scss";
@@ -14,14 +15,18 @@ class BestSeller extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/mockupdata.json")
+    this.showBestSeller();
+  }
+
+  showBestSeller = () => {
+    fetch(allAPI)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          bestSeller: res.bestSeller,
+          bestSeller: res.data.filter((item) => item.best).slice(0, 12),
         });
       });
-  }
+  };
 
   render() {
     const settings = {
@@ -39,7 +44,6 @@ class BestSeller extends Component {
     };
 
     const { bestSeller } = this.state;
-
     return (
       <div className="BestSeller">
         <h1 className="bestSellerTitle">
@@ -52,16 +56,24 @@ class BestSeller extends Component {
         <div className="bestSellerList">
           <Slider {...settings}>
             {bestSeller.map((item, idx) => {
-              const hash = item.hash.split(",")[0];
+              const product = item.product;
+              const hash = product.hash_tag.split(",");
               return (
-                <ItemBox
-                  item={item}
-                  key={idx}
-                  product_line={item.product_line}
-                  name={item.name}
-                  width={"wide"}
-                  hash={hash.toString()}
-                />
+                <>
+                  <ItemBox
+                    key={idx}
+                    item={item}
+                    width={"narrow"}
+                    hash={hash}
+                    price={product.price}
+                    discountPrice={product.sale_price}
+                    productLine={product.product_line}
+                    isBest={item.best}
+                    isNew={item.new}
+                    isGift={item.gift}
+                    isSale={item.sale}
+                  />
+                </>
               );
             })}
           </Slider>

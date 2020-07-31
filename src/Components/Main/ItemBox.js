@@ -1,67 +1,94 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { likeAPI, cartAPI } from "../../config";
+import Modal from "./Modal";
 import "./ItemBox.scss";
 
 class ItemBox extends Component {
   constructor() {
     super();
     this.state = {
-      isActive: false,
+      addLike: false,
+      addCart: false,
+      Authorization: localStorage.getItem("Authorization"),
     };
   }
 
-  addLikeItem = (key) => {
-    console.log(key);
-    fetch("api주소", {
+  handleLikeItem = (id) => {
+    fetch(likeAPI, {
       method: "POST",
       headers: {
-        Authorization: localStorage.getItem("access_token"),
+        Authorization: localStorage.getItem("Authorization"),
       },
-      body: JSON.stringify({ product_id: key }),
+      body: JSON.stringify({ product_id: id }),
     }).then((res) => res.json());
   };
 
-  removeLikeItem = (key) => {
-    console.log(key);
-    fetch("api주소", {
+  handleCartItem = (id) => {
+    fetch(cartAPI, {
       method: "POST",
       headers: {
-        Authorization: localStorage.getItem("access_token"),
+        Authorization: localStorage.getItem("Authorization"),
       },
-      body: JSON.stringify({ product_id: key }),
+      body: JSON.stringify({ product_id: id }),
     }).then((res) => res.json());
   };
 
-  handleClickLikes = (key) => {
-    if (!this.state.access_token) {
+  handleClickLikes = (id) => {
+    if (!this.state.Authorization) {
       alert("먼저 로그인 해주세요");
       return;
-    }
-
-    if (this.state.isActive) {
-      console.log("삭제!");
-      alert("찜하기 취소!");
-      this.addLikeItem(key);
-      this.setState({
-        isActive: false,
-      });
     } else {
-      console.log("추가!");
-      alert("찜하기 성공!");
-      this.removeLikeItem(key);
-      this.setState({
-        isActive: true,
-      });
+      return (
+        this.handleLikeItem(id),
+        this.setState({
+          addLike: !this.state.addLike,
+        })
+      );
+    }
+  };
+
+  handleClickCart = (id) => {
+    if (!this.state.Authorization) {
+      alert("먼저 로그인 해주세요");
+      return;
+    } else {
+      return (
+        this.handleCartItem(id),
+        this.setState({
+          addCart: !this.state.addCart,
+        })
+      );
     }
   };
 
   render() {
-    const { item, width, showLikes, isBest, isNew, hash } = this.props;
-    const { img, product_line, name, price, sale_price } = this.props.item;
-    const { isActive } = this.state;
-    const { handleClickLikes } = this;
+    const {
+      width,
+      showLikes,
+      isBest,
+      isNew,
+      isGift,
+      hash,
+      price,
+      productLine,
+      discountPrice,
+    } = this.props;
+    const { images, product } = this.props.item;
+    const { id, name } = product;
+    const priceNum = Number(price);
+    const discountPriceNum = Number(discountPrice);
+    const { addLike, addCart } = this.state;
+    const { handleClickLikes, handleClickCart } = this;
+
     return (
-      <div className="ItemBox">
+      <div className="ItemBox" key={id}>
+        <div className={addLike ? "showModal" : "displayNone"}>
+          <Modal type="like" />
+        </div>
+        <div className={addCart ? "showModal" : "displayNone"}>
+          <Modal type="cart" />
+        </div>
         <li>
           <div
             className={
@@ -70,45 +97,70 @@ class ItemBox extends Component {
           >
             <div
               className={showLikes && "like"}
-              onClick={() => handleClickLikes(item.id)}
+              onClick={() => handleClickLikes(id)}
             >
-              <div className={isActive ? "on" : "off"}></div>
+              <div className={addLike ? "on" : "off"}></div>
             </div>
 
             <div className="itemTag">
               <div className={isBest ? "best" : "displayNone"}>BEST</div>
-              <div
-                className={isNew ? (isBest ? "bestnew" : "new") : "displayNone"}
-              >
-                NEW
-              </div>
+              <div className={isNew ? "new" : "displayNone"}>NEW</div>
             </div>
 
-            <img alt="" src={img} />
-            <p className="itemHash">{hash}</p>
-            <p className="itemLine">{product_line}</p>
+            <img
+              alt=""
+              src={`https://www.larocheposay.co.kr${images[0].slice(
+                1,
+                images[0].length - 1
+              )}`}
+            />
+
+            <p className="itemHash">{hash[0]}</p>
+            <p className="itemLine">{productLine}</p>
             <p className="itemName">{name}</p>
             <div className="itemPrice">
               <div className="discount">
-                <span className={sale_price ? "discountRate" : "displayNone"}>
-                  {Math.round(((price - item.sale_price) / price) * 100) + "%"}
+                <span
+                  className={
+                    discountPrice !== price ? "discountRate" : "displayNone"
+                  }
+                >
+                  {Math.round(
+                    ((priceNum - discountPriceNum) / priceNum) * 100
+                  ) + "%"}
                 </span>
-                <p className={sale_price ? "salePrice" : "sellingPrice"}>
-                  {price
-                    .toLocaleString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"}
+                <p
+                  className={
+                    discountPrice !== price ? "discountPrice" : "sellingPrice"
+                  }
+                >
+                  {priceNum.toLocaleString() + "원"}
                 </p>
               </div>
-              <p className={sale_price ? "sellingPrice" : "displayNone"}>
-                {sale_price > 0 &&
-                  sale_price
-                    .toLocaleString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"}
+              <p
+                className={
+                  discountPrice !== price ? "sellingPrice" : "displayNone"
+                }
+              >
+                {discountPriceNum > 0 &&
+                  discountPriceNum.toLocaleString() + "원"}
+              </p>
+            </div>
+            <div className="giftSaleTag">
+              <p className={isGift ? "gift" : "displayNone"}>증정</p>
+              <p className={discountPrice !== price ? "sale" : "displayNone"}>
+                세일
               </p>
             </div>
             <div className="over">
-              <Link to="/" className="hoverBtn detailView"></Link>
-              <Link to="/" className="hoverBtn addCart"></Link>
+              <Link
+                to={`detailpage/${product.id}`}
+                className="hoverBtn detailView"
+              ></Link>
+              <div
+                className="hoverBtn addCart"
+                onClick={() => handleClickCart(id)}
+              ></div>
             </div>
           </div>
         </li>

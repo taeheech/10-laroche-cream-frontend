@@ -1,0 +1,39 @@
+.LikeItems {
+  width: 850px;
+
+  .itemListTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0 30px;
+
+    h1 {
+      font-size: 36px;
+    }
+
+    button {
+      width: 100px;
+      height: 40px;
+      outline: none;
+      border: 1px solid #8f8f8f;
+      cursor: pointer;
+    }
+
+    .cartBtn {
+      color: white;
+      background-color: #8f8f8f;
+    }
+
+    .deleteBtn {
+      color: #666;
+      margin-left: 3px;
+    }
+  }
+
+  .itemTable {
+    display: flex;
+    flex-wrap: wrap;
+    width: 870px;
+    margin-bottom: 100px;
+    white-space: nowrap;
+  }
+}

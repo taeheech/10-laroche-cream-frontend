@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import ItemBox from "./ItemBox";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Slides.scss";
@@ -14,25 +15,25 @@ class Slides extends Component {
       slidesToScroll: this.props.slidesToScroll,
       arrow: true,
     };
-    const { slideList } = this.props;
     return (
       <div className="Slides">
         <Slider {...settings}>
-          {slideList.map((item, idx) => {
+          {this.props.slideList.map((item, idx) => {
+            const product = item.product;
+            const hash = product.hash_tag.split(",");
             return (
-              <div className="slideList" key={idx}>
-                <div className="slideItemBox">
-                  <div className="test">
-                    <img className="itemImg" alt="" src={item.img} />
-                  </div>
-                  <p className="itemDesc">{item.desc}</p>
-                  <p className="itemPrice">
-                    {item.price}
-                    <span>원</span>
-                  </p>
-                  <p className="prevPrice">{item.prevPrice}</p>
-                </div>
-              </div>
+              <ItemBox
+                item={item}
+                key={idx}
+                product_line={item.productLine}
+                name={item.name}
+                width={"wide"}
+                price={product.price}
+                productLine={product.product_line}
+                discountPrice={product.sale_price}
+                hash={hash}
+                isSale={item.sale}
+              />
             );
           })}
         </Slider>

@@ -45,6 +45,7 @@
       background: url(https://www.larocheposay.co.kr/images/common/ico_comm_sp.png)
         no-repeat -167px -129px;
       z-index: 1;
+
       &:before {
         display: none;
       }
@@ -75,6 +76,7 @@
             width: 400px;
             transition: 0.5s;
           }
+
           .solutionText {
             text-align: left;
             width: 286px;
@@ -86,6 +88,7 @@
             transition: 0.5s;
             word-break: keep-all;
           }
+
           hr {
             width: 286px;
             margin: 0;
@@ -93,16 +96,19 @@
             transition: 0.5s;
           }
         }
+
         &:hover {
           .solutionImages {
             transform: scale(1.1);
             transition: 0.5s;
           }
+
           .hoverItems {
             .solutionText {
               color: #009ee3;
               transition: 0.5s;
             }
+
             hr {
               left: 0;
               width: 0;
@@ -114,6 +120,7 @@
         }
       }
     }
+
     .slick-dots {
       li {
         top: 20px;

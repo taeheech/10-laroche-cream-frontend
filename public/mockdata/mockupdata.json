@@ -10,8 +10,8 @@
       "best": null,
       "new": true,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
-      "gift": true,
-      "sale": false
+      "gift": false,
+      "sale": true
     },
     {
       "product_line": "오 떼르말",
@@ -62,8 +62,8 @@
       "best": true,
       "new": null,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200716_1622039_192.png",
-      "gift": false,
-      "sale": true
+      "gift": true,
+      "sale": false
     },
     {
       "product_line": "똘러리앙",
@@ -141,7 +141,7 @@
       "new": true,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200716_1450038_174.png",
       "gift": true,
-      "sale": false
+      "sale": true
     },
     {
       "product_line": "에빠끌라",
@@ -225,14 +225,14 @@
       "product_line": "똘러리앙",
       "name": "울트라 로션 [400ml]",
       "desc": "저자극 고보습 & 진정 토너",
-      "sale_price": null,
+      "sale_price": 40500,
       "price": 45000,
       "hash": "#24시간 수분지속,#수분공급,#울트라수딩,#수분장벽강화,#민감피부진정,#피부진정토너,#진정과보습한방에,#민감피부토너",
       "best": null,
       "new": null,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/06/20200630_1650018_727.png",
       "gift": false,
-      "sale": false
+      "sale": true
     },
     {
       "product_line": "시카플라스트",
@@ -245,7 +245,7 @@
       "new": null,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/06/20200630_1650004_724.png",
       "gift": false,
-      "sale": true
+      "sale": false
     },
     {
       "product_line": "오 떼르말",
@@ -284,7 +284,7 @@
       "new": true,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/06/20200630_1622056_648.png",
       "gift": false,
-      "sale": false
+      "sale": true
     },
     {
       "product_line": "세로징크",
@@ -297,7 +297,7 @@
       "new": true,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200701_0933021_116.png",
       "gift": false,
-      "sale": false
+      "sale": true
     },
     {
       "product_line": "똘러리앙",
@@ -348,6 +348,7 @@
       "best": true,
       "new": null,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/06/20200630_1732050_008.png",
+      "gift": false,
       "sale": false
     },
     {
@@ -399,6 +400,7 @@
       "best": null,
       "new": null,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200720_1008040_238.png",
+      "gift": false,
       "sale": false
     },
     {
@@ -724,7 +726,7 @@
       "new": null,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200702_1441033_191.png",
       "gift": false,
-      "sale": true
+      "sale": false
     },
     {
       "product_line": "에빠끌라",
@@ -753,7 +755,7 @@
       "new": true,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200715_1348021_162.png",
       "gift": true,
-      "sale": false
+      "sale": true
     },
     {
       "product_line": "오 떼르말",
@@ -860,7 +862,7 @@
       "new": null,
       "img": "https://www.larocheposay.co.kr/upload/product/main/2020/07/20200702_1441033_191.png",
       "gift": false,
-      "sale": true
+      "sale": false
     },
     {
       "product_line": "에빠끌라",

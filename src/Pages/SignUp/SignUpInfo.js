@@ -2,23 +2,9 @@ import React, { Component } from "react";
 import "./SignUpInfo.scss";
 
 class SignUpInfo extends Component {
-
-  // function ValidateEmail(uemail) {
-  //   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  //   if(this.state.account.match(mailformat))
-  //   {
-  //   return true;
-  //   }
-  //   else
-  //   {
-  //   alert("You have entered an invalid email address!");
-  //   uemail.focus();
-  //   return false;
-  //   }
-  //   }
-
   render() {
-    const { inputHandler, checkID } = this.props;
+    const { inputHandler, checkID, gender_type } = this.props;
+
     return (
       <section className="SignUpInfo">
         <h3>필수항목</h3>
@@ -92,14 +78,14 @@ class SignUpInfo extends Component {
                 name="birthday"
                 className="birthday_input"
                 type="text"
-                placeholder='생년월일'
+                placeholder="생년월일"
               />
               <button
                 onClick={inputHandler}
                 name="gender_type"
                 value="남자"
                 type="button"
-                className="male"
+                className={gender_type === "남자" ? "selectedGender" : "female"}
               >
                 남자
               </button>
@@ -108,7 +94,7 @@ class SignUpInfo extends Component {
                 name="gender_type"
                 value="여자"
                 type="button"
-                className="female"
+                className={gender_type === "여자" ? "selectedGender" : "female"}
               >
                 여자
               </button>

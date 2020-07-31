@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ItemBox from "../../Components/Main/ItemBox";
+import { allAPI } from "../../config";
 import "./ItemList.scss";
 
 class ItemList extends Component {
@@ -11,14 +12,18 @@ class ItemList extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/mockupdata.json")
+    this.showItemList();
+  }
+
+  showItemList = () => {
+    fetch(allAPI)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           itemTable: res.data,
         });
       });
-  }
+  };
 
   render() {
     const { itemTable } = this.state;
@@ -27,7 +32,7 @@ class ItemList extends Component {
         <div className="itemListTitle">
           <h1>전체</h1>
           <div className="sortingArea">
-            <div className="totalCount">57개</div>
+            <div className="totalCount">{itemTable.length}개</div>
             <ul className="sortingCriteria">
               <li>판매량 순</li>
               <li>최근 등록 순</li>
@@ -39,19 +44,23 @@ class ItemList extends Component {
         </div>
         <ul className="itemTable">
           {itemTable.map((item, idx) => {
-            const hash = item.hash.split(",")[0];
+            const product = item.product;
+            const hash = product.hash_tag.split(",");
             return (
-              <>
-                <ItemBox
-                  key={idx}
-                  item={item}
-                  width={"narrow"}
-                  hash={hash.toString()}
-                  showLikes={true}
-                  isBest={item.best}
-                  isNew={item.new}
-                />
-              </>
+              <ItemBox
+                key={idx}
+                item={item}
+                width={"narrow"}
+                hash={hash}
+                price={product.price}
+                discountPrice={product.sale_price}
+                productLine={product.product_line}
+                showLikes={true}
+                isBest={item.best}
+                isNew={item.new}
+                isGift={item.gift}
+                isSale={item.sale}
+              />
             );
           })}
         </ul>

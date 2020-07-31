@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { allAPI } from "../../../config";
 import Slides from "../../../Components/Main/Slides";
 import "./Discount.scss";
 
@@ -11,14 +12,21 @@ class Discount extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/data.json")
+    this.showDiscount();
+  }
+
+  showDiscount = () => {
+    fetch(allAPI)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          discountList: res.data,
+          discountList: res.data.filter(
+            (item) =>
+              Number(item.product.price) !== Number(item.product.sale_price)
+          ),
         });
       });
-  }
+  };
 
   render() {
     return (

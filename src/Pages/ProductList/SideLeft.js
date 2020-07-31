@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
+import "react-accessible-accordion/dist/fancy-example.css";
 import "./SideLeft.scss";
 
 class SideLeft extends Component {
@@ -12,15 +19,16 @@ class SideLeft extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/mockdata/data.json")
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          sideBarMenu: res.sideBarMenu,
-          stage: res.stage,
-        });
-      });
+    this.showSideLeft();
   }
+
+  showSideLeft = () => {
+    fetch("http://localhost:3000/mockdata/sideBar.json")
+      .then((res) => res.json())
+      .then(({ sideBarMenu, stage }) => {
+        this.setState({ sideBarMenu, stage });
+      });
+  };
 
   render() {
     const { sideBarMenu, stage } = this.state;
@@ -28,18 +36,22 @@ class SideLeft extends Component {
     return (
       <div className="SideLeft">
         <div className="sideCateTitle">FACE</div>
-        <ul className="sideCateList">
-          {sideBarMenu.map((category, idx) => {
+        <Accordion>
+          {sideBarMenu.map((category) => {
             return (
-              <li key={idx} className="sideCateItem">
-                <h2> {category.title} </h2>
-                {category.list.map((item) => {
-                  return <p>- {item.id}</p>;
-                })}
-              </li>
+              <AccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>{category.title}</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  {category.list.map((el) => {
+                    return <li>- {el}</li>;
+                  })}
+                </AccordionItemPanel>
+              </AccordionItem>
             );
           })}
-        </ul>
+        </Accordion>
         <div className="sideCateTitle">
           FILTER
           <button></button>
@@ -50,7 +62,7 @@ class SideLeft extends Component {
             return (
               <label className="filter">
                 <input type="checkbox" id="cleansing" />
-                {item.id}
+                {item}
               </label>
             );
           })}
