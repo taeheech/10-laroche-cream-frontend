@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MemberSignIn from "./MemberSignIn";
 import NonMemberSignIn from "./NonMemberSignIn";
+import { signinAPI } from "../../config";
 import "./SignIn.scss";
 
 class SignIn extends Component {
@@ -23,7 +24,7 @@ class SignIn extends Component {
 
   handleLoginBtn = () => {
     const { account, password } = this.state;
-    fetch("http://10.58.3.224:8000/user/signin", {
+    fetch(signinAPI, {
       method: "POST",
       body: JSON.stringify({
         account,
@@ -33,9 +34,9 @@ class SignIn extends Component {
       .then((res) => res.json())
       .then((res) => {
         if (res.access_token) {
-          localStorage.setItem("token", res.access_token);
+          localStorage.setItem("Authorization", res.access_token);
           alert("로그인 성공");
-          this.props.history.push("main");
+          this.props.history.push("/");
         } else {
           alert("로그인 실패, 회원가입 먼저하세요");
           this.props.history.push("signup");
