@@ -19,7 +19,7 @@ class TopBar extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        this.setState({ userName: res.경로 });
+        this.setState({ userName: res.name });
       });
   }
 
@@ -38,7 +38,9 @@ class TopBar extends Component {
           {localStorage.getItem("Authorization") ? (
             <>
               <li>
-                <Link to="">{this.state.userName} 님</Link>
+                <Link className="userName" to="">
+                  <span>{this.state.userName}</span> 님
+                </Link>
               </li>
               <li>
                 <Link to="">로그아웃</Link>
