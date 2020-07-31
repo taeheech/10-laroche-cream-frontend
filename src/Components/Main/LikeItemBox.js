@@ -75,12 +75,7 @@ class ItemBox extends Component {
       discountPrice,
       productLine,
     } = this.props;
-    const {
-      id,
-      name,
-
-      images,
-    } = this.props.item;
+    const { id, name, images } = this.props.item;
     const firstImg = images.slice(1, images.length - 1).split(",")[0];
     const priceNum = Number(price);
     const discountPriceNum = Number(discountPrice);

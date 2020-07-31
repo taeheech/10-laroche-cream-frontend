@@ -3,8 +3,6 @@ import React, { Component } from "react";
 class ItemCard extends Component {
   render() {
     const {
-      item,
-      id,
       product_line,
       name,
       sale_price,

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ItemCard from "./ItemCard";
-import { cartAPI } from "../../config";
+import { userAPI, cartAPI } from "../../config";
 import "./CartItems.scss";
 
 class CartItems extends Component {
@@ -13,10 +13,22 @@ class CartItems extends Component {
   }
 
   componentDidMount() {
+    console.log("dodo");
     this.showCartItems();
   }
 
   showCartItems = () => {
+    fetch(userAPI, {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("Authorization"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ userName: res.name });
+      });
+
     fetch(cartAPI, {
       method: "GET",
       headers: {
@@ -25,7 +37,6 @@ class CartItems extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         this.setState({ CartItemTable: res.cart_list });
       });
   };
@@ -47,16 +58,43 @@ class CartItems extends Component {
   };
 
   sumPrice = () => {
-    let total = 0;
+    let totalPrice = 0;
+    let sellingPrice = 0;
     this.state.CartItemTable.forEach((item) => {
-      total = total + Number(item.price) * this.state.value;
+      if (item.sale_price !== item.price) {
+        sellingPrice = item.sale_price;
+      } else {
+        sellingPrice = item.price;
+      }
+      totalPrice = totalPrice + Number(sellingPrice) * this.state.value;
     });
-    return total;
+    return totalPrice;
+  };
+
+  discountAmount = () => {
+    let totalDiscount = 0;
+    let discounted = 0;
+    this.state.CartItemTable.forEach((item) => {
+      if (item.sale_price !== item.price) {
+        discounted = item.price - item.sale_price;
+      } else {
+        discounted = 0;
+      }
+      totalDiscount = totalDiscount + Number(discounted) * this.state.value;
+    });
+    return totalDiscount;
+  };
+
+  shippingfee = () => {
+    let shippingFee = 0;
+    this.sumPrice() - this.discountAmount() < 70000 && this.sumPrice() !== 0
+      ? (shippingFee = 2500)
+      : (shippingFee = 0);
+    return shippingFee;
   };
 
   render() {
     const { CartItemTable } = this.state;
-
     return (
       <div className="CartItems">
         <div className="itemListTitle">
@@ -76,7 +114,7 @@ class CartItems extends Component {
           <div className="memberlevel">
             <span className="memberIcon"></span>
             <p>
-              이지윤 님의 회원 등급은
+              {this.state.userName} 님의 회원 등급은
               <span>Dermo-beginner</span> 입니다.
             </p>
           </div>
@@ -142,7 +180,8 @@ class CartItems extends Component {
             <span>
               <em className="totalItem">총 할인금액</em>
               <strong className="dicountCount">
-                0<em>원</em>
+                {this.discountAmount().toLocaleString()}
+                <em>원</em>
               </strong>
             </span>
             <span>
@@ -155,7 +194,11 @@ class CartItems extends Component {
             <span>
               <em className="totalItem">결제예정금액</em>
               <strong className="totalCount">
-                {this.sumPrice().toLocaleString()}
+                {(
+                  this.sumPrice() -
+                  this.discountAmount() +
+                  this.shippingfee()
+                ).toLocaleString()}
                 <em>원</em>
               </strong>
             </span>
