@@ -19,7 +19,7 @@ class MemberSignIn extends Component {
             onChange={handleInput}
             name="password"
             className="account"
-            type="text"
+            type="password"
             placeholder="비밀번호"
           />
           <button onClick={handleLoginBtn} className="login_btn btns">
