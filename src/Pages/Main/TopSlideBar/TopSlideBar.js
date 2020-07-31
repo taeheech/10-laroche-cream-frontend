@@ -17,7 +17,7 @@ class TopSlideBar extends Component {
   }
 
   showTopSlideBar = () => {
-    fetch("http://localhost:3000/mockdata/data.json")
+    fetch("/mockdata/data.json")
       .then((res) => res.json())
       .then(({ topSlideImg }) => {
         this.setState({ topSlideImg });
