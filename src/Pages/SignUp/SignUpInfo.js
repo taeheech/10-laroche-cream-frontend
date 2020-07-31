@@ -3,7 +3,8 @@ import "./SignUpInfo.scss";
 
 class SignUpInfo extends Component {
   render() {
-    const { inputHandler } = this.props;
+    const { inputHandler, checkID, gender_type } = this.props;
+
     return (
       <section className="SignUpInfo">
         <h3>필수항목</h3>
@@ -23,7 +24,7 @@ class SignUpInfo extends Component {
                 type="text"
                 placeholder="아이디 (영문, 숫자 조합 8~20자 내외)"
               />
-              <button className="checkId" type="button">
+              <button className="checkId" type="button" onClick={checkID}>
                 <span>중복확인</span>
               </button>
             </div>
@@ -77,14 +78,14 @@ class SignUpInfo extends Component {
                 name="birthday"
                 className="birthday_input"
                 type="text"
-                placeholder='생년월일'
+                placeholder="생년월일"
               />
               <button
                 onClick={inputHandler}
                 name="gender_type"
                 value="남자"
                 type="button"
-                className="male"
+                className={gender_type === "남자" ? "selectedGender" : "female"}
               >
                 남자
               </button>
@@ -93,7 +94,7 @@ class SignUpInfo extends Component {
                 name="gender_type"
                 value="여자"
                 type="button"
-                className="female"
+                className={gender_type === "여자" ? "selectedGender" : "female"}
               >
                 여자
               </button>

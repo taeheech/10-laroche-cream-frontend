@@ -23,6 +23,16 @@ class TopBar extends Component {
       });
   }
 
+
+  signOut=()=>{
+    fetch(userAPI, {
+      method: "POST",
+      headers: {
+        Authorization: localStorage.removeItem("Authorization"),
+      },
+    })
+  }
+
   render() {
     return (
       <nav>
@@ -43,7 +53,7 @@ class TopBar extends Component {
                 </Link>
               </li>
               <li>
-                <Link to="">로그아웃</Link>
+                <Link to="" onClick={this.signOut}>로그아웃</Link>
               </li>
             </>
           ) : (

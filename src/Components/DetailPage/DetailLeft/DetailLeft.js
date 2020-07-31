@@ -6,12 +6,10 @@ import "./DetailLeft.scss";
 
 class DetailLeft extends Component {
   render() {
-    let splitImages;
+    let sliderImgs;
     if (this.props.sliderData) {
-      splitImages = this.props.sliderData.image;
+      sliderImgs = this.props.sliderData.image;
     }
-
-    console.log(splitImages);
 
     const settings = {
       customPaging: function (imageUrl) {
@@ -19,7 +17,7 @@ class DetailLeft extends Component {
           <div>
             <img
               alt="img22"
-              src={`https://www.larocheposay.co.kr/${imageUrl}`}
+              src={`https://www.larocheposay.co.kr/${sliderImgs[imageUrl]}`}
             />
           </div>
         );

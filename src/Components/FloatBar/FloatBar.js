@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { cartAPI, likeAPI } from "../../config";
+import { cartAPI, likeAPI, userAPI } from "../../config";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,6 +12,8 @@ class FloatBar extends Component {
       floatProducts: [],
       cartProducts: [],
       likedProducts: [],
+      userName: "",
+      Authorization: localStorage.getItem("Authorization"),
     };
   }
   componentDidMount() {
@@ -24,6 +26,17 @@ class FloatBar extends Component {
         this.setState({
           floatProducts: res.data,
         });
+      });
+    fetch(userAPI, {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("Authorization"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        this.setState({ userName: res.name });
       });
     fetch(cartAPI, {
       method: "GET",
@@ -60,27 +73,42 @@ class FloatBar extends Component {
       slidesToScroll: 1,
       arrow: true,
     };
-    const { floatProducts, cartProducts, likedProducts } = this.state;
+    const {
+      floatProducts,
+      cartProducts,
+      likedProducts,
+      Authorization,
+    } = this.state;
     return (
       <div className="FloatBar">
         <div className="floatContainer">
-          <div className="floatGreeting">
-            <strong>
-              <em>user</em>님
-            </strong>
-            <p>반갑습니다</p>
-          </div>
+          {Authorization ? (
+            <div className="floatGreeting">
+              <strong>
+                <em>{this.state.userName}</em>님
+              </strong>
+              <p>반갑습니다</p>
+            </div>
+          ) : (
+            <div className="floatGreeting">
+              <p>반갑습니다</p>
+            </div>
+          )}
           <div className="icon">
             <Link to="/cart">
               <div className="floatCart">
-                <p className="count">{cartProducts.length}</p>
+                <p className="count">
+                  {Authorization ? cartProducts.length : 0}
+                </p>
               </div>
             </Link>
           </div>
           <div className="icon">
             <Link to="/likeitemlist">
               <div className="floatLike">
-                <p className="count">{likedProducts.length}</p>
+                <p className="count">
+                  {Authorization ? likedProducts.length : 0}
+                </p>
               </div>
             </Link>
           </div>

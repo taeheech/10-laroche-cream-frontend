@@ -45,7 +45,6 @@ class SignIn extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="SignIn">
         <header>
