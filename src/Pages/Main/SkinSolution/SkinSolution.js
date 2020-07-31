@@ -17,7 +17,7 @@ class SkinSolution extends Component {
   }
 
   showSkinSolution = () => {
-    fetch("http://localhost:3000/mockdata/data.json")
+    fetch("/mockdata/data.json")
       .then((res) => res.json())
       .then(({ skinSolution }) => {
         this.setState({ skinSolution });
