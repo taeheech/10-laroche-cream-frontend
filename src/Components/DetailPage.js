@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Nav from "./Nav";
 import DetailLeft from "./DetailPage/DetailLeft/DetailLeft";
-import DetailRight from "./DetailPageRight/DetailRight";
+import DetailRight from "./DetailPage/DetailPageRight/DetailRight";
 import DetailTab from "./DetailTab/DetailTab";
 import DetailSlider from "./DetailSlider/DetailSlider";
 import Footer from "../Components/Footer/Footer";

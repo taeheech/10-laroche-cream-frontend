@@ -19,7 +19,7 @@ class DetailLeft extends Component {
           <div>
             <img
               alt="img22"
-              src={`https://www.larocheposay.co.kr${imageUrl}`}
+              src={`https://www.larocheposay.co.kr/${imageUrl}`}
             />
           </div>
         );
