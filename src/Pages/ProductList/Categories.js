@@ -17,7 +17,7 @@ class Categories extends Component {
   }
 
   showCategories = () => {
-    fetch("http://localhost:3000/mockdata/data.json")
+    fetch("/mockdata/data.json")
       .then((res) => res.json())
       .then(({ categoryData }) => {
         this.setState({ categoryData });

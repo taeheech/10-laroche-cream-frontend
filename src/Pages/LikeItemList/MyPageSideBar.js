@@ -22,7 +22,7 @@ class MyPageSideBar extends Component {
   }
 
   showMyPageSideBar = () => {
-    fetch("http://localhost:3000/mockdata/sideBar.json")
+    fetch("/mockdata/sideBar.json")
       .then((res) => res.json())
       .then(({ myPageSideBarList }) => {
         this.setState({ myPageSideBarList });

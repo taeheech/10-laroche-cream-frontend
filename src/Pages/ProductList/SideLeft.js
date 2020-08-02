@@ -23,7 +23,7 @@ class SideLeft extends Component {
   }
 
   showSideLeft = () => {
-    fetch("http://localhost:3000/mockdata/sideBar.json")
+    fetch("/mockdata/sideBar.json")
       .then((res) => res.json())
       .then(({ sideBarMenu, stage }) => {
         this.setState({ sideBarMenu, stage });
